@@ -484,3 +484,4 @@ $RECYCLE.BIN/
 *.swp
 
 appsettings.json
+/PrimeCare.Api/appsettings.json
