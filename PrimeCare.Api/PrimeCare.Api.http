@@ -1,0 +1,6 @@
+@PrimeCare.Api_HostAddress = http://localhost:5030
+
+GET {{PrimeCare.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
