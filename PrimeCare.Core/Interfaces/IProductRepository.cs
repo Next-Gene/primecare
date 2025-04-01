@@ -19,4 +19,16 @@ public interface IProductRepository
     /// </summary>
     /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of products.</returns>
     Task<IReadOnlyList<Product>> GetProductsAsync();
+
+    /// <summary>
+    /// Gets all product brands.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of product brands.</returns>
+    Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync();
+
+    /// <summary>
+    /// Gets all product types.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of product types.</returns>
+    Task<IReadOnlyList<ProductType>> GetProductTypesAsync();
 }

@@ -21,6 +21,13 @@ public class ProductRepository : IProductRepository
     }
 
     /// <summary>
+    /// Gets all product brands.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of product brands.</returns>
+    public async Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync()
+        => await _context.ProductBrands.ToListAsync();
+
+    /// <summary>
     /// Gets a product by its identifier.
     /// </summary>
     /// <param name="id">The product identifier.</param>
@@ -34,4 +41,11 @@ public class ProductRepository : IProductRepository
     /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of products.</returns>
     public async Task<IReadOnlyList<Product>> GetProductsAsync()
         => await _context.Products.ToListAsync();
+
+    /// <summary>
+    /// Gets all product types.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of product types.</returns>
+    public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
+        => await _context.ProductTypes.ToListAsync();
 }
