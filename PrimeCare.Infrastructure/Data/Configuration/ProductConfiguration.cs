@@ -4,8 +4,15 @@ using PrimeCare.Core.Entities;
 
 namespace PrimeCare.Infrastructure.Data.Configuration;
 
+/// <summary>
+/// Configures the properties and relationships of the <see cref="Product"/> entity.
+/// </summary>
 public class ProductConfiguration : IEntityTypeConfiguration<Product>
 {
+    /// <summary>
+    /// Configures the <see cref="Product"/> entity.
+    /// </summary>
+    /// <param name="builder">The builder to be used to configure the <see cref="Product"/> entity.</param>
     public void Configure(EntityTypeBuilder<Product> builder)
     {
         builder
