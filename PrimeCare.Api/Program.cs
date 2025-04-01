@@ -39,6 +39,7 @@ try
 {
     var context = services.GetRequiredService<PrimeCareContext>();
     await context.Database.MigrateAsync();
+    await PrimeContextSeed.SeedAsync(context, loggerFactory);
 }
 catch (Exception ex)
 {

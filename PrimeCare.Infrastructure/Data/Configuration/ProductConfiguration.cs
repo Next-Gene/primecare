@@ -26,7 +26,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder
             .Property(p => p.Description)
             .HasColumnType("varchar")
-            .HasMaxLength(180)
+            .HasMaxLength(300)
             .IsRequired();
         builder
             .Property(p => p.Price)
