@@ -18,12 +18,8 @@ public class ProductController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Product>>> GetProducts()
     {
-        //var products = await _productRepository.GetProductsAsync();
-        var p = new List<Product>
-        {
-            new Product{Id=1,Name="Hmada",Description="asfdsfsd"}
-        };
-        return Ok(p);
+        var products = await _productRepository.GetProductsAsync();
+        return Ok(products);
     }
 
     [HttpGet("{id}")]
