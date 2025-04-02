@@ -32,7 +32,7 @@ public class ProductRepository : IProductRepository
     /// </summary>
     /// <param name="id">The product identifier.</param>
     /// <returns>A task that represents the asynchronous operation. The task result contains the product.</returns>
-    public async Task<Product?> GetProductByIdAsync(int? id)
+    public async Task<Product?> GetProductByIdAsync(int id)
         => await _context.Products
         .Include(p => p.ProductBrand)
         .Include(p => p.ProductType)
