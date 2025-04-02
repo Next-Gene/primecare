@@ -12,7 +12,7 @@ public interface IProductRepository
     /// </summary>
     /// <param name="id">The product identifier.</param>
     /// <returns>A task that represents the asynchronous operation. The task result contains the product.</returns>
-    Task<Product> GetProductByIdAsync(int id);
+    Task<Product?> GetProductByIdAsync(int? id);
 
     /// <summary>
     /// Gets all products.
