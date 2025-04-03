@@ -27,20 +27,11 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<ProductDto>>> GetProducts()
+    public async Task<ActionResult<IReadOnlyList<ProductDto>>> GetProducts()
     {
         var specification = new ProductsWithTypesAndBrandsSpecification();
         var products = await _productRepo.ListAsync(specification);
-        return products.Select(product => new ProductDto
-        {
-            Id = product!.Id,
-            Name = product.Name,
-            Price = product.Price,
-            Description = product.Description,
-            PictureUrl = product.PictureUrl,
-            ProductBrand = product.ProductBrand.Name,
-            ProductType = product.ProductType.Name,
-        }).ToList();
+        return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDto>>(products));
     }
 
     [HttpGet("{id}")]
