@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using PrimeCare.Api.Helpers;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Infrastructure.Data;
 
@@ -14,7 +15,7 @@ builder.Services.AddDbContext<PrimeCareContext>(options =>
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
