@@ -8,6 +8,11 @@ namespace PrimeCare.Core.Specifications;
 /// <typeparam name="T">The type of the entity.</typeparam>
 public class BaseSpecification<T> : ISpecification<T>
 {
+    public BaseSpecification()
+    {
+
+    }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="BaseSpecification{T}"/> class.
     /// </summary>
