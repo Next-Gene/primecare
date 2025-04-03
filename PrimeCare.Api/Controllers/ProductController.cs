@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
+using PrimeCare.Core.Specifications;
 
 namespace PrimeCare.Api.Controllers;
 
@@ -24,7 +25,8 @@ public class ProductController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Product>>> GetProducts()
     {
-        var products = await _productRepo.ListAllAsync();
+        var specification = new ProductsWithTypesAndBrandsSpecification();
+        var products = await _productRepo.ListAsync(specification);
         return Ok(products);
     }
 
