@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Api.Dtos;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
@@ -13,14 +14,16 @@ public class ProductController : ControllerBase
     private readonly IGenericRepository<Product> _productRepo;
     private readonly IGenericRepository<ProductBrand> _productBrandRepo;
     private readonly IGenericRepository<ProductType> _productTypeRepo;
+    private readonly IMapper _mapper;
 
     public ProductController(IGenericRepository<Product> productRepo,
         IGenericRepository<ProductBrand> productBrandRepo,
-        IGenericRepository<ProductType> productTypeRepo)
+        IGenericRepository<ProductType> productTypeRepo, IMapper mapper)
     {
         _productRepo = productRepo;
         _productBrandRepo = productBrandRepo;
         _productTypeRepo = productTypeRepo;
+        _mapper = mapper;
     }
 
     [HttpGet]
@@ -45,16 +48,7 @@ public class ProductController : ControllerBase
     {
         var specification = new ProductsWithTypesAndBrandsSpecification(id);
         var product = await _productRepo.GetEntityWithSpecification(specification);
-        return new ProductDto
-        {
-            Id = product!.Id,
-            Name = product.Name,
-            Price = product.Price,
-            Description = product.Description,
-            PictureUrl = product.PictureUrl,
-            ProductBrand = product.ProductBrand.Name,
-            ProductType = product.ProductType.Name,
-        };
+        return _mapper.Map<Product, ProductDto>(product!);
     }
 
     [HttpGet("brands")]
