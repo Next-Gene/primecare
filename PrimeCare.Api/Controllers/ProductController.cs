@@ -32,7 +32,10 @@ public class ProductController : ControllerBase
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Product?>> GetProduct(int id)
-        => await _productRepo.GetByIdAsync(id);
+    {
+        var specification = new ProductsWithTypesAndBrandsSpecification(id);
+        return await _productRepo.GetEntityWithSpecification(specification);
+    }
 
     [HttpGet("brands")]
     public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
