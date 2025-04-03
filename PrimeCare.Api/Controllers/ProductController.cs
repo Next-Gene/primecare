@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrimeCare.Api.Dtos;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;
@@ -23,18 +24,37 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<Product>>> GetProducts()
+    public async Task<ActionResult<List<ProductDto>>> GetProducts()
     {
         var specification = new ProductsWithTypesAndBrandsSpecification();
         var products = await _productRepo.ListAsync(specification);
-        return Ok(products);
+        return products.Select(product => new ProductDto
+        {
+            Id = product!.Id,
+            Name = product.Name,
+            Price = product.Price,
+            Description = product.Description,
+            PictureUrl = product.PictureUrl,
+            ProductBrand = product.ProductBrand.Name,
+            ProductType = product.ProductType.Name,
+        }).ToList();
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Product?>> GetProduct(int id)
+    public async Task<ActionResult<ProductDto>> GetProduct(int id)
     {
         var specification = new ProductsWithTypesAndBrandsSpecification(id);
-        return await _productRepo.GetEntityWithSpecification(specification);
+        var product = await _productRepo.GetEntityWithSpecification(specification);
+        return new ProductDto
+        {
+            Id = product!.Id,
+            Name = product.Name,
+            Price = product.Price,
+            Description = product.Description,
+            PictureUrl = product.PictureUrl,
+            ProductBrand = product.ProductBrand.Name,
+            ProductType = product.ProductType.Name,
+        };
     }
 
     [HttpGet("brands")]
