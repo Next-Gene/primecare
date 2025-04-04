@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
+using PrimeCare.Infrastructure.Data;
 
-namespace PrimeCare.Infrastructure.Data;
+namespace PrimeCare.Infrastructure.Repositories;
 
 /// <summary>
 /// Repository for managing product data.

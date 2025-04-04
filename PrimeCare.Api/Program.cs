@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using PrimeCare.Api.Helpers;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Infrastructure.Data;
+using PrimeCare.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -2,8 +2,9 @@
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;
+using PrimeCare.Infrastructure.Data;
 
-namespace PrimeCare.Infrastructure.Data;
+namespace PrimeCare.Infrastructure.Repositories;
 
 /// <summary>
 /// Generic repository for managing entities.
