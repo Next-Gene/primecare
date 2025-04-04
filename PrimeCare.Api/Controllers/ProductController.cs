@@ -8,19 +8,13 @@ namespace PrimeCare.Api.Controllers;
 
 public class ProductController : BaseApiController
 {
-    private readonly IGenericRepository<Product> _productRepo;
-    private readonly IGenericRepository<ProductBrand> _productBrandRepo;
-    private readonly IGenericRepository<ProductType> _productTypeRepo;
-    private readonly IMapper _mapper;
+
 
     public ProductController(IGenericRepository<Product> productRepo,
         IGenericRepository<ProductBrand> productBrandRepo,
         IGenericRepository<ProductType> productTypeRepo, IMapper mapper)
     {
-        _productRepo = productRepo;
-        _productBrandRepo = productBrandRepo;
-        _productTypeRepo = productTypeRepo;
-        _mapper = mapper;
+
     }
 
     [HttpGet]
