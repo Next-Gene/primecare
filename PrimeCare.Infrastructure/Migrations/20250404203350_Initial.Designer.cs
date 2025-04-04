@@ -11,8 +11,8 @@ using PrimeCare.Infrastructure.Data;
 namespace PrimeCare.Infrastructure.Migrations
 {
     [DbContext(typeof(PrimeCareContext))]
-    [Migration("20250401165505_IncreasedDescritionlength")]
-    partial class IncreasedDescritionlength
+    [Migration("20250404203350_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,6 +53,9 @@ namespace PrimeCare.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("ProductTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
