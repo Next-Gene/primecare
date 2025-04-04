@@ -62,4 +62,23 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     private IQueryable<T> ApplySpecification(ISpecification<T> specification)
         => SpecificationEvaluator<T>
         .GetQuery(_context.Set<T>().AsQueryable(), specification);
+
+    public async Task<int> AddAsync(T entity)
+    {
+        _context.Set<T>().Add(entity);
+        return await _context.SaveChangesAsync();
+    }
+
+    public Task<int> UpdateAsync(T entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<int> DeleteAsync(int id)
+    {
+        var entity = await _context.Set<T>().FindAsync(id);
+        if (entity == null)
+            throw new Exception($"Item with {id} is not found");
+
+    }
 }
