@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeCare.Core", "PrimeCare
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeCare.Infrastructure", "PrimeCare.Infrastructure\PrimeCare.Infrastructure.csproj", "{FF5618DA-460C-4F06-AE77-94854530B6D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeCare.Application", "PrimeCare.Application\PrimeCare.Application.csproj", "{F84B8BDA-37DF-4A4A-BC21-A788B6D214DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FF5618DA-460C-4F06-AE77-94854530B6D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF5618DA-460C-4F06-AE77-94854530B6D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF5618DA-460C-4F06-AE77-94854530B6D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F84B8BDA-37DF-4A4A-BC21-A788B6D214DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84B8BDA-37DF-4A4A-BC21-A788B6D214DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84B8BDA-37DF-4A4A-BC21-A788B6D214DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84B8BDA-37DF-4A4A-BC21-A788B6D214DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
