@@ -10,4 +10,8 @@
     <Folder Include="Errors\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PrimeCare.Core\PrimeCare.Core.csproj" />
+  </ItemGroup>
+
 </Project>

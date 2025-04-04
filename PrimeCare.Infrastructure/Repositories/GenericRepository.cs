@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PrimeCare.Application.Exceptions;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;
@@ -36,7 +37,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     /// </summary>
     /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of entities.</returns>
     public async Task<IReadOnlyList<T>> ListAllAsync()
-        => await _context.Set<T>().ToListAsync();
+        => await _context.Set<T>().AsNoTracking().ToListAsync();
 
     /// <summary>
     /// Gets an entity that matches the given specification.
@@ -52,7 +53,27 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     /// <param name="specification">The specification to apply.</param>
     /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of entities.</returns>
     public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> specification)
-        => await ApplySpecification(specification).ToListAsync();
+        => await ApplySpecification(specification).AsNoTracking().ToListAsync();
+
+    public async Task<int> AddAsync(T entity)
+    {
+        _context.Set<T>().Add(entity);
+        return await _context.SaveChangesAsync();
+    }
+
+    public async Task<int> UpdateAsync(T entity)
+    {
+        _context.Set<T>().Update(entity);
+        return await _context.SaveChangesAsync();
+    }
+
+    public async Task<int> DeleteAsync(int id)
+    {
+        var entity = await _context.Set<T>().FindAsync(id)
+            ?? throw new ItemNotFoundException($"Item with {id} is not found");
+        _context.Set<T>().Remove(entity);
+        return await _context.SaveChangesAsync();
+    }
 
     /// <summary>
     /// Applies the given specification to the query.
@@ -62,23 +83,4 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     private IQueryable<T> ApplySpecification(ISpecification<T> specification)
         => SpecificationEvaluator<T>
         .GetQuery(_context.Set<T>().AsQueryable(), specification);
-
-    public async Task<int> AddAsync(T entity)
-    {
-        _context.Set<T>().Add(entity);
-        return await _context.SaveChangesAsync();
-    }
-
-    public Task<int> UpdateAsync(T entity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<int> DeleteAsync(int id)
-    {
-        var entity = await _context.Set<T>().FindAsync(id);
-        if (entity == null)
-            throw new Exception($"Item with {id} is not found");
-
-    }
 }
