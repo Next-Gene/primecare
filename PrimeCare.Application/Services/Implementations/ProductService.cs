@@ -10,47 +10,58 @@ namespace PrimeCare.Application.Services.Implementations;
 
 public class ProductService : IProductService
 {
-    private readonly IGenericRepository<Product> _productRepo;
+    private readonly IGenericRepository<Product> _productInterface;
     private readonly IMapper _mapper;
 
-    public ProductService(IGenericRepository<Product> productRepo, IMapper mapper)
+    public ProductService(IGenericRepository<Product> productInterface, IMapper mapper)
     {
-        _productRepo = productRepo;
+        _productInterface = productInterface;
         _mapper = mapper;
     }
 
     public async Task<ServiceResponse> AddAsync(CreateProductDto entity)
     {
-        int result = await
+        var mappedData = _mapper.Map<Product>(entity);
+        int result = await _productInterface.AddAsync(mappedData);
+
+        return result > 0
+            ? new ServiceResponse(true, "Product Added")
+            : new ServiceResponse(false, "Product failed to be Added");
     }
 
-    public Task<ServiceResponse> DeleteAsync(int id)
+    public async Task<ServiceResponse> DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        int result = await _productInterface.DeleteAsync(id);
+
+        return result > 0
+            ? new ServiceResponse(true, "Product Deleted")
+            : new ServiceResponse(false, "Product Not Found or failed to be Deleted");
     }
 
-    public Task<ProductDto> GetByIdAsync(int id)
+
+    public async Task<ProductDto> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var spec = new ProductsWithTypesAndBrandsSpecification(id);
+        var product = await _productInterface.GetEntityWithSpecification(spec);
+        if (product == null) return new ProductDto();
+        return _mapper.Map<Product, ProductDto>(product);
     }
 
-    public Task<ProductDto> GetEntityWithSpecification(ISpecification<Product> specification)
+    public async Task<IReadOnlyList<ProductDto>> ListAsync()
     {
-        throw new NotImplementedException();
+        var spec = new ProductsWithTypesAndBrandsSpecification();
+        var products = await _productInterface.ListAsync(spec);
+        if (!products.Any()) return [];
+        return _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDto>>(products);
     }
 
-    public Task<IReadOnlyList<ProductDto>> ListAllAsync()
+    public async Task<ServiceResponse> UpdateAsync(CreateProductDto entity)
     {
-        throw new NotImplementedException();
-    }
+        var mappedData = _mapper.Map<Product>(entity);
+        int result = await _productInterface.UpdateAsync(mappedData);
 
-    public Task<IReadOnlyList<ProductDto>> ListAsync(ISpecification<Product> specification)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<ServiceResponse> UpdateAsync(CreateProductDto entity)
-    {
-        throw new NotImplementedException();
+        return result > 0
+            ? new ServiceResponse(true, "Product Updated")
+            : new ServiceResponse(false, "Product failed to be Updated");
     }
 }

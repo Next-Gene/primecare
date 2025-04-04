@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Infrastructure.Data;
 using PrimeCare.Infrastructure.Repositories;
@@ -16,8 +17,8 @@ public static class ServiceContainer
         {
             options.UseSqlServer(configuration.GetConnectionString("Default"));
         });
-        services.AddScoped<IProductRepository, ProductRepository>();
-        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+        services.AddScoped<IGenericRepository<Product>, GenericRepository<Product>>();
 
         return services;
     }
