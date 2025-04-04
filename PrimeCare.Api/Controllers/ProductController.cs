@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using PrimeCare.Api.Dtos;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;

@@ -25,6 +25,9 @@ public class Product : BaseEntity
     /// </summary>
     public string PictureUrl { get; set; } = null!;
 
+
+    public int Quantity { get; set; }
+
     /// <summary>
     /// Gets or sets the type of the product.
     /// </summary>

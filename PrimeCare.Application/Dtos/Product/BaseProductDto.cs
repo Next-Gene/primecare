@@ -1,15 +1,7 @@
-﻿namespace PrimeCare.Api.Dtos;
+﻿namespace PrimeCare.Application.Dtos.Product;
 
-/// <summary>
-/// Data Transfer Object for a product.
-/// </summary>
-public class ProductDto
+public class BaseProductDto
 {
-    /// <summary>
-    /// Gets or sets the unique identifier for the product.
-    /// </summary>
-    public int Id { get; set; }
-
     /// <summary>
     /// Gets or sets the name of the product.
     /// </summary>
@@ -29,6 +21,8 @@ public class ProductDto
     /// Gets or sets the URL of the product picture.
     /// </summary>
     public string PictureUrl { get; set; } = null!;
+
+    public int Quantity { get; set; }
 
     /// <summary>
     /// Gets or sets the type of the product.

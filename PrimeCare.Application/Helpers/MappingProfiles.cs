@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using PrimeCare.Api.Dtos;
+using PrimeCare.Application.Dtos.Product;
 using PrimeCare.Core.Entities;
 
 namespace PrimeCare.Api.Helpers;
