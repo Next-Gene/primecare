@@ -19,6 +19,8 @@ public static class ServiceContainer
         });
 
         services.AddScoped<IGenericRepository<Product>, GenericRepository<Product>>();
+        services.AddScoped<IGenericRepository<ProductBrand>, GenericRepository<ProductBrand>>();
+        services.AddScoped<IGenericRepository<ProductType>, GenericRepository<ProductType>>();
 
         return services;
     }

@@ -15,7 +15,7 @@ public class ProductController : BaseApiController
     [HttpGet]
     public async Task<IActionResult> GetProducts()
     {
-        var data = await _productService.ListAsync();
+        var data = await _productService.GetAllAsync();
         return data.Any() ? Ok(data) : NotFound(data);
     }
 

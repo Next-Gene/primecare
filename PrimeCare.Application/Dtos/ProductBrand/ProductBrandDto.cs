@@ -1,6 +1,6 @@
 ﻿namespace PrimeCare.Application.Dtos.ProductBrand;
 
-public class UpdateProductBrandDto
+public class ProductBrandDto
 {
     public int Id { get; set; }
     public string Name { get; set; } = null!;

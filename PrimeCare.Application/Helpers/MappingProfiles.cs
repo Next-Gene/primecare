@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using PrimeCare.Application.Dtos.Product;
+using PrimeCare.Application.Dtos.ProductBrand;
 using PrimeCare.Core.Entities;
 
 namespace PrimeCare.Api.Helpers;
@@ -16,5 +17,9 @@ public class MappingProfiles : Profile
         //CreateMap<ProductDto, Product>()
         //   .ForMember(dest => dest.ProductBrand.Name, opt => opt.MapFrom(src => src.ProductBrand))
         //   .ForMember(dest => dest.ProductType.Name, opt => opt.MapFrom(src => src.ProductType));
+
+        CreateMap<ProductBrand, ProductBrandDto>();
+        CreateMap<ProductBrand, CreateProductBrandDto>();
+
     }
 }

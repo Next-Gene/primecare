@@ -47,10 +47,10 @@ public class ProductService : IProductService
         return _mapper.Map<Product, ProductDto>(product);
     }
 
-    public async Task<IReadOnlyList<ProductDto>> ListAsync()
+    public async Task<IReadOnlyList<ProductDto>> GetAllAsync()
     {
         var spec = new ProductsWithTypesAndBrandsSpecification();
-        var products = await _productInterface.ListAsync(spec);
+        var products = await _productInterface.GetAllWithSpecificationAsync(spec);
         if (!products.Any()) return [];
         return _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDto>>(products);
     }

@@ -36,7 +36,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     /// Gets all entities.
     /// </summary>
     /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of entities.</returns>
-    public async Task<IReadOnlyList<T>> ListAllAsync()
+    public async Task<IReadOnlyList<T>> GetAllAsync()
         => await _context.Set<T>().AsNoTracking().ToListAsync();
 
     /// <summary>
@@ -52,7 +52,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     /// </summary>
     /// <param name="specification">The specification to apply.</param>
     /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of entities.</returns>
-    public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> specification)
+    public async Task<IReadOnlyList<T>> GetAllWithSpecificationAsync(ISpecification<T> specification)
         => await ApplySpecification(specification).AsNoTracking().ToListAsync();
 
     public async Task<int> AddAsync(T entity)
