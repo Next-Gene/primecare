@@ -43,7 +43,7 @@ public class ProductService : IProductService
     {
         var spec = new ProductsWithTypesAndBrandsSpecification(id);
         var product = await _productInterface.GetEntityWithSpecification(spec);
-        if (product == null) return new ProductDto();
+        if (product == null) return null!;
         return _mapper.Map<Product, ProductDto>(product);
     }
 
@@ -51,7 +51,6 @@ public class ProductService : IProductService
     {
         var spec = new ProductsWithTypesAndBrandsSpecification();
         var products = await _productInterface.GetAllWithSpecificationAsync(spec);
-        if (!products.Any()) return [];
         return _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDto>>(products);
     }
 

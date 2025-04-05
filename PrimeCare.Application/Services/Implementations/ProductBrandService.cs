@@ -41,14 +41,13 @@ public class ProductBrandService : IProductBrandService
     public async Task<ProductBrandDto> GetByIdAsync(int id)
     {
         var product = await _productBrandInterface.GetByIdAsync(id);
-        if (product == null) return new ProductBrandDto();
+        if (product == null) return null!;
         return _mapper.Map<ProductBrand, ProductBrandDto>(product);
     }
 
     public async Task<IReadOnlyList<ProductBrandDto>> GetAllAsync()
     {
         var products = await _productBrandInterface.GetAllAsync();
-        if (!products.Any()) return [];
         return _mapper.Map<IReadOnlyList<ProductBrand>, IReadOnlyList<ProductBrandDto>>(products);
     }
 
