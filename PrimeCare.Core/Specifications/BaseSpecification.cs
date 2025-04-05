@@ -8,11 +8,6 @@ namespace PrimeCare.Core.Specifications;
 /// <typeparam name="T">The type of the entity.</typeparam>
 public class BaseSpecification<T> : ISpecification<T>
 {
-    public BaseSpecification()
-    {
-
-    }
-
     /// <summary>
     /// Initializes a new instance of the <see cref="BaseSpecification{T}"/> class.
     /// </summary>
@@ -30,8 +25,7 @@ public class BaseSpecification<T> : ISpecification<T>
     /// <summary>
     /// Gets the list of expressions used to include related entities in the query.
     /// </summary>
-    public List<Expression<Func<T, object>>> Includes { get; } =
-        new List<Expression<Func<T, object>>>();
+    public List<Expression<Func<T, object>>> Includes { get; } = new();
 
     /// <summary>
     /// Adds an include expression to the list of includes.

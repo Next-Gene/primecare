@@ -10,7 +10,7 @@ public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product
     /// <summary>
     /// Initializes a new instance of the <see cref="ProductsWithTypesAndBrandsSpecification"/> class.
     /// </summary>
-    public ProductsWithTypesAndBrandsSpecification()
+    public ProductsWithTypesAndBrandsSpecification() : base(null!)
     {
         AddInclude(x => x.ProductType);
         AddInclude(x => x.ProductBrand);
