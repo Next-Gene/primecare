@@ -54,7 +54,8 @@ public class ProductBrandService : IProductBrandService
 
     public async Task<ServiceResponse> UpdateAsync(ProductBrandDto entity)
     {
-        var mappedData = _mapper.Map<ProductBrand>(entity);
+        var productBrand = await _productBrandInterface.GetByIdAsync(entity.Id);
+        var mappedData = _mapper.Map(entity, productBrand);
         int result = await _productBrandInterface.UpdateAsync(mappedData);
 
         return result > 0
