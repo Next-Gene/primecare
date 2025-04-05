@@ -26,12 +26,4 @@ public class ProductController : BaseApiController
         return data != null ? Ok(data) : NotFound(data);
     }
 
-    //[HttpGet("brands")]
-    //public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
-    //    => Ok(await _productBrandRepo.ListAllAsync());
-
-    //[HttpGet("types")]
-    //public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
-    //    => Ok(await _productTypeRepo.ListAllAsync());
-
 }
