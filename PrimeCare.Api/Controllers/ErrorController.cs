@@ -1,0 +1,12 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using PrimeCare.Application.Errors;
+
+namespace PrimeCare.Api.Controllers;
+[Route("error/{code}")]
+public class ErrorController : BaseApiController
+{
+    public IActionResult Error(int code)
+    {
+        return new ObjectResult(new ApiResponse(code));
+    }
+}

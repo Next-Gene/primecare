@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PrimeCare.Application;
+using PrimeCare.Application.Middleware;
 using PrimeCare.Infrastructure;
 using PrimeCare.Infrastructure.Data;
 
@@ -24,6 +25,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseStatusCodePagesWithReExecute("/error/{0}");
 
 app.UseHttpsRedirection();
 
