@@ -1,4 +1,4 @@
 ﻿namespace PrimeCare.Application.Dtos;
 
-public record ServiceResponse(bool Succss = false, string Message = null!);
+public record ServiceResponse(bool Success = false, string Message = null!);
 

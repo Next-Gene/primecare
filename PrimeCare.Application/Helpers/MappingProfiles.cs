@@ -19,7 +19,8 @@ public class MappingProfiles : Profile
         //   .ForMember(dest => dest.ProductType.Name, opt => opt.MapFrom(src => src.ProductType));
 
         CreateMap<ProductBrand, ProductBrandDto>();
-        CreateMap<ProductBrand, CreateProductBrandDto>();
+        CreateMap<ProductBrandDto, ProductBrand>();
+        CreateMap<CreateProductBrandDto, ProductBrand>();
 
     }
 }
