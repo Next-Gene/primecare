@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using PrimeCare.Application.Dtos;
 using PrimeCare.Application.Dtos.ProductBrand;
+using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 
 namespace PrimeCare.Application.Services.Implementations;
 
-public class ProductTypeService
+public class ProductTypeService : IProductTypeService
 {
     private readonly IGenericRepository<ProductType> _productTypeInterface;
     private readonly IMapper _mapper;

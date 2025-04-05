@@ -13,6 +13,7 @@ public static class ServiceContainer
         services.AddAutoMapper(typeof(MappingProfiles));
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<IProductBrandService, ProductBrandService>();
+        services.AddScoped<IProductTypeService, ProductTypeService>();
         return services;
     }
 }
