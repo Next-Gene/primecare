@@ -55,7 +55,7 @@ public class ProductTypeService
     {
         var productBrand = await _productTypeInterface.GetByIdAsync(entity.Id);
         var mappedData = _mapper.Map(entity, productBrand);
-        int result = await _productTypeInterface.UpdateAsync(mappedData);
+        int result = await _productTypeInterface.UpdateAsync(mappedData!);
 
         return result > 0
             ? new ServiceResponse(true, "Product Type Updated")

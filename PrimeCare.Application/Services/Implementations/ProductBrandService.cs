@@ -56,7 +56,7 @@ public class ProductBrandService : IProductBrandService
     {
         var productBrand = await _productBrandInterface.GetByIdAsync(entity.Id);
         var mappedData = _mapper.Map(entity, productBrand);
-        int result = await _productBrandInterface.UpdateAsync(mappedData);
+        int result = await _productBrandInterface.UpdateAsync(mappedData!);
 
         return result > 0
             ? new ServiceResponse(true, "Product Brand Updated")
