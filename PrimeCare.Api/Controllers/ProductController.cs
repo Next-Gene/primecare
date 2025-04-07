@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrimeCare.Application.Errors;
 using PrimeCare.Application.Services.Interfaces;
 
 namespace PrimeCare.Api.Controllers;
@@ -13,6 +14,8 @@ public class ProductController : BaseApiController
     }
 
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetProducts()
     {
         var products = await _productService.GetAllAsync();
@@ -20,6 +23,8 @@ public class ProductController : BaseApiController
     }
 
     [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetProduct(int id)
     {
         var data = await _productService.GetByIdAsync(id);

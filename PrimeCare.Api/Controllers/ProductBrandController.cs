@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Dtos.ProductBrand;
+using PrimeCare.Application.Errors;
 using PrimeCare.Application.Services.Interfaces;
 
 namespace PrimeCare.Api.Controllers;
@@ -14,6 +15,8 @@ public class ProductBrandController : BaseApiController
     }
 
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetProductBrands()
     {
         var productbrands = await _productBrandService.GetAllAsync();
@@ -21,6 +24,8 @@ public class ProductBrandController : BaseApiController
     }
 
     [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetProductBrand(int id)
     {
         var productbrand = await _productBrandService.GetByIdAsync(id);
