@@ -1,5 +1,5 @@
 ﻿using PrimeCare.Application.Dtos;
-using PrimeCare.Application.Dtos.ProductBrand;
+using PrimeCare.Application.Dtos.ProductType;
 
 namespace PrimeCare.Application.Services.Interfaces;
 
