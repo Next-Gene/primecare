@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrimeCare.Application.Dtos.ProductBrand;
+using PrimeCare.Application.Dtos.ProductType;
 using PrimeCare.Application.Services.Interfaces;
 
 namespace PrimeCare.Api.Controllers;
