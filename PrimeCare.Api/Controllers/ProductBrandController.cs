@@ -15,11 +15,17 @@ public class ProductBrandController : BaseApiController
 
     [HttpGet]
     public async Task<IActionResult> GetProductBrands()
-        => Ok(await _productBrandService.GetAllAsync());
+    {
+        var productbrands = await _productBrandService.GetAllAsync();
+        return productbrands.Any() ? Ok(productbrands) : NotFound(productbrands);
+    }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetProductBrand(int id)
-        => Ok(await _productBrandService.GetByIdAsync(id));
+    {
+        var productbrand = await _productBrandService.GetByIdAsync(id);
+        return productbrand != null ? Ok(productbrand) : NotFound(productbrand);
+    }
 
     [HttpPost("add")]
     public async Task<IActionResult> Add(CreateProductBrandDto productBrand)

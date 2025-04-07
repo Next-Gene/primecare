@@ -15,11 +15,17 @@ public class ProductTypeController : BaseApiController
 
     [HttpGet]
     public async Task<IActionResult> GetProductTypes()
-        => Ok(await _productTypeService.GetAllAsync());
+    {
+        var producttypes = await _productTypeService.GetAllAsync();
+        return producttypes.Any() ? Ok(producttypes) : NotFound(producttypes);
+    }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetProductType(int id)
-        => Ok(await _productTypeService.GetByIdAsync(id));
+    {
+        var producttype = await _productTypeService.GetByIdAsync(id);
+        return producttype != null ? Ok(producttype) : NotFound(producttype);
+    }
 
     [HttpPost("add")]
     public async Task<IActionResult> Add(CreateProductTypeDto productType)
