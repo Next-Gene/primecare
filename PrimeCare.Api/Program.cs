@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PrimeCare.Application;
+using PrimeCare.Application.Errors;
 using PrimeCare.Application.Middleware;
 using PrimeCare.Infrastructure;
 using PrimeCare.Infrastructure.Data;
@@ -16,6 +18,24 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplicationService();
 builder.Services.AddInfrastructureService(builder.Configuration);
+
+builder.Services.Configure<ApiBehaviorOptions>(option =>
+{
+    option.InvalidModelStateResponseFactory = actionContext =>
+    {
+        var errors = actionContext.ModelState
+            .Where(e => e.Value!.Errors.Count > 0)
+            .SelectMany(x => x.Value!.Errors)
+            .Select(x => x.ErrorMessage);
+
+        var errorResponse = new ApiValidationErrorResponse
+        {
+            Errors = errors
+        };
+
+        return new BadRequestObjectResult(errorResponse);
+    };
+});
 
 var app = builder.Build();
 
