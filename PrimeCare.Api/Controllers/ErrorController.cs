@@ -2,7 +2,9 @@
 using PrimeCare.Application.Errors;
 
 namespace PrimeCare.Api.Controllers;
+
 [Route("error/{code}")]
+[ApiExplorerSettings(IgnoreApi = true)]
 public class ErrorController : BaseApiController
 {
     public IActionResult Error(int code)
