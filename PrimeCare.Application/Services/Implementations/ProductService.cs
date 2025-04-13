@@ -51,7 +51,7 @@ public class ProductService : IProductService
         var products = await _productInterface.GetAllWithSpecificationAsync(spec);
         return _mapper.Map<IReadOnlyList<ProductDto>>(products);
     }
-
+    // test pr
     /// <summary>
     /// Adds a new product asynchronously.
     /// </summary>
