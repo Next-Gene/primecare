@@ -25,9 +25,9 @@ public class BaseProductDto
     public int Quantity { get; set; }
 
     /// <summary>
-    /// Gets or sets the type of the product.
+    /// Gets or sets the type of the category.
     /// </summary>
-    public string ProductType { get; set; } = null!;
+    public string Category { get; set; } = null!;
 
     /// <summary>
     /// Gets or sets the brand of the product.

@@ -36,9 +36,9 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
             .WithMany()
             .HasForeignKey(p => p.ProductBrandId);
         builder
-            .HasOne(t => t.ProductType)
+            .HasOne(t => t.Category)
             .WithMany()
-            .HasForeignKey(p => p.ProductTypeId);
+            .HasForeignKey(p => p.CategoryId);
 
     }
 }

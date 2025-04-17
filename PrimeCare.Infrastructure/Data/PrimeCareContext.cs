@@ -29,9 +29,9 @@ public class PrimeCareContext : DbContext
     public DbSet<ProductBrand> ProductBrands { get; set; }
 
     /// <summary>
-    /// Gets or sets the product types.
+    /// Gets or sets the Categories.
     /// </summary>
-    public DbSet<ProductType> ProductTypes { get; set; }
+    public DbSet<Category> Categories { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
