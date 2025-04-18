@@ -1,12 +1,12 @@
 ﻿namespace PrimeCare.Core.Entities;
 
 /// <summary>
-/// Represents a type of product.
+/// Represents a category of product.
 /// </summary>
-public class ProductType : BaseEntity
+public class Category : BaseEntity
 {
     /// <summary>
-    /// Gets or sets the name of the product type.
+    /// Gets or sets the name of the category.
     /// </summary>
     public string Name { get; set; } = null!;
 }

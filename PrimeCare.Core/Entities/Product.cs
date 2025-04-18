@@ -25,18 +25,17 @@ public class Product : BaseEntity
     /// </summary>
     public string PictureUrl { get; set; } = null!;
 
-
-    public int Quantity { get; set; }
-
-    /// <summary>
-    /// Gets or sets the type of the product.
-    /// </summary>
-    public ProductType ProductType { get; set; } = null!;
+    public int Stock { get; set; }
 
     /// <summary>
-    /// Gets or sets the identifier of the product type.
+    /// Gets or sets the category of the product.
     /// </summary>
-    public int ProductTypeId { get; set; }
+    public Category Category { get; set; } = null!;
+
+    /// <summary>
+    /// Gets or sets the identifier of the product category.
+    /// </summary>
+    public int CategoryId { get; set; }
 
     /// <summary>
     /// Gets or sets the brand of the product.

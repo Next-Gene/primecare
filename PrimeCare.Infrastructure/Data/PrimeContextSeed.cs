@@ -19,12 +19,12 @@ public class PrimeContextSeed
                 await context.SaveChangesAsync();
             }
 
-            if (!context.ProductTypes.Any())
+            if (!context.Categories.Any())
             {
-                var typesData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\types.json");
-                var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
-                foreach (var type in types!)
-                    context.ProductTypes.Add(type);
+                var categoriesData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\categories.json");
+                var categories = JsonSerializer.Deserialize<List<Category>>(categoriesData);
+                foreach (var category in categories!)
+                    context.Categories.Add(category);
                 await context.SaveChangesAsync();
             }
 

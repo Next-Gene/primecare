@@ -6,6 +6,7 @@ using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;
 
+
 namespace PrimeCare.Application.Services.Implementations;
 
 /// <summary>
@@ -36,7 +37,7 @@ public class ProductService : IProductService
     /// <returns>A task that represents the asynchronous operation, with the product DTO as result.</returns>
     public async Task<ProductDto> GetByIdAsync(int id)
     {
-        var spec = new ProductsWithTypesAndBrandsSpecification(id);
+        var spec = new ProductsWithBrandsAndCategoriesSpecification(id);
         var product = await _productInterface.GetEntityWithSpecification(spec);
         return product == null ? null! : _mapper.Map<ProductDto>(product);
     }
@@ -47,7 +48,7 @@ public class ProductService : IProductService
     /// <returns>A task representing the asynchronous operation, with a list of product DTOs as result.</returns>
     public async Task<IReadOnlyList<ProductDto>> GetAllAsync()
     {
-        var spec = new ProductsWithTypesAndBrandsSpecification();
+        var spec = new ProductsWithBrandsAndCategoriesSpecification();
         var products = await _productInterface.GetAllWithSpecificationAsync(spec);
         return _mapper.Map<IReadOnlyList<ProductDto>>(products);
     }
