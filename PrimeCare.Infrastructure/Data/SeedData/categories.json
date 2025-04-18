@@ -2,7 +2,7 @@
     {
         "Name": "Boards",
         "Slug": "boards",
-        "ImageUrl": "/images/category/boards.png",
+        "ImageUrl": "images/category/boards.png",
         "CreatedAt": "2025-04-18T00:00:00Z",
         "UpdatedAt": "2025-04-18T00:00:00Z",
         "Description": "Category for various types of boards."
@@ -10,7 +10,7 @@
     {
         "Name": "Hats",
         "Slug": "hats",
-        "ImageUrl": "/images/category/hats.png",
+        "ImageUrl": "images/category/hats.png",
         "CreatedAt": "2025-04-18T00:00:00Z",
         "UpdatedAt": "2025-04-18T00:00:00Z",
         "Description": "Category for headwear and hats."
@@ -18,7 +18,7 @@
     {
         "Name": "Boots",
         "Slug": "boots",
-        "ImageUrl": "/images/category/boots.png",
+        "ImageUrl": "images/category/boots.png",
         "CreatedAt": "2025-04-18T00:00:00Z",
         "UpdatedAt": "2025-04-18T00:00:00Z",
         "Description": "Category for different types of boots."
@@ -26,7 +26,7 @@
     {
         "Name": "Gloves",
         "Slug": "gloves",
-        "ImageUrl": "/images/category/gloves.png",
+        "ImageUrl": "images/category/gloves.png",
         "CreatedAt": "2025-04-18T00:00:00Z",
         "UpdatedAt": "2025-04-18T00:00:00Z",
         "Description": "Category for gloves and handwear."
