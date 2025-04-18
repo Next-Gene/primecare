@@ -26,7 +26,7 @@ public class MappingProfiles : Profile
         CreateMap<CreateProductBrandDto, ProductBrand>();
 
         CreateMap<Category, CategoryDto>();
-        CreateMap<CategoryDto, Category>();
+        CreateMap<UpdateCategoryDto, Category>();
         CreateMap<CreateCategoryDto, Category>();
     }
 }
