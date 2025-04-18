@@ -2,6 +2,7 @@
 using PrimeCare.Application.Dtos.Category;
 using PrimeCare.Application.Dtos.Product;
 using PrimeCare.Application.Dtos.ProductBrand;
+using PrimeCare.Application.Helpers;
 using PrimeCare.Core.Entities;
 
 namespace PrimeCare.Api.Helpers;
@@ -25,7 +26,8 @@ public class MappingProfiles : Profile
         CreateMap<ProductBrandDto, ProductBrand>();
         CreateMap<CreateProductBrandDto, ProductBrand>();
 
-        CreateMap<Category, CategoryDto>();
+        CreateMap<Category, CategoryDto>()
+             .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom<CategoryUrlResolver>());
         CreateMap<UpdateCategoryDto, Category>();
         CreateMap<CreateCategoryDto, Category>();
     }
