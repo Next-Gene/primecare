@@ -73,10 +73,11 @@ public class ProductService : IProductService
     /// </summary>
     /// <param name="entity">The product data transfer object (DTO) to be updated.</param>
     /// <returns>A task that represents the asynchronous operation. The result contains a service response indicating success or failure.</returns>
-    public async Task<ServiceResponse> UpdateAsync(CreateProductDto entity)
+    public async Task<ServiceResponse> UpdateAsync(UpdateProductDto entity)
     {
-        var mappedData = _mapper.Map<Product>(entity);
-        int result = await _productInterface.UpdateAsync(mappedData);
+        var product = await _productInterface.GetByIdAsync(entity.Id);
+        var mappedData = _mapper.Map(entity, product);
+        int result = await _productInterface.UpdateAsync(mappedData!);
 
         return result > 0
             ? new ServiceResponse(true, "Product Updated")
@@ -96,6 +97,5 @@ public class ProductService : IProductService
             ? new ServiceResponse(true, "Product Deleted")
             : new ServiceResponse(false, "Product Not Found or failed to be Deleted");
     }
-
     #endregion
 }

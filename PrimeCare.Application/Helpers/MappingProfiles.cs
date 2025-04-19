@@ -21,7 +21,9 @@ public class MappingProfiles : Profile
             .ForMember(dest => dest.ProductBrand, opt => opt.MapFrom(src => src.ProductBrand.Name))
             .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category.Name))
             .ForMember(dest => dest.PictureUrl, opt => opt.MapFrom<ProductUrlResolver>());
-
+        CreateMap<CreateProductDto, Product>();
+        CreateMap<UpdateProductDto, Product>();
+        
         CreateMap<ProductBrand, ProductBrandDto>();
         CreateMap<ProductBrandDto, ProductBrand>();
         CreateMap<CreateProductBrandDto, ProductBrand>();
