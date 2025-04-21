@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrimeCare.Application.Dtos.Category;
+using PrimeCare.Application.Dtos.Categories;
 using PrimeCare.Application.Errors;
 using PrimeCare.Application.Services.Interfaces;
 

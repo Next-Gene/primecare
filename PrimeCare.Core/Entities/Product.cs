@@ -21,9 +21,10 @@ public class Product : BaseEntity
     public decimal Price { get; set; }
 
     /// <summary>
-    /// Gets or sets the URL of the product picture.
+    /// Gets or sets the collection of photos associated with this product.
     /// </summary>
-    public string PictureUrl { get; set; } = null!;
+
+    public ICollection<ProductPhotos> ProductPhotos { get; set; } = null!;
 
     public int Stock { get; set; }
 

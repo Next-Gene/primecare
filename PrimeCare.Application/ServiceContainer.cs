@@ -14,6 +14,8 @@ public static class ServiceContainer
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<IProductBrandService, ProductBrandService>();
         services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IPhotoServies, PhotoService>();
+
         return services;
     }
 }

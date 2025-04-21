@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using PrimeCare.Application.Dtos.Category;
-using PrimeCare.Application.Dtos.Product;
+using PrimeCare.Application.Dtos.Categories;
+using PrimeCare.Application.Dtos.Products;
 using PrimeCare.Application.Dtos.ProductBrand;
-using PrimeCare.Application.Helpers;
 using PrimeCare.Core.Entities;
+using PrimeCare.Application.Dtos.Photos;
 
 namespace PrimeCare.Api.Helpers;
 
@@ -20,15 +20,22 @@ public class MappingProfiles : Profile
         CreateMap<Product, ProductDto>()
             .ForMember(dest => dest.ProductBrand, opt => opt.MapFrom(src => src.ProductBrand.Name))
             .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category.Name))
-            .ForMember(dest => dest.PictureUrl, opt => opt.MapFrom<ProductUrlResolver>());
+            .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.ProductPhotos.FirstOrDefault(X => X.IsMain).Url));
 
         CreateMap<ProductBrand, ProductBrandDto>();
         CreateMap<ProductBrandDto, ProductBrand>();
         CreateMap<CreateProductBrandDto, ProductBrand>();
 
         CreateMap<Category, CategoryDto>()
-             .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom<CategoryUrlResolver>());
+         .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.CategoryPhoto.Url));
+
         CreateMap<UpdateCategoryDto, Category>();
+
         CreateMap<CreateCategoryDto, Category>();
+
+        CreateMap< CategoryPhoto, CategoryPhotoDto>();
+        CreateMap< ProductPhotos, ProductPhotosDto>();
+
+
     }
 }

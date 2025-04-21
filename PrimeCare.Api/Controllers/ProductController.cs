@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Errors;
 using PrimeCare.Application.Services.Interfaces;
+using PrimeCare.Application.Dtos.Photos;
 
+using Microsoft.AspNetCore.Http;
 namespace PrimeCare.Api.Controllers;
 
 public class ProductController : BaseApiController
@@ -30,5 +32,8 @@ public class ProductController : BaseApiController
         var data = await _productService.GetByIdAsync(id);
         return data != null ? Ok(data) : NotFound(data);
     }
+
+    
+
 
 }

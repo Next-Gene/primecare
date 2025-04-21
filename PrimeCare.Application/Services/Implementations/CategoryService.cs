@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using PrimeCare.Application.Dtos;
-using PrimeCare.Application.Dtos.Category;
+using PrimeCare.Application.Dtos.Categories   ;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
+using PrimeCare.Core.Specifications;
 
 namespace PrimeCare.Application.Services.Implementations;
 
@@ -39,13 +40,18 @@ public class CategoryService : ICategoryService
         return category == null ? null! : _mapper.Map<Category, CategoryDto>(category);
     }
 
+
+
+
+
     /// <summary>
     /// Retrieves all categories asynchronously.
     /// </summary>
     /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of category data transfer objects.</returns>
     public async Task<IReadOnlyList<CategoryDto>> GetAllAsync()
     {
-        var categories = await _categoryInterface.GetAllAsync();
+        var spec = new CategoryPhotoSepcification();
+        var categories = await _categoryInterface.GetAllWithSpecificationAsync(spec);
         return _mapper.Map<IReadOnlyList<Category>, IReadOnlyList<CategoryDto>>(categories);
     }
 
