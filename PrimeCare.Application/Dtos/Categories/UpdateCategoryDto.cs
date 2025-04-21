@@ -1,10 +1,14 @@
 ﻿
 using PrimeCare.Core.Entities;
 
-namespace PrimeCare.Application.Dtos.Category;
+namespace PrimeCare.Application.Dtos.Categories;
 
-public class UpdateCategoryDto:BaseEntity
+public class UpdateCategoryDto
 {
+
+
+    int Id { get; set; }
+
 
     /// <summary>
     /// Gets or sets the name of the category.
@@ -17,12 +21,18 @@ public class UpdateCategoryDto:BaseEntity
     /// </summary>
     public string Slug { get; set; } = null!;
 
+
     /// <summary>
-    /// Gets or sets the image path of the category.
+    /// Gets or sets the collection of photos associated with this category.
+    /// Initialized as an empty list to avoid null reference exceptions.
     /// </summary>
-    public string ImageUrl { get; set; } = null!;
+    public ICollection<CategoryPhoto> CategoryPhoto { get; set; } = null!;
 
 
+    /// <summary>
+    /// img url   
+    /// </summary>
+    public string PhotoUrl { get; set; } = null!;
 
     /// <summary>
     /// Gets or sets the date and time when the category was last updated.
