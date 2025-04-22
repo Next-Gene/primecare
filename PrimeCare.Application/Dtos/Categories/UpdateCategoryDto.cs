@@ -1,4 +1,5 @@
 ﻿
+using PrimeCare.Application.Dtos.Photos;
 using PrimeCare.Core.Entities;
 
 namespace PrimeCare.Application.Dtos.Categories;
@@ -26,7 +27,7 @@ public class UpdateCategoryDto
     /// Gets or sets the collection of photos associated with this category.
     /// Initialized as an empty list to avoid null reference exceptions.
     /// </summary>
-    public ICollection<CategoryPhoto> CategoryPhoto { get; set; } = null!;
+    public ICollection<CategoryPhotoDto> CategoryPhoto { get; set; } = null!;
 
 
     /// <summary>

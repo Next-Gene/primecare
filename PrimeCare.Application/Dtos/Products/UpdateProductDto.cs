@@ -1,4 +1,5 @@
-﻿using PrimeCare.Core.Entities;
+﻿using PrimeCare.Application.Dtos.Photos;
+using PrimeCare.Core.Entities;
 
 namespace PrimeCare.Application.Dtos.Products;
 
@@ -9,12 +10,12 @@ public class UpdateProductDto : BaseProductDto
     /// </summary>
     
     public int Id { get; set; }
-   
+
     /// <summary>
     /// Gets or sets the collection of photos associated with this category.
     /// Initialized as an empty list to avoid null reference exceptions.
     /// </summary>
-    public ICollection<CategoryPhoto> CategoryPhoto { get; set; } = null!;
+    public ICollection<ProductPhotosDto> ProductPhotos { get; set; } = null!;
 
 
     /// <summary>

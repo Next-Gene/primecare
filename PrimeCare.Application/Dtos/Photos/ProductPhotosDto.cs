@@ -3,7 +3,7 @@ using PrimeCare.Core.Entities;
 
 namespace PrimeCare.Application.Dtos.Photos
 {
-    internal class ProductPhotosDto
+    public class ProductPhotosDto
     {
 
 
