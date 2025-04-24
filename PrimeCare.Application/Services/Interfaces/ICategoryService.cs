@@ -1,5 +1,5 @@
 ﻿using PrimeCare.Application.Dtos;
-using PrimeCare.Application.Dtos.Category;
+using PrimeCare.Application.Dtos.Categories;
 
 
 namespace PrimeCare.Application.Services.Interfaces;

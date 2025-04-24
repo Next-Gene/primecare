@@ -1,4 +1,7 @@
-﻿namespace PrimeCare.Application.Dtos.Category;
+﻿using PrimeCare.Application.Dtos.Photos;
+using PrimeCare.Core.Entities;
+
+namespace PrimeCare.Application.Dtos.Categories;
 
 /// <summary>
 /// Data Transfer Object for creating a category.
@@ -16,10 +19,18 @@ public class CreateCategoryDto
     /// </summary>
     public string Slug { get; set; } = null!;
 
+
     /// <summary>
-    /// Gets or sets the image path of the category.
+    /// Gets or sets the collection of photos associated with this category.
+    /// Initialized as an empty list to avoid null reference exceptions.
     /// </summary>
-    public string ImageUrl { get; set; } = null!;
+    public ICollection<CategoryPhotoDto> CategoryPhoto { get; set; } = null!;
+
+
+    /// <summary>
+    /// img url   
+    /// </summary>
+    public string PhotoUrl { get; set; } = null!;
 
     /// <summary>
     /// Gets or sets the date and time when the category was created.

@@ -1,4 +1,6 @@
-﻿namespace PrimeCare.Application.Dtos.Product;
+﻿using PrimeCare.Core.Entities;
+
+namespace PrimeCare.Application.Dtos.Products;
 
 public class BaseProductDto
 {
@@ -18,7 +20,7 @@ public class BaseProductDto
     public decimal Price { get; set; }
 
     /// <summary>
-    /// Gets or sets the URL of the product picture.
+    /// Collection of photos associated with this product.
     /// </summary>
     public string PictureUrl { get; set; } = null!;
 
