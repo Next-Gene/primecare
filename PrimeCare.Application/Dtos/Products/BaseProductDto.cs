@@ -22,16 +22,8 @@ public class BaseProductDto
     /// <summary>
     /// Collection of photos associated with this product.
     /// </summary>
- 
-    public int Quantity { get; set; }
+    public string PictureUrl { get; set; } = null!;
 
-    /// <summary>
-    /// Gets or sets the type of the category.
-    /// </summary>
-    public string Category { get; set; } = null!;
+    public int Stock { get; set; }
 
-    /// <summary>
-    /// Gets or sets the brand of the product.
-    /// </summary>
-    public string ProductBrand { get; set; } = null!;
 }

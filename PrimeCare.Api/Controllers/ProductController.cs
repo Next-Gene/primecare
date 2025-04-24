@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrimeCare.Application.Dtos.Products;
 using PrimeCare.Application.Errors;
 using PrimeCare.Application.Services.Interfaces;
 namespace PrimeCare.Api.Controllers;
@@ -31,9 +32,33 @@ public class ProductController : BaseApiController
     }
 
 
+  [HttpPost("add")]
+    public async Task<IActionResult> Add(CreateProductDto Product)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
 
+        var result = await _productService.AddAsync(Product);
 
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
 
+    [HttpPut("update")]
+    public async Task<IActionResult> Update(UpdateProductDto product)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
 
+        var result = await _productService.UpdateAsync(product);
 
-}
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var result = await _productService.DeleteAsync(id);
+
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
+
+   
+

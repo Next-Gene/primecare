@@ -75,7 +75,7 @@ public class CategoryService : ICategoryService
     /// </summary>
     /// <param name="entity">The category data transfer object (DTO) to be updated.</param>
     /// <returns>A task that represents the asynchronous operation. The task result contains the service response indicating success or failure.</returns>
-    public async Task<ServiceResponse> UpdateAsync(CategoryDto entity)
+    public async Task<ServiceResponse> UpdateAsync(UpdateCategoryDto entity)
     {
         var category = await _categoryInterface.GetByIdAsync(entity.Id);
         if (category == null)

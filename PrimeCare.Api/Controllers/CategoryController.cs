@@ -43,7 +43,7 @@ public class CategoryController : BaseApiController
     }
 
     [HttpPut("update")]
-    public async Task<IActionResult> Update(CategoryDto category)
+    public async Task<IActionResult> Update(UpdateCategoryDto category)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
