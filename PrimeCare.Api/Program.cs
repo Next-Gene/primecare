@@ -1,8 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PrimeCare.Api.Extensions;
 using PrimeCare.Application;
-using PrimeCare.Application.Errors;
 using PrimeCare.Application.Middleware;
 using PrimeCare.Infrastructure;
 using PrimeCare.Infrastructure.Data;
@@ -16,26 +14,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddSwaggerDecumentation();
 
-builder.Services.AddApplicationService();
+builder.Services.AddApplicationService(); // for application layer
 builder.Services.AddInfrastructureService(builder.Configuration);
-
-builder.Services.Configure<ApiBehaviorOptions>(option =>
-{
-    option.InvalidModelStateResponseFactory = actionContext =>
-    {
-        var errors = actionContext.ModelState
-            .Where(e => e.Value!.Errors.Count > 0)
-            .SelectMany(x => x.Value!.Errors)
-            .Select(x => x.ErrorMessage);
-
-        var errorResponse = new ApiValidationErrorResponse
-        {
-            Errors = errors
-        };
-
-        return new BadRequestObjectResult(errorResponse);
-    };
-});
+builder.Services.AddApplicationServices(); // for api layer
 
 var app = builder.Build();
 
