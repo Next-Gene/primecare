@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using PrimeCare.Application.Dtos;
-using PrimeCare.Application.Dtos.Categories   ;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;
+using PrimeCare.Shared;
+using PrimeCare.Shared.Dtos.Categories;
 
 namespace PrimeCare.Application.Services.Implementations;
 

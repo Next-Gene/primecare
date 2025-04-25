@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrimeCare.Application.Dtos.Categories;
-using PrimeCare.Application.Errors;
 using PrimeCare.Application.Services.Interfaces;
+using PrimeCare.Shared.Dtos.Categories;
+using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Controllers;
 

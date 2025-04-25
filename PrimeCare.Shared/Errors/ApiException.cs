@@ -1,4 +1,4 @@
-﻿namespace PrimeCare.Application.Errors;
+﻿namespace PrimeCare.Shared.Errors;
 
 /// <summary>
 /// Represents an API exception with a status code, message, and details.

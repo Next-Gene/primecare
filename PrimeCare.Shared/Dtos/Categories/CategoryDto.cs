@@ -1,6 +1,6 @@
-﻿using PrimeCare.Application.Dtos.Photos;
+﻿using PrimeCare.Shared.Dtos.Photos;
 
-namespace PrimeCare.Application.Dtos.Categories;
+namespace PrimeCare.Shared.Dtos.Categories;
 
 /// <summary>
 /// Data Transfer Object for a category.

@@ -1,4 +1,4 @@
-﻿namespace PrimeCare.Application.Errors;
+﻿namespace PrimeCare.Shared.Errors;
 
 /// <summary>
 /// Represents an API validation error response with a status code and a list of validation errors.

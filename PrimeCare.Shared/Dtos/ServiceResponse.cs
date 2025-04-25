@@ -1,4 +1,4 @@
-﻿namespace PrimeCare.Application.Dtos;
+﻿namespace PrimeCare.Shared;
 
 /// <summary>
 /// Represents a service response with a success status and a message.

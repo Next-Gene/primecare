@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PrimeCare.Core\PrimeCare.Core.csproj" />
+    <ProjectReference Include="..\PrimeCare.Shared\PrimeCare.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrimeCare.Application.Dtos.ProductBrand;
-using PrimeCare.Application.Errors;
 using PrimeCare.Application.Services.Interfaces;
+using PrimeCare.Shared.Dtos.ProductBrand;
+using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Controllers;
 
