@@ -42,16 +42,15 @@ Follow these steps to get started with PrimeCare:
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-```
-/PrimeCare
-├── /Core            → Contains the domain entities and shared models.
-├── /Api             → Handles HTTP requests and acts as the entry point.
-├── /Application     → application-level logic and service contracts.
-├── /Infrastructure  → Implements infrastructure concerns like data access, external services, etc.
-└── /wwwroot         → Static files.
-```
+| Layer             | Responsibility                                    |
+|------------------|---------------------------------------------------|
+| PrimeCare.Api     | Entry point for HTTP requests and routing        |
+| PrimeCare.Application | Business logic and use cases                  |
+| PrimeCare.Core    | Entities, interfaces, and core domain rules      |
+| PrimeCare.Infrastructure | Data access, repositories, external services |
+| PrimeCare.Shared  | Shared types like DTOs, constants, and enums     |
 
 ---
 
