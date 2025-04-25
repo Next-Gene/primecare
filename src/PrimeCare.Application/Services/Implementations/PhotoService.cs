@@ -10,9 +10,9 @@ namespace PrimeCare.Application.Services.Implementations;
 /// <summary>
 /// Service responsible for handling photo uploads and deletions using Cloudinary.
 /// </summary>
-public class PhotoService : IPhotoServies
+public class PhotoService : IPhotoService
 {
-    private readonly Cloudinary _Cloudinary;
+    private readonly Cloudinary _cloudinary;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="PhotoService"/> class.
@@ -20,13 +20,13 @@ public class PhotoService : IPhotoServies
     /// <param name="config">Cloudinary configuration settings injected via IOptions.</param>
     public PhotoService(IOptions<CloudinarySettings> config)
     {
-        var acc = new Account(
+        var account = new Account(
             config.Value.CloudName,
             config.Value.ApiKey,
             config.Value.ApiSecret
         );
 
-        _Cloudinary = new Cloudinary(acc);
+        _cloudinary = new Cloudinary(account);
     }
 
     /// <summary>
@@ -36,8 +36,6 @@ public class PhotoService : IPhotoServies
     /// <returns>The result of the image upload.</returns>
     public async Task<ImageUploadResult> AddPhotoAsync(IFormFile file)
     {
-        var uploadResult = new ImageUploadResult();
-
         if (file.Length > 0)
         {
             using var stream = file.OpenReadStream();
@@ -52,10 +50,20 @@ public class PhotoService : IPhotoServies
                     .Gravity("face")
             };
 
-            uploadResult = await _Cloudinary.UploadAsync(uploadParams);
-        }
+            var uploadResult = await _cloudinary.UploadAsync(uploadParams);
 
-        return uploadResult;
+            if (uploadResult.Error != null)
+            {
+                throw new Exception(uploadResult.Error.Message);
+            }
+
+            return new ImageUploadResult
+            {
+                PublicId = uploadResult.PublicId,
+                Url = uploadResult.Url
+            };
+        }
+        return null!;
     }
 
     /// <summary>
@@ -66,7 +74,7 @@ public class PhotoService : IPhotoServies
     public async Task<DeletionResult> DeletePhotoAsync(string publicId)
     {
         var deleteParams = new DeletionParams(publicId);
-        var result = await _Cloudinary.DestroyAsync(deleteParams);
+        var result = await _cloudinary.DestroyAsync(deleteParams);
         return result;
     }
 }

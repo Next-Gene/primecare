@@ -16,7 +16,7 @@ builder.Services.AddSwaggerDecumentation();
 
 builder.Services.AddApplicationService(); // for application layer
 builder.Services.AddInfrastructureService(builder.Configuration);
-builder.Services.AddApplicationServices(); // for api layer
+builder.Services.AddApplicationServices(builder.Configuration); // for api layer
 
 var app = builder.Build();
 
@@ -45,7 +45,7 @@ try
 {
     var context = services.GetRequiredService<PrimeCareContext>();
     await context.Database.MigrateAsync();
-    await PrimeContextSeed.SeedAsync(context, loggerFactory);
+    //await PrimeContextSeed.SeedAsync(context, loggerFactory);
 }
 catch (Exception ex)
 {

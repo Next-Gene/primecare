@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;
 using PrimeCare.Shared;
 using PrimeCare.Shared.Dtos.Products;
-using Microsoft.AspNetCore.Http;
 
 namespace PrimeCare.Application.Services.Implementations;
 
@@ -17,7 +17,7 @@ public class ProductService : IProductService
     private readonly IGenericRepository<Product> _productInterface;
     private readonly IGenericRepository<ProductPhotos> _productPhotoInterface;
     private readonly IMapper _mapper;
-    private readonly IPhotoServies _photoServies;
+    private readonly IPhotoService _photoService;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ProductService"/> class.
@@ -26,12 +26,12 @@ public class ProductService : IProductService
     /// <param name="mapper">The AutoMapper instance.</param>
     public ProductService(IGenericRepository<Product> productInterface,
                          IMapper mapper,
-                         IPhotoServies photoServies,
+                         IPhotoService photoService,
                          IGenericRepository<ProductPhotos> productPhotoInterface)
     {
         _productInterface = productInterface;
         _mapper = mapper;
-        _photoServies = photoServies;
+        _photoService = photoService;
         _productPhotoInterface = productPhotoInterface;
     }
 
@@ -113,7 +113,7 @@ public class ProductService : IProductService
             return new ServiceResponse(false, "Product Not Found");
         }
 
-        var result = await _photoServies.AddPhotoAsync(file);
+        var result = await _photoService.AddPhotoAsync(file);
         if (result.Error != null)
         {
             return new ServiceResponse(false, result.Error.Message.ToString());
@@ -145,7 +145,7 @@ public class ProductService : IProductService
             return new ServiceResponse(false, "Photo Not Found");
         }
 
-        var result = await _photoServies.DeletePhotoAsync(publicId);
+        var result = await _photoService.DeletePhotoAsync(publicId);
         if (result.Error != null)
         {
             return new ServiceResponse(false, result.Error.Message.ToString());

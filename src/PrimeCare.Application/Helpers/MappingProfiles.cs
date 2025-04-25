@@ -17,8 +17,8 @@ public class MappingProfiles : Profile
     /// </summary>
     public MappingProfiles()
     {
-        CreateMap<Product, ProductDto>()
-            .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.ProductPhotos.FirstOrDefault(X => X.IsMain)!.Url));
+        CreateMap<Product, ProductDto>();
+        //.ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.ProductPhotos.FirstOrDefault(X => X.IsMain)!.Url));
         CreateMap<CreateProductDto, Product>();
         CreateMap<UpdateProductDto, Product>();
         CreateMap<ProductPhotos, ProductPhotosDto>();

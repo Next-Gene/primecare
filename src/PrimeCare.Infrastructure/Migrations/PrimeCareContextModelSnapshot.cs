@@ -40,10 +40,6 @@ namespace PrimeCare.Infrastructure.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("varchar");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -62,6 +58,36 @@ namespace PrimeCare.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("PrimeCare.Core.Entities.CategoryPhoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PublicId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId")
+                        .IsUnique();
+
+                    b.ToTable("CategoryPhoto");
                 });
 
             modelBuilder.Entity("PrimeCare.Core.Entities.Product", b =>
@@ -85,17 +111,10 @@ namespace PrimeCare.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
-                    b.Property<string>("PictureUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductBrandId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Stock")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -124,6 +143,46 @@ namespace PrimeCare.Infrastructure.Migrations
                     b.ToTable("ProductBrands");
                 });
 
+            modelBuilder.Entity("PrimeCare.Core.Entities.ProductPhotos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PublicId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductPhotos");
+                });
+
+            modelBuilder.Entity("PrimeCare.Core.Entities.CategoryPhoto", b =>
+                {
+                    b.HasOne("PrimeCare.Core.Entities.Category", "Category")
+                        .WithOne("CategoryPhoto")
+                        .HasForeignKey("PrimeCare.Core.Entities.CategoryPhoto", "CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("PrimeCare.Core.Entities.Product", b =>
                 {
                     b.HasOne("PrimeCare.Core.Entities.Category", "Category")
@@ -141,6 +200,28 @@ namespace PrimeCare.Infrastructure.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("ProductBrand");
+                });
+
+            modelBuilder.Entity("PrimeCare.Core.Entities.ProductPhotos", b =>
+                {
+                    b.HasOne("PrimeCare.Core.Entities.Product", "Product")
+                        .WithMany("ProductPhotos")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("PrimeCare.Core.Entities.Category", b =>
+                {
+                    b.Navigation("CategoryPhoto")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("PrimeCare.Core.Entities.Product", b =>
+                {
+                    b.Navigation("ProductPhotos");
                 });
 #pragma warning restore 612, 618
         }

@@ -17,8 +17,6 @@ public class CategoryDto
     /// </summary>
     public string Name { get; set; } = null!;
 
-
-
     /// <summary>
     /// Gets or sets the slug of the category.
     /// </summary>

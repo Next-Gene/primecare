@@ -16,20 +16,21 @@ public class CategoryService : ICategoryService
 {
     private readonly IGenericRepository<Category> _categoryInterface;
     private readonly IGenericRepository<CategoryPhoto> _categoryPhotoInterface;
-
     private readonly IMapper _mapper;
-    private readonly IPhotoServies _photoServies;
+    private readonly IPhotoService _photoService;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CategoryService"/> class.
     /// </summary>
     /// <param name="productTypeInterface">The category repository interface used for CRUD operations.</param>
     /// <param name="mapper">The AutoMapper instance for mapping between DTOs and entities.</param>
-    public CategoryService(IGenericRepository<Category> categoryInterface, IMapper mapper, IPhotoServies photoServies)
+    public CategoryService(IGenericRepository<Category> categoryInterface,
+        IMapper mapper, IPhotoService photoService, IGenericRepository<CategoryPhoto> categoryPhotoInterface)
     {
         _categoryInterface = categoryInterface;
         _mapper = mapper;
-        _photoServies = photoServies;
+        _photoService = photoService;
+        _categoryPhotoInterface = categoryPhotoInterface;
     }
 
     #region Methods
@@ -118,7 +119,7 @@ public class CategoryService : ICategoryService
             return new ServiceResponse(false, "Category Not Found");
         }
 
-        var result = await _photoServies.AddPhotoAsync(file);
+        var result = await _photoService.AddPhotoAsync(file);
         if (result.Error != null)
         {
             return new ServiceResponse(false, result.Error.Message.ToString());
@@ -150,7 +151,7 @@ public class CategoryService : ICategoryService
             return new ServiceResponse(false, "Photo Not Found");
         }
 
-        var result = await _photoServies.DeletePhotoAsync(publicId);
+        var result = await _photoService.DeletePhotoAsync(publicId);
         if (result.Error != null)
         {
             return new ServiceResponse(false, result.Error.Message.ToString());
