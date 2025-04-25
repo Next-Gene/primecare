@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeCare.Infrastructure", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeCare.Application", "PrimeCare.Application\PrimeCare.Application.csproj", "{F84B8BDA-37DF-4A4A-BC21-A788B6D214DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B87F534D-9FC6-46B8-BA16-004D23175FE4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C44E82C0-1CAE-4E55-BF52-96185C39E103} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{FF5618DA-460C-4F06-AE77-94854530B6D3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{F84B8BDA-37DF-4A4A-BC21-A788B6D214DC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C502F487-3A99-42D9-842D-9A74721844F6}
