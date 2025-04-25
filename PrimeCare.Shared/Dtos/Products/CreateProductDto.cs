@@ -1,9 +1,8 @@
-﻿using PrimeCare.Core.Entities;
-using  PrimeCare.Application.Dtos.Photos;
+﻿using PrimeCare.Shared.Dtos.Photos;
 
-namespace PrimeCare.Application.Dtos.Products;
+namespace PrimeCare.Shared.Dtos.Products;
 
-public class CreateProductDto:BaseProductDto
+public class CreateProductDto : BaseProductDto
 {
 
 

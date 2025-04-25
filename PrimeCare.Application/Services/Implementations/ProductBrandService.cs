@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using PrimeCare.Application.Dtos;
-using PrimeCare.Application.Dtos.ProductBrand;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
+using PrimeCare.Shared;
+using PrimeCare.Shared.Dtos.ProductBrand;
 
 namespace PrimeCare.Application.Services.Implementations;
 

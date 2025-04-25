@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PrimeCare.Application\PrimeCare.Application.csproj" />
+    <ProjectReference Include="..\PrimeCare.Shared\PrimeCare.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

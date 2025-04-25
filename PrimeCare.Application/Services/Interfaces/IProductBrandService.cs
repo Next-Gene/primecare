@@ -1,5 +1,5 @@
-﻿using PrimeCare.Application.Dtos;
-using PrimeCare.Application.Dtos.ProductBrand;
+﻿using PrimeCare.Shared;
+using PrimeCare.Shared.Dtos.ProductBrand;
 
 namespace PrimeCare.Application.Services.Interfaces;
 

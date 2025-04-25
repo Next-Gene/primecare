@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrimeCare.Application.Errors;
+using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Controllers;
 

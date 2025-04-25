@@ -1,4 +1,4 @@
-﻿namespace PrimeCare.Application.Dtos.ProductBrand;
+﻿namespace PrimeCare.Shared.Dtos.ProductBrand;
 
 /// <summary>
 /// Data Transfer Object for creating a product brand.

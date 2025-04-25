@@ -1,6 +1,4 @@
-﻿using PrimeCare.Core.Entities;
-
-namespace PrimeCare.Application.Dtos.Products;
+﻿namespace PrimeCare.Shared.Dtos.Products;
 
 public class BaseProductDto
 {

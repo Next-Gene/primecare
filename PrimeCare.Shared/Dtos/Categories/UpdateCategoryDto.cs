@@ -1,13 +1,12 @@
-﻿using PrimeCare.Application.Dtos.Photos;
-using PrimeCare.Core.Entities;
+﻿using PrimeCare.Shared.Dtos.Photos;
 
-namespace PrimeCare.Application.Dtos.Categories;
+namespace PrimeCare.Shared.Dtos.Categories;
 
-/// <summary>
-/// Data Transfer Object for creating a category.
-/// </summary>
-public class CreateCategoryDto
+public class UpdateCategoryDto
 {
+    public int Id { get; set; }
+
+
     /// <summary>
     /// Gets or sets the name of the category.
     /// </summary>
@@ -33,11 +32,11 @@ public class CreateCategoryDto
     public string PhotoUrl { get; set; } = null!;
 
     /// <summary>
-    /// Gets or sets the date and time when the category was created.
+    /// Gets or sets the date and time when the category was last updated.
     /// </summary>
-    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 
-    
+
 
     /// <summary>
     /// Gets or sets the description of the category.

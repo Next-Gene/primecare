@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PrimeCare.Application.Exceptions;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;
 using PrimeCare.Infrastructure.Data;
+using PrimeCare.Shared.Exceptions;
 
 namespace PrimeCare.Infrastructure.Repositories;
 

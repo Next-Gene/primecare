@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrimeCare.Application.Dtos.Products;
-using PrimeCare.Application.Errors;
 using PrimeCare.Application.Services.Interfaces;
+using PrimeCare.Shared.Dtos.Products;
+using PrimeCare.Shared.Errors;
 namespace PrimeCare.Api.Controllers;
 
 public class ProductController : BaseApiController
@@ -32,7 +32,7 @@ public class ProductController : BaseApiController
     }
 
 
-  [HttpPost("add")]
+    [HttpPost("add")]
     public async Task<IActionResult> Add(CreateProductDto Product)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -59,6 +59,7 @@ public class ProductController : BaseApiController
 
         return result.Success ? Ok(result) : BadRequest(result);
     }
+}
 
-   
+
 
