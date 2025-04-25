@@ -14,17 +14,21 @@ namespace PrimeCare.Application.Services.Implementations;
 public class CategoryService : ICategoryService
 {
     private readonly IGenericRepository<Category> _categoryInterface;
+    private readonly IGenericRepository<CategoryPhoto> _categoryPhotoInterface;
+
     private readonly IMapper _mapper;
+    private readonly IPhotoServies _photoServies;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CategoryService"/> class.
     /// </summary>
     /// <param name="productTypeInterface">The category repository interface used for CRUD operations.</param>
     /// <param name="mapper">The AutoMapper instance for mapping between DTOs and entities.</param>
-    public CategoryService(IGenericRepository<Category> categoryInterface, IMapper mapper)
+    public CategoryService(IGenericRepository<Category> categoryInterface, IMapper mapper, IPhotoServies photoServies)
     {
         _categoryInterface = categoryInterface;
         _mapper = mapper;
+        _photoServies = photoServies;
     }
 
     #region Methods
@@ -105,5 +109,39 @@ public class CategoryService : ICategoryService
             : new ServiceResponse(false, "Category Not Found or failed to be Deleted");
     }
 
+    //public async Task<ServiceResponse> AddPhotoAsync(int id, IFormFile file)
+    //{
+    //    var category = await GetByIdAsync(id);
+    //    if (category == null)
+    //    {
+    //        return new ServiceResponse(false, "Category Not Found");
+    //    }
+
+    //    var result = await _photoServies.AddPhotoAsync(file);
+    //    if (result.Error != null)
+    //    {
+    //        return new ServiceResponse(false, result.Error.Message.ToString());
+    //    }
+
+    //    var photo = new CategoryPhoto
+    //    {
+    //        Url = result.SecureUrl.AbsoluteUri,
+    //        PublicId = result.PublicId
+    //    };
+
+    //    if (category.CategoryPhoto.Count == 0)
+    //    {
+
+    //        photo.IsMain = true;
+
+    //    }
+
+
+
+
+
+
     #endregion
+
+
 }
