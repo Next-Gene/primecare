@@ -59,6 +59,30 @@ public class ProductController : BaseApiController
 
         return result.Success ? Ok(result) : BadRequest(result);
     }
+
+    [HttpPost("photo")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+    [Consumes("multipart/form-data")]
+    public async Task<IActionResult> AddPhoto(int productId, IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+        {
+            return BadRequest();
+        }
+
+        var result = await _productService.AddPhotoAsync(productId, file);
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
+
+    [HttpDelete("photo")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> DeletePhoto(int productId, string publicId)
+    {
+        var result = await _productService.DeletePhotoAsync(productId, publicId);
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
 }
 
 

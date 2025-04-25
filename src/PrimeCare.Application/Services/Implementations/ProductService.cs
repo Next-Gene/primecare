@@ -5,7 +5,7 @@ using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;
 using PrimeCare.Shared;
 using PrimeCare.Shared.Dtos.Products;
-
+using Microsoft.AspNetCore.Http;
 
 namespace PrimeCare.Application.Services.Implementations;
 
@@ -15,17 +15,24 @@ namespace PrimeCare.Application.Services.Implementations;
 public class ProductService : IProductService
 {
     private readonly IGenericRepository<Product> _productInterface;
+    private readonly IGenericRepository<ProductPhotos> _productPhotoInterface;
     private readonly IMapper _mapper;
+    private readonly IPhotoServies _photoServies;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ProductService"/> class.
     /// </summary>
     /// <param name="productInterface">The product repository interface.</param>
     /// <param name="mapper">The AutoMapper instance.</param>
-    public ProductService(IGenericRepository<Product> productInterface, IMapper mapper)
+    public ProductService(IGenericRepository<Product> productInterface,
+                         IMapper mapper,
+                         IPhotoServies photoServies,
+                         IGenericRepository<ProductPhotos> productPhotoInterface)
     {
         _productInterface = productInterface;
         _mapper = mapper;
+        _photoServies = photoServies;
+        _productPhotoInterface = productPhotoInterface;
     }
 
     #region Methods
@@ -96,6 +103,56 @@ public class ProductService : IProductService
         return result > 0
             ? new ServiceResponse(true, "Product Deleted")
             : new ServiceResponse(false, "Product Not Found or failed to be Deleted");
+    }
+
+    public async Task<ServiceResponse> AddPhotoAsync(int id, IFormFile file)
+    {
+        var product = await GetByIdAsync(id);
+        if (product == null)
+        {
+            return new ServiceResponse(false, "Product Not Found");
+        }
+
+        var result = await _photoServies.AddPhotoAsync(file);
+        if (result.Error != null)
+        {
+            return new ServiceResponse(false, result.Error.Message.ToString());
+        }
+
+        var photo = new ProductPhotos
+        {
+            Url = result.SecureUrl.AbsoluteUri,
+            PublicId = result.PublicId,
+            ProductId = id,
+            IsMain = product.ProductPhotos.Count == 0 // Set as main if it's the first photo
+        };
+
+        await _productPhotoInterface.AddAsync(photo);
+        return new ServiceResponse(true, "Photo added successfully");
+    }
+
+    public async Task<ServiceResponse> DeletePhotoAsync(int id, string publicId)
+    {
+        var product = await GetByIdAsync(id);
+        if (product == null)
+        {
+            return new ServiceResponse(false, "Product Not Found");
+        }
+
+        var photo = product.ProductPhotos.FirstOrDefault(p => p.PublicId == publicId);
+        if (photo == null)
+        {
+            return new ServiceResponse(false, "Photo Not Found");
+        }
+
+        var result = await _photoServies.DeletePhotoAsync(publicId);
+        if (result.Error != null)
+        {
+            return new ServiceResponse(false, result.Error.Message.ToString());
+        }
+
+        await _productPhotoInterface.DeleteAsync(photo.Id);
+        return new ServiceResponse(true, "Photo deleted successfully");
     }
     #endregion
 }
