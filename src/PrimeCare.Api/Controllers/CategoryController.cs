@@ -8,10 +8,12 @@ namespace PrimeCare.Api.Controllers;
 public class CategoryController : BaseApiController
 {
     private readonly ICategoryService _category;
+    private readonly IPhotoServies _photoServies;
 
-    public CategoryController(ICategoryService category)
+    public CategoryController(ICategoryService category, IPhotoServies photoServies)
     {
         _category = category;
+        _photoServies = photoServies;
     }
 
     [HttpGet]
@@ -59,4 +61,14 @@ public class CategoryController : BaseApiController
 
         return result.Success ? Ok(result) : BadRequest(result);
     }
+
+
+    //[HttpPost("add-photo")]
+
+    //public async Task<CategoryPhotoDto> AddPhoto(IFormFile file)
+    //{
+
+
+
+    //}
 }

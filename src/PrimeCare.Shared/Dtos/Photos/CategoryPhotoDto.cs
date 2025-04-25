@@ -5,14 +5,18 @@ public class CategoryPhotoDto
 
 
 
-    public int id { get; set; }
+    public int Id { get; set; }
 
 
-    /// <summary>
-    /// Gets or sets the URL where the photo is stored.
-    /// </summary>
+
 
     public string Url { get; set; } = null!;
+
+
+    public string PublicId { get; set; } = null!;
+
+
+    public bool IsMain { get; set; }
 
 
 

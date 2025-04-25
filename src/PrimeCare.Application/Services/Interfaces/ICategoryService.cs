@@ -10,4 +10,7 @@ public interface ICategoryService
     Task<ServiceResponse> AddAsync(CreateCategoryDto entity);
     Task<ServiceResponse> UpdateAsync(UpdateCategoryDto entity);
     Task<ServiceResponse> DeleteAsync(int id);
+    //Task<ServiceResponse> AddPhotoAsync(int id, IFormFile file);
+
+
 }
