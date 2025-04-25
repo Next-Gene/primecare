@@ -21,7 +21,4 @@ public class BaseProductDto
     /// Collection of photos associated with this product.
     /// </summary>
     public string PictureUrl { get; set; } = null!;
-
-    public int Stock { get; set; }
-
 }
