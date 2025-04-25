@@ -26,8 +26,6 @@ public class Product : BaseEntity
 
     public ICollection<ProductPhotos> ProductPhotos { get; set; } = null!;
 
-    public int Stock { get; set; }
-
     /// <summary>
     /// Gets or sets the category of the product.
     /// </summary>
