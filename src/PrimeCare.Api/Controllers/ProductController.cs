@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Services.Interfaces;
+using PrimeCare.Core.Entities;
+using PrimeCare.Core.Interfaces;
+using PrimeCare.Shared.Dtos.Photos;
 using PrimeCare.Shared.Dtos.Products;
 using PrimeCare.Shared.Errors;
 namespace PrimeCare.Api.Controllers;
@@ -7,10 +11,18 @@ namespace PrimeCare.Api.Controllers;
 public class ProductController : BaseApiController
 {
     private readonly IProductService _productService;
+    private readonly IPhotoService _photoService;
+    IGenericRepository<Product> _productRepository;
+    private readonly IMapper _mapper;
 
-    public ProductController(IProductService productService)
+    public ProductController(IProductService productService,
+        IPhotoService photoService, IMapper mapper,
+        IGenericRepository<Product> productRepository)
     {
         _productService = productService;
+        _photoService = photoService;
+        _mapper = mapper;
+        _productRepository = productRepository;
     }
 
     [HttpGet]
@@ -59,6 +71,40 @@ public class ProductController : BaseApiController
 
         return result.Success ? Ok(result) : BadRequest(result);
     }
+
+    [HttpPost("add-photo")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<ProductPhotoDto>> AddPhoto(int id, IFormFile file)
+    {
+        var product = await _productRepository.GetByIdAsync(id);
+        var result = await _photoService.AddPhotoAsync(file);
+
+        if (result.Error != null) return BadRequest(result.Error.Message);
+
+        var productPhoto = new ProductPhoto
+        {
+            Url = result.SecureUrl.AbsoluteUri,
+            PublicId = result.PublicId
+        };
+
+        if (product!.ProductPhotos.Count == 0)
+        {
+            productPhoto.IsMain = true;
+        }
+
+        product.ProductPhotos.Add(productPhoto);
+        if (await _productRepository.SaveAllAsync())
+            return _mapper.Map<ProductPhotoDto>(productPhoto);
+        return BadRequest("Problem Adding Photo");
+    }
+
+    //[HttpDelete("photo")]
+    //[ProducesResponseType(StatusCodes.Status200OK)]
+    //[ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+    //public async Task<IActionResult> DeletePhoto(int productId, string publicId)
+    //{
+    //}
 }
 
 

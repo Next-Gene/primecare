@@ -8,12 +8,10 @@ namespace PrimeCare.Api.Controllers;
 public class CategoryController : BaseApiController
 {
     private readonly ICategoryService _category;
-    private readonly IPhotoServies _photoServies;
 
-    public CategoryController(ICategoryService category, IPhotoServies photoServies)
+    public CategoryController(ICategoryService category)
     {
         _category = category;
-        _photoServies = photoServies;
     }
 
     [HttpGet]
@@ -62,13 +60,25 @@ public class CategoryController : BaseApiController
         return result.Success ? Ok(result) : BadRequest(result);
     }
 
+    [HttpPost("photo")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+    [Consumes("multipart/form-data")]
+    public async Task<IActionResult> AddPhoto(int categoryId, IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+        {
+            return BadRequest();
+        }
 
-    //[HttpPost("add-photo")]
+        var result = await _category.AddPhotoAsync(categoryId, file);
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
 
-    //public async Task<CategoryPhotoDto> AddPhoto(IFormFile file)
-    //{
-
-
-
-    //}
+    [HttpDelete("photo")]
+    public async Task<IActionResult> DeletePhoto(int categoryId, string publicId)
+    {
+        var result = await _category.DeletePhotoAsync(categoryId, publicId);
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
 }

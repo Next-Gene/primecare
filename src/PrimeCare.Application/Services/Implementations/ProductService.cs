@@ -6,7 +6,6 @@ using PrimeCare.Core.Specifications;
 using PrimeCare.Shared;
 using PrimeCare.Shared.Dtos.Products;
 
-
 namespace PrimeCare.Application.Services.Implementations;
 
 /// <summary>
@@ -15,6 +14,7 @@ namespace PrimeCare.Application.Services.Implementations;
 public class ProductService : IProductService
 {
     private readonly IGenericRepository<Product> _productInterface;
+    private readonly IGenericRepository<ProductPhoto> _productPhotoInterface;
     private readonly IMapper _mapper;
 
     /// <summary>
@@ -22,10 +22,14 @@ public class ProductService : IProductService
     /// </summary>
     /// <param name="productInterface">The product repository interface.</param>
     /// <param name="mapper">The AutoMapper instance.</param>
-    public ProductService(IGenericRepository<Product> productInterface, IMapper mapper)
+    public ProductService(IGenericRepository<Product> productInterface,
+                         IMapper mapper,
+                         IPhotoService photoService,
+                         IGenericRepository<ProductPhoto> productPhotoInterface)
     {
         _productInterface = productInterface;
         _mapper = mapper;
+        _productPhotoInterface = productPhotoInterface;
     }
 
     #region Methods

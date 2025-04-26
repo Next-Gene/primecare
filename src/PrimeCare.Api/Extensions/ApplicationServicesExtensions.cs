@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrimeCare.Application.Helpers;
 using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Extensions;
@@ -6,7 +7,7 @@ namespace PrimeCare.Api.Extensions;
 public static class ApplicationServicesExtensions
 {
     public static IServiceCollection AddApplicationServices
-        (this IServiceCollection services)
+        (this IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<ApiBehaviorOptions>(option =>
         {
@@ -25,6 +26,8 @@ public static class ApplicationServicesExtensions
                 return new BadRequestObjectResult(errorResponse);
             };
         });
+
+        services.Configure<CloudinarySettings>(configuration.GetSection("CloudinarySettings"));
 
         return services;
     }
