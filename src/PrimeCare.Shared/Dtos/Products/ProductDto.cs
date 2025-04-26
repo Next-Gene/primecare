@@ -41,7 +41,7 @@ public class ProductDto
     /// Gets or sets the collection of photos associated with this category.
     /// Initialized as an empty list to avoid null reference exceptions.
     /// </summary>
-    public ICollection<ProductPhotosDto> ProductPhotos { get; set; } = null!;
+    public ICollection<ProductPhotoDto> ProductPhotos { get; set; } = null!;
 
     public string PhotoUrl { get; set; } = null!;
 }

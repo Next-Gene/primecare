@@ -12,7 +12,7 @@ public class ProductController : BaseApiController
 {
     private readonly IProductService _productService;
     private readonly IPhotoService _photoService;
-    IGenericRepository<Product> _productRepository;
+    private readonly IGenericRepository<Product> _productRepository;
     private readonly IMapper _mapper;
 
     public ProductController(IProductService productService,
@@ -95,7 +95,7 @@ public class ProductController : BaseApiController
 
         product.ProductPhotos.Add(productPhoto);
         if (await _productRepository.SaveAllAsync())
-            return _mapper.Map<ProductPhotoDto>(productPhoto);
+            return Ok(_mapper.Map<ProductPhotoDto>(productPhoto));
         return BadRequest("Problem Adding Photo");
     }
 
