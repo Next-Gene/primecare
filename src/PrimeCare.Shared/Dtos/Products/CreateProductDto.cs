@@ -1,6 +1,4 @@
-﻿using PrimeCare.Shared.Dtos.Photos;
-
-namespace PrimeCare.Shared.Dtos.Products;
+﻿namespace PrimeCare.Shared.Dtos.Products;
 
 public class CreateProductDto
 {
@@ -21,11 +19,12 @@ public class CreateProductDto
     public decimal Price { get; set; }
 
     /// <summary>
-    /// Gets or sets the collection of photos associated with this category.
-    /// Initialized as an empty list to avoid null reference exceptions.
+    /// Gets or sets the type of the category.
     /// </summary>
-    public ICollection<ProductPhotosDto> ProductPhotos { get; set; } = null!;
+    public int CategoryId { get; set; }
 
-    public string PhotoUrl { get; set; } = null!;
-
+    /// <summary>
+    /// Gets or sets the brand of the product.
+    /// </summary>
+    public int ProductBrandId { get; set; }
 }

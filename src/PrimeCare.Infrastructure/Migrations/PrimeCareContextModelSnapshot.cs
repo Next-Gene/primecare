@@ -71,7 +71,7 @@ namespace PrimeCare.Infrastructure.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("IsMain")
+                    b.Property<bool>("IsMain")
                         .HasColumnType("bit");
 
                     b.Property<string>("PublicId")
@@ -83,8 +83,7 @@ namespace PrimeCare.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId")
-                        .IsUnique();
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("CategoryPhotos");
                 });
@@ -173,8 +172,8 @@ namespace PrimeCare.Infrastructure.Migrations
             modelBuilder.Entity("PrimeCare.Core.Entities.CategoryPhoto", b =>
                 {
                     b.HasOne("PrimeCare.Core.Entities.Category", "Category")
-                        .WithOne("CategoryPhoto")
-                        .HasForeignKey("PrimeCare.Core.Entities.CategoryPhoto", "CategoryId")
+                        .WithMany("CategoryPhotos")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -213,8 +212,7 @@ namespace PrimeCare.Infrastructure.Migrations
 
             modelBuilder.Entity("PrimeCare.Core.Entities.Category", b =>
                 {
-                    b.Navigation("CategoryPhoto")
-                        .IsRequired();
+                    b.Navigation("CategoryPhotos");
                 });
 
             modelBuilder.Entity("PrimeCare.Core.Entities.Product", b =>

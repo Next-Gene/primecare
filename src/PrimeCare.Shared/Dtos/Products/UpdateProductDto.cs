@@ -28,7 +28,7 @@ public class UpdateProductDto
     /// <summary>
     /// Collection of photos associated with this product.
     /// </summary>
-    public ICollection<ProductPhotosDto> ProductPhotos { get; set; } = null!;
+    public ICollection<ProductPhotoDto> ProductPhotos { get; set; } = null!;
 
     public string PhotoUrl { get; set; } = null!;
 

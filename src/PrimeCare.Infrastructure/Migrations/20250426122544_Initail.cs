@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace PrimeCare.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Initail : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -117,8 +116,7 @@ namespace PrimeCare.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_CategoryPhotos_CategoryId",
                 table: "CategoryPhotos",
-                column: "CategoryId",
-                unique: true);
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductPhotos_ProductId",

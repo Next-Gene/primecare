@@ -1,17 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Services.Interfaces;
+using PrimeCare.Core.Entities;
+using PrimeCare.Core.Interfaces;
 using PrimeCare.Shared.Dtos.Categories;
+using PrimeCare.Shared.Dtos.Photos;
 using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Controllers;
 
 public class CategoryController : BaseApiController
 {
-    private readonly ICategoryService _category;
-
-    public CategoryController(ICategoryService category)
+    private readonly ICategoryService _categoryService;
+    private readonly IPhotoService _photoService;
+    private readonly IGenericRepository<Category> _categoryRepository;
+    private readonly IMapper _mapper;
+    public CategoryController(ICategoryService categoryService,
+        IGenericRepository<Category> categoryRepository, IMapper mapper,
+        IPhotoService photoService)
     {
-        _category = category;
+        _categoryService = categoryService;
+        _categoryRepository = categoryRepository;
+        _photoService = photoService;
+        _mapper = mapper;
     }
 
     [HttpGet]
@@ -19,16 +30,16 @@ public class CategoryController : BaseApiController
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetCategories()
     {
-        var categories = await _category.GetAllAsync();
+        var categories = await _categoryService.GetAllAsync();
         return categories.Any() ? Ok(categories) : NotFound(categories);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}", Name = "GetCategory")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetCategory(int id)
     {
-        var category = await _category.GetByIdAsync(id);
+        var category = await _categoryService.GetByIdAsync(id);
         return category != null ? Ok(category) : NotFound(category);
     }
 
@@ -37,7 +48,7 @@ public class CategoryController : BaseApiController
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        var result = await _category.AddAsync(category);
+        var result = await _categoryService.AddAsync(category);
 
         return result.Success ? Ok(result) : BadRequest(result);
     }
@@ -47,7 +58,7 @@ public class CategoryController : BaseApiController
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        var result = await _category.UpdateAsync(category);
+        var result = await _categoryService.UpdateAsync(category);
 
         return result.Success ? Ok(result) : BadRequest(result);
     }
@@ -55,30 +66,43 @@ public class CategoryController : BaseApiController
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var result = await _category.DeleteAsync(id);
+        var result = await _categoryService.DeleteAsync(id);
 
         return result.Success ? Ok(result) : BadRequest(result);
     }
 
-    [HttpPost("photo")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
-    [Consumes("multipart/form-data")]
-    public async Task<IActionResult> AddPhoto(int categoryId, IFormFile file)
+    [HttpPost("add-photo/{id}")]
+    public async Task<ActionResult<CategoryPhotoDto>> AddPhoto(int id, IFormFile file)
     {
-        if (file == null || file.Length == 0)
+        var category = await _categoryRepository.GetByIdAsync(id);
+        if (category == null)
+            return NotFound($"Category with id {id} not found");
+        var result = await _photoService.AddPhotoAsync(file);
+
+        if (result.Error != null) return BadRequest(result.Error.Message);
+
+        var categoryPhoto = new CategoryPhoto
         {
-            return BadRequest();
+            Url = result.SecureUrl.AbsoluteUri,
+            PublicId = result.PublicId
+        };
+
+        if (category.CategoryPhotos.Count == 0)
+        {
+            categoryPhoto.IsMain = true;
         }
 
-        var result = await _category.AddPhotoAsync(categoryId, file);
-        return result.Success ? Ok(result) : BadRequest(result);
+
+        category.CategoryPhotos.Add(categoryPhoto);
+        if (await _categoryRepository.SaveAllAsync())
+            return CreatedAtRoute("GetCategory", new { id = category.Id }, _mapper.Map<CategoryPhotoDto>(categoryPhoto));
+        return BadRequest("Problem Adding Photo");
     }
 
-    [HttpDelete("photo")]
-    public async Task<IActionResult> DeletePhoto(int categoryId, string publicId)
-    {
-        var result = await _category.DeletePhotoAsync(categoryId, publicId);
-        return result.Success ? Ok(result) : BadRequest(result);
-    }
+    //[HttpDelete("photo")]
+    //public async Task<IActionResult> DeletePhoto(int categoryId, string publicId)
+    //{
+    //    var result = await _category.DeletePhotoAsync(categoryId, publicId);
+    //    return result.Success ? Ok(result) : BadRequest(result);
+    //}
 }

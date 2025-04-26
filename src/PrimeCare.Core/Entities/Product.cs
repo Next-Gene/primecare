@@ -24,7 +24,7 @@ public class Product : BaseEntity
     /// Gets or sets the collection of photos associated with this product.
     /// </summary>
 
-    public ICollection<ProductPhoto> ProductPhotos { get; set; } = null!;
+    public ICollection<ProductPhoto> ProductPhotos { get; set; } = new List<ProductPhoto>();
 
     /// <summary>
     /// Gets or sets the category of the product.
