@@ -20,7 +20,7 @@ public class CategoryPhoto : BaseEntity
     /// <summary>
     /// Gets or sets a value indicating whether this photo is the main photo for the category.
     /// </summary>
-    public bool? IsMain { get; set; }
+    public bool IsMain { get; set; }
 
 
     /// <summary>

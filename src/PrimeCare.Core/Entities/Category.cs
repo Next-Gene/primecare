@@ -30,7 +30,7 @@ public class Category : BaseEntity
     /// Gets or sets the collection of photos associated with this category.
     /// Initialized as an empty list to avoid null reference exceptions.
     /// </summary>
-    public ICollection<CategoryPhoto> CategoryPhotos { get; set; } = null!;
+    public ICollection<CategoryPhoto> CategoryPhotos { get; set; } = new List<CategoryPhoto>();
 
 
     /// <summary>

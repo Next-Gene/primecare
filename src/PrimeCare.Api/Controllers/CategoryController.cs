@@ -34,7 +34,7 @@ public class CategoryController : BaseApiController
         return categories.Any() ? Ok(categories) : NotFound(categories);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}", Name = "GetCategory")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetCategory(int id)
@@ -71,12 +71,12 @@ public class CategoryController : BaseApiController
         return result.Success ? Ok(result) : BadRequest(result);
     }
 
-    [HttpPost("add-photo")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+    [HttpPost("add-photo/{id}")]
     public async Task<ActionResult<CategoryPhotoDto>> AddPhoto(int id, IFormFile file)
     {
         var category = await _categoryRepository.GetByIdAsync(id);
+        if (category == null)
+            return NotFound($"Category with id {id} not found");
         var result = await _photoService.AddPhotoAsync(file);
 
         if (result.Error != null) return BadRequest(result.Error.Message);
@@ -87,7 +87,7 @@ public class CategoryController : BaseApiController
             PublicId = result.PublicId
         };
 
-        if (category!.CategoryPhotos.Count == 0)
+        if (category.CategoryPhotos.Count == 0)
         {
             categoryPhoto.IsMain = true;
         }
@@ -95,7 +95,7 @@ public class CategoryController : BaseApiController
 
         category.CategoryPhotos.Add(categoryPhoto);
         if (await _categoryRepository.SaveAllAsync())
-            return Ok(_mapper.Map<CategoryPhotoDto>(categoryPhoto));
+            return CreatedAtRoute("GetCategory", new { id = category.Id }, _mapper.Map<CategoryPhotoDto>(categoryPhoto));
         return BadRequest("Problem Adding Photo");
     }
 

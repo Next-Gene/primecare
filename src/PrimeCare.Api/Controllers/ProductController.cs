@@ -34,7 +34,7 @@ public class ProductController : BaseApiController
         return products.Any() ? Ok(products) : NotFound(products);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}", Name = "GetProduct")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetProduct(int id)
@@ -72,12 +72,13 @@ public class ProductController : BaseApiController
         return result.Success ? Ok(result) : BadRequest(result);
     }
 
-    [HttpPost("add-photo")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+    [HttpPost("add-photo/{id}")]
     public async Task<ActionResult<ProductPhotoDto>> AddPhoto(int id, IFormFile file)
     {
         var product = await _productRepository.GetByIdAsync(id);
+        if (product == null)
+            return NotFound($"Product with id {id} not found");
+
         var result = await _photoService.AddPhotoAsync(file);
 
         if (result.Error != null) return BadRequest(result.Error.Message);
@@ -95,7 +96,7 @@ public class ProductController : BaseApiController
 
         product.ProductPhotos.Add(productPhoto);
         if (await _productRepository.SaveAllAsync())
-            return Ok(_mapper.Map<ProductPhotoDto>(productPhoto));
+            return CreatedAtRoute("GetCategory", new { id = product.Id }, _mapper.Map<ProductPhotoDto>(productPhoto));
         return BadRequest("Problem Adding Photo");
     }
 
