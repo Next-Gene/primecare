@@ -1,6 +1,5 @@
 ﻿using PrimeCare.Shared;
 using PrimeCare.Shared.Dtos.Categories;
-using Microsoft.AspNetCore.Http;
 
 namespace PrimeCare.Application.Services.Interfaces;
 
@@ -11,6 +10,4 @@ public interface ICategoryService
     Task<ServiceResponse> AddAsync(CreateCategoryDto entity);
     Task<ServiceResponse> UpdateAsync(UpdateCategoryDto entity);
     Task<ServiceResponse> DeleteAsync(int id);
-    Task<ServiceResponse> AddPhotoAsync(int id, IFormFile file);
-    Task<ServiceResponse> DeletePhotoAsync(int id, string publicId);
 }

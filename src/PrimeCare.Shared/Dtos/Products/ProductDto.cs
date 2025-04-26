@@ -28,14 +28,20 @@ public class ProductDto
     public decimal Price { get; set; }
 
     /// <summary>
+    /// Gets or sets the brand of the product.
+    /// </summary>
+    public string ProductBrand { get; set; } = null!;
+
+    /// <summary>
+    /// Gets or sets the type of the product.
+    /// </summary>
+    public string Category { get; set; } = null!;
+
+    /// <summary>
     /// Gets or sets the collection of photos associated with this category.
     /// Initialized as an empty list to avoid null reference exceptions.
     /// </summary>
     public ICollection<ProductPhotosDto> ProductPhotos { get; set; } = null!;
 
-
-    /// <summary>
-    /// img url   
-    /// </summary>
     public string PhotoUrl { get; set; } = null!;
 }

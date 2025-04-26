@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -41,7 +42,7 @@ namespace PrimeCare.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CategoryPhoto",
+                name: "CategoryPhotos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -53,9 +54,9 @@ namespace PrimeCare.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CategoryPhoto", x => x.Id);
+                    table.PrimaryKey("PK_CategoryPhotos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CategoryPhoto_Categories_CategoryId",
+                        name: "FK_CategoryPhotos_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
@@ -114,8 +115,8 @@ namespace PrimeCare.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CategoryPhoto_CategoryId",
-                table: "CategoryPhoto",
+                name: "IX_CategoryPhotos_CategoryId",
+                table: "CategoryPhotos",
                 column: "CategoryId",
                 unique: true);
 
@@ -139,7 +140,7 @@ namespace PrimeCare.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CategoryPhoto");
+                name: "CategoryPhotos");
 
             migrationBuilder.DropTable(
                 name: "ProductPhotos");

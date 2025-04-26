@@ -92,6 +92,15 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     }
 
     /// <summary>
+    /// Saves all changes made in this context to the database.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation. The task result contains the number of state entries written to the database.</returns>
+    public async Task<bool> SaveAllAsync()
+    {
+        return await _context.SaveChangesAsync() > 0;
+    }
+
+    /// <summary>
     /// Applies the given specification to the query.
     /// </summary>
     /// <param name="specification">The specification to apply.</param>

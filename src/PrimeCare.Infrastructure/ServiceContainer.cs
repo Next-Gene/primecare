@@ -31,7 +31,7 @@ public static class ServiceContainer
         services.AddScoped<IGenericRepository<ProductBrand>, GenericRepository<ProductBrand>>();
         services.AddScoped<IGenericRepository<Category>, GenericRepository<Category>>();
         services.AddScoped<IGenericRepository<CategoryPhoto>, GenericRepository<CategoryPhoto>>();
-        services.AddScoped<IGenericRepository<ProductPhotos>, GenericRepository<ProductPhotos>>();
+        services.AddScoped<IGenericRepository<ProductPhoto>, GenericRepository<ProductPhoto>>();
 
         return services;
     }

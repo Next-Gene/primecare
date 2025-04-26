@@ -7,17 +7,10 @@ using PrimeCare.Application.Services.Interfaces;
 
 namespace PrimeCare.Application.Services.Implementations;
 
-/// <summary>
-/// Service responsible for handling photo uploads and deletions using Cloudinary.
-/// </summary>
 public class PhotoService : IPhotoService
 {
     private readonly Cloudinary _cloudinary;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="PhotoService"/> class.
-    /// </summary>
-    /// <param name="config">Cloudinary configuration settings injected via IOptions.</param>
     public PhotoService(IOptions<CloudinarySettings> config)
     {
         var account = new Account(
@@ -29,17 +22,13 @@ public class PhotoService : IPhotoService
         _cloudinary = new Cloudinary(account);
     }
 
-    /// <summary>
-    /// Uploads a photo file to Cloudinary.
-    /// </summary>
-    /// <param name="file">The photo file to be uploaded.</param>
-    /// <returns>The result of the image upload.</returns>
     public async Task<ImageUploadResult> AddPhotoAsync(IFormFile file)
     {
+        var uploadResult = new ImageUploadResult();
+
         if (file.Length > 0)
         {
             using var stream = file.OpenReadStream();
-
             var uploadParams = new ImageUploadParams
             {
                 File = new FileDescription(file.FileName, stream),
@@ -49,28 +38,11 @@ public class PhotoService : IPhotoService
                     .Crop("fill")
                     .Gravity("face")
             };
-
-            var uploadResult = await _cloudinary.UploadAsync(uploadParams);
-
-            if (uploadResult.Error != null)
-            {
-                throw new Exception(uploadResult.Error.Message);
-            }
-
-            return new ImageUploadResult
-            {
-                PublicId = uploadResult.PublicId,
-                Url = uploadResult.Url
-            };
+            uploadResult = await _cloudinary.UploadAsync(uploadParams);
         }
-        return null!;
+        return uploadResult;
     }
 
-    /// <summary>
-    /// Deletes a photo from Cloudinary using its public ID.
-    /// </summary>
-    /// <param name="publicId">The public ID of the photo to be deleted.</param>
-    /// <returns>The result of the deletion operation.</returns>
     public async Task<DeletionResult> DeletePhotoAsync(string publicId)
     {
         var deleteParams = new DeletionParams(publicId);

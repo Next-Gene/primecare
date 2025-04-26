@@ -1,6 +1,5 @@
 ﻿using PrimeCare.Shared.Dtos.Photos;
 
-
 namespace PrimeCare.Shared.Dtos.Products;
 
 public class UpdateProductDto

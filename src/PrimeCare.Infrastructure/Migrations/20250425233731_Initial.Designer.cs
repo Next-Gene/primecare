@@ -12,7 +12,7 @@ using PrimeCare.Infrastructure.Data;
 namespace PrimeCare.Infrastructure.Migrations
 {
     [DbContext(typeof(PrimeCareContext))]
-    [Migration("20250425223849_Initial")]
+    [Migration("20250425233731_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -74,7 +74,7 @@ namespace PrimeCare.Infrastructure.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsMain")
+                    b.Property<bool?>("IsMain")
                         .HasColumnType("bit");
 
                     b.Property<string>("PublicId")
@@ -82,7 +82,6 @@ namespace PrimeCare.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -90,7 +89,7 @@ namespace PrimeCare.Infrastructure.Migrations
                     b.HasIndex("CategoryId")
                         .IsUnique();
 
-                    b.ToTable("CategoryPhoto");
+                    b.ToTable("CategoryPhotos");
                 });
 
             modelBuilder.Entity("PrimeCare.Core.Entities.Product", b =>
@@ -146,7 +145,7 @@ namespace PrimeCare.Infrastructure.Migrations
                     b.ToTable("ProductBrands");
                 });
 
-            modelBuilder.Entity("PrimeCare.Core.Entities.ProductPhotos", b =>
+            modelBuilder.Entity("PrimeCare.Core.Entities.ProductPhoto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -165,7 +164,6 @@ namespace PrimeCare.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -205,7 +203,7 @@ namespace PrimeCare.Infrastructure.Migrations
                     b.Navigation("ProductBrand");
                 });
 
-            modelBuilder.Entity("PrimeCare.Core.Entities.ProductPhotos", b =>
+            modelBuilder.Entity("PrimeCare.Core.Entities.ProductPhoto", b =>
                 {
                     b.HasOne("PrimeCare.Core.Entities.Product", "Product")
                         .WithMany("ProductPhotos")

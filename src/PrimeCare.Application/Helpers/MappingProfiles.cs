@@ -17,11 +17,13 @@ public class MappingProfiles : Profile
     /// </summary>
     public MappingProfiles()
     {
-        CreateMap<Product, ProductDto>();
-        //.ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.ProductPhotos.FirstOrDefault(X => X.IsMain)!.Url));
+        CreateMap<Product, ProductDto>()
+            .ForMember(dest => dest.ProductBrand, opt => opt.MapFrom(src => src.ProductBrand.Name))
+            .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category.Name))
+            .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.ProductPhotos.FirstOrDefault(x => x.IsMain)!.Url));
         CreateMap<CreateProductDto, Product>();
         CreateMap<UpdateProductDto, Product>();
-        CreateMap<ProductPhotos, ProductPhotosDto>();
+        CreateMap<ProductPhoto, ProductPhotosDto>();
 
 
         CreateMap<ProductBrand, ProductBrandDto>();
@@ -30,7 +32,6 @@ public class MappingProfiles : Profile
 
         CreateMap<Category, CategoryDto>()
          .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.CategoryPhoto.Url));
-
         CreateMap<UpdateCategoryDto, Category>();
         CreateMap<CreateCategoryDto, Category>();
         CreateMap<CategoryPhoto, CategoryPhotoDto>();

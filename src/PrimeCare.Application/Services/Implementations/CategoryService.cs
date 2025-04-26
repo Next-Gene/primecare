@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
@@ -17,7 +16,6 @@ public class CategoryService : ICategoryService
     private readonly IGenericRepository<Category> _categoryInterface;
     private readonly IGenericRepository<CategoryPhoto> _categoryPhotoInterface;
     private readonly IMapper _mapper;
-    private readonly IPhotoService _photoService;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CategoryService"/> class.
@@ -29,7 +27,6 @@ public class CategoryService : ICategoryService
     {
         _categoryInterface = categoryInterface;
         _mapper = mapper;
-        _photoService = photoService;
         _categoryPhotoInterface = categoryPhotoInterface;
     }
 
@@ -110,56 +107,5 @@ public class CategoryService : ICategoryService
             ? new ServiceResponse(true, "Category Deleted")
             : new ServiceResponse(false, "Category Not Found or failed to be Deleted");
     }
-
-    public async Task<ServiceResponse> AddPhotoAsync(int id, IFormFile file)
-    {
-        var category = await GetByIdAsync(id);
-        if (category == null)
-        {
-            return new ServiceResponse(false, "Category Not Found");
-        }
-
-        var result = await _photoService.AddPhotoAsync(file);
-        if (result.Error != null)
-        {
-            return new ServiceResponse(false, result.Error.Message.ToString());
-        }
-
-        var photo = new CategoryPhoto
-        {
-            Url = result.SecureUrl.AbsoluteUri,
-            PublicId = result.PublicId,
-            CategoryId = id,
-            IsMain = true // Since we're only allowing one photo per category
-        };
-
-        await _categoryPhotoInterface.AddAsync(photo);
-        return new ServiceResponse(true, "Photo added successfully");
-    }
-
-    public async Task<ServiceResponse> DeletePhotoAsync(int id, string publicId)
-    {
-        var category = await GetByIdAsync(id);
-        if (category == null)
-        {
-            return new ServiceResponse(false, "Category Not Found");
-        }
-
-        var photo = category.CategoryPhoto.FirstOrDefault(p => p.PublicId == publicId);
-        if (photo == null)
-        {
-            return new ServiceResponse(false, "Photo Not Found");
-        }
-
-        var result = await _photoService.DeletePhotoAsync(publicId);
-        if (result.Error != null)
-        {
-            return new ServiceResponse(false, result.Error.Message.ToString());
-        }
-
-        await _categoryPhotoInterface.DeleteAsync(photo.Id);
-        return new ServiceResponse(true, "Photo deleted successfully");
-    }
-
     #endregion
 }
