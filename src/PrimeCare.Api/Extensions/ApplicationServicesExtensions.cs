@@ -27,7 +27,8 @@ public static class ApplicationServicesExtensions
             };
         });
 
-        services.Configure<CloudinarySettings>(configuration.GetSection("CloudinarySettings"));
+        services.Configure<CloudinarySettings>(configuration
+            .GetSection("CloudinarySettings"));
 
         return services;
     }
