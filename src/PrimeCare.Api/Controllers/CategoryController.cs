@@ -28,9 +28,9 @@ public class CategoryController : BaseApiController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetCategories()
+    public async Task<IActionResult> GetCategories(string? sort)
     {
-        var categories = await _categoryService.GetAllAsync();
+        var categories = await _categoryService.GetAllAsync(sort);
         return categories.Any() ? Ok(categories) : NotFound(categories);
     }
 

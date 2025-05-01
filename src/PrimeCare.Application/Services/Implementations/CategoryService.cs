@@ -23,7 +23,8 @@ public class CategoryService : ICategoryService
     /// <param name="productTypeInterface">The category repository interface used for CRUD operations.</param>
     /// <param name="mapper">The AutoMapper instance for mapping between DTOs and entities.</param>
     public CategoryService(IGenericRepository<Category> categoryInterface,
-        IMapper mapper, IPhotoService photoService, IGenericRepository<CategoryPhoto> categoryPhotoInterface)
+        IMapper mapper, IPhotoService photoService,
+        IGenericRepository<CategoryPhoto> categoryPhotoInterface)
     {
         _categoryInterface = categoryInterface;
         _mapper = mapper;
@@ -51,9 +52,9 @@ public class CategoryService : ICategoryService
     /// Retrieves all categories asynchronously.
     /// </summary>
     /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of category data transfer objects.</returns>
-    public async Task<IReadOnlyList<CategoryDto>> GetAllAsync()
+    public async Task<IReadOnlyList<CategoryDto>> GetAllAsync(string? sort)
     {
-        var spec = new CategoryPhotoSepcification();
+        var spec = new CategoryPhotoSepcification(sort);
         var categories = await _categoryInterface.GetAllWithSpecificationAsync(spec);
         return _mapper.Map<IReadOnlyList<Category>, IReadOnlyList<CategoryDto>>(categories);
     }

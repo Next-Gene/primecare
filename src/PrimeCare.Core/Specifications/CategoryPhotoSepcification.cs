@@ -3,8 +3,6 @@
 namespace PrimeCare.Core.Specifications;
 
 
-
-
 /// <summary>
 /// Specification for products with their Categories and brands included.
 /// </summary>
@@ -13,9 +11,27 @@ public class CategoryPhotoSepcification : BaseSpecification<Category>
     /// <summary>
     /// Initializes a new instance of the <see cref="CategoryPhotoSepcification"/> class.
     /// </summary>
-    public CategoryPhotoSepcification() : base(null!)
+    public CategoryPhotoSepcification(string? sort)
+        : base(null!)
     {
         AddInclude(x => x.CategoryPhotos);
+
+        // Default sorting by name
+        AddOrderBy(x => x.Name);
+
+        // Apply sorting based on the provided criteria
+        if (!string.IsNullOrEmpty(sort))
+        {
+            switch (sort)
+            {
+                case "nameDesc":
+                    AddOrderByDescending(p => p.Name);
+                    break;
+                default:
+                    AddOrderBy(p => p.Name);
+                    break;
+            }
+        }
     }
 
     /// <summary>
@@ -25,9 +41,7 @@ public class CategoryPhotoSepcification : BaseSpecification<Category>
     public CategoryPhotoSepcification(int id)
         : base(x => x.Id == id)
     {
-
         AddInclude(x => x.CategoryPhotos);
-
     }
 
 }
