@@ -10,11 +10,29 @@ public class ProductsWithBrandsAndCategoriesAndPhotosSpecification : BaseSpecifi
     /// <summary>
     /// Initializes a new instance of the <see cref="ProductsWithBrandsAndCategoriesAndPhotosSpecification"/> class.
     /// </summary>
-    public ProductsWithBrandsAndCategoriesAndPhotosSpecification() : base(null!)
+    public ProductsWithBrandsAndCategoriesAndPhotosSpecification(string? sort)
+        : base(null!)
     {
         AddInclude(x => x.Category);
         AddInclude(x => x.ProductBrand);
         AddInclude(x => x.ProductPhotos);
+        AddOrderBy(x => x.Name);
+
+        if (!string.IsNullOrEmpty(sort))
+        {
+            switch (sort)
+            {
+                case "priceAsc":
+                    AddOrderBy(p => p.Price);
+                    break;
+                case "priceDesc":
+                    AddOrderByDescending(p => p.Price);
+                    break;
+                default:
+                    AddOrderBy(p => p.Name);
+                    break;
+            }
+        }
     }
 
     /// <summary>

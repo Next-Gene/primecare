@@ -27,7 +27,7 @@ public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
 
         if (specification.OrderBy != null)
             query = query.OrderBy(specification.OrderBy);
-        else if (specification.OrderByDescending != null)
+        if (specification.OrderByDescending != null)
             query = query.OrderByDescending(specification.OrderByDescending);
 
         // Apply the includes to the query

@@ -6,6 +6,7 @@ using PrimeCare.Core.Interfaces;
 using PrimeCare.Shared.Dtos.Photos;
 using PrimeCare.Shared.Dtos.Products;
 using PrimeCare.Shared.Errors;
+
 namespace PrimeCare.Api.Controllers;
 
 public class ProductController : BaseApiController
@@ -28,9 +29,9 @@ public class ProductController : BaseApiController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetProducts()
+    public async Task<ActionResult<IReadOnlyList<ProductDto>>> GetProducts(string? sort)
     {
-        var products = await _productService.GetAllAsync();
+        var products = await _productService.GetAllAsync(sort);
         return products.Any() ? Ok(products) : NotFound(products);
     }
 

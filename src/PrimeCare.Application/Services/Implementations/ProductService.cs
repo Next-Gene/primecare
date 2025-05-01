@@ -50,9 +50,9 @@ public class ProductService : IProductService
     /// Retrieves all products asynchronously.
     /// </summary>
     /// <returns>A task representing the asynchronous operation, with a list of product DTOs as result.</returns>
-    public async Task<IReadOnlyList<ProductDto>> GetAllAsync()
+    public async Task<IReadOnlyList<ProductDto>> GetAllAsync(string? sort)
     {
-        var spec = new ProductsWithBrandsAndCategoriesAndPhotosSpecification();
+        var spec = new ProductsWithBrandsAndCategoriesAndPhotosSpecification(sort);
         var products = await _productInterface.GetAllWithSpecificationAsync(spec);
         return _mapper.Map<IReadOnlyList<ProductDto>>(products);
     }
