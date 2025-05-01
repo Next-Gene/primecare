@@ -23,9 +23,8 @@ public class ProductService : IProductService
     /// <param name="productInterface">The product repository interface.</param>
     /// <param name="mapper">The AutoMapper instance.</param>
     public ProductService(IGenericRepository<Product> productInterface,
-                         IMapper mapper,
-                         IPhotoService photoService,
-                         IGenericRepository<ProductPhoto> productPhotoInterface)
+        IMapper mapper, IPhotoService photoService,
+        IGenericRepository<ProductPhoto> productPhotoInterface)
     {
         _productInterface = productInterface;
         _mapper = mapper;
@@ -50,9 +49,11 @@ public class ProductService : IProductService
     /// Retrieves all products asynchronously.
     /// </summary>
     /// <returns>A task representing the asynchronous operation, with a list of product DTOs as result.</returns>
-    public async Task<IReadOnlyList<ProductDto>> GetAllAsync(string? sort)
+    public async Task<IReadOnlyList<ProductDto>> GetAllAsync(
+        string? sort, int? brandId, int? categoryId)
     {
-        var spec = new ProductsWithBrandsAndCategoriesAndPhotosSpecification(sort);
+        var spec = new ProductsWithBrandsAndCategoriesAndPhotosSpecification(
+            sort, brandId, categoryId);
         var products = await _productInterface.GetAllWithSpecificationAsync(spec);
         return _mapper.Map<IReadOnlyList<ProductDto>>(products);
     }

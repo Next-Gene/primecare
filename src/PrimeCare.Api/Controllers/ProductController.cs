@@ -29,9 +29,10 @@ public class ProductController : BaseApiController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<IReadOnlyList<ProductDto>>> GetProducts(string? sort)
+    public async Task<ActionResult<IReadOnlyList<ProductDto>>> GetProducts(
+        string? sort, int? brandId, int? categoryId)
     {
-        var products = await _productService.GetAllAsync(sort);
+        var products = await _productService.GetAllAsync(sort, brandId, categoryId);
         return products.Any() ? Ok(products) : NotFound(products);
     }
 
@@ -97,7 +98,7 @@ public class ProductController : BaseApiController
 
         product.ProductPhotos.Add(productPhoto);
         if (await _productRepository.SaveAllAsync())
-            return CreatedAtRoute("GetCategory", new { id = product.Id }, _mapper.Map<ProductPhotoDto>(productPhoto));
+            return CreatedAtRoute("GetProduct", new { id = product.Id }, _mapper.Map<ProductPhotoDto>(productPhoto));
         return BadRequest("Problem Adding Photo");
     }
 
