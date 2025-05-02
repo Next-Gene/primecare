@@ -1,4 +1,6 @@
-﻿using PrimeCare.Shared;
+﻿using Microsoft.AspNetCore.Http;
+using PrimeCare.Shared;
+using PrimeCare.Shared.Dtos.Photos;
 using PrimeCare.Shared.Dtos.Products;
 
 namespace PrimeCare.Application.Services.Interfaces;
@@ -10,4 +12,5 @@ public interface IProductService
     Task<ServiceResponse> AddAsync(CreateProductDto entity);
     Task<ServiceResponse> UpdateAsync(UpdateProductDto entity);
     Task<ServiceResponse> DeleteAsync(int id);
+    Task<ProductPhotoDto?> AddPhotoAsync(int productId, IFormFile file);
 }
