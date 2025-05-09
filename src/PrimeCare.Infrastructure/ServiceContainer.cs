@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Infrastructure.Data;
 using PrimeCare.Infrastructure.Repositories;
+using StackExchange.Redis;
 
 namespace PrimeCare.Infrastructure;
 
@@ -27,7 +28,12 @@ public static class ServiceContainer
         });
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddSingleton<ConnectionMultiplexer>(c =>
+        {
+            var config = ConfigurationOptions.Parse(configuration.GetConnectionString("Redis"), true);
 
+            return ConnectionMultiplexer.Connect(config);
+        });
         return services;
     }
 }
