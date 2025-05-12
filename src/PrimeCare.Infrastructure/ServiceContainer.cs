@@ -28,7 +28,7 @@ public static class ServiceContainer
         });
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-        services.AddSingleton<ConnectionMultiplexer>(c =>
+        services.AddSingleton<IConnectionMultiplexer>(c =>
         {
             var config = ConfigurationOptions.Parse(configuration.GetConnectionString("Redis"), true);
 

@@ -1,48 +1,47 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
 
-namespace PrimeCare.Api.Controllers;
-
-
-public class CartController : BaseApiController
+namespace PrimeCare.Api.Controllers
 {
-
-    private readonly ICartService _cartService;
-    public CartController(ICartService cartService)
+    [ApiController]
+    public class CartController : ControllerBase
     {
-        _cartService = cartService;
-    }
-    /// <summary>
-    /// Retrieves the current user's cart.
-    /// </summary>
-    /// <returns>The user's cart or a 404 status if not found.</returns>
+        private readonly ICartService _cartService;
 
-    [HttpGet]
+        public CartController(ICartService cartService)
+        {
+            _cartService = cartService;
+        }
 
-    public async Task<ActionResult<CustomerCart>> GetCartByID(string id)
-    {
-        var cart = await _cartService.GetCartAsync(id);
+        /// <summary>
+        /// Retrieves the cart by user ID.
+        /// </summary>
+        [HttpGet("api/getcart/{id}", Name = "GetCartById")]
+        public async Task<ActionResult<CustomerCart>> GetCartByID(string id)
+        {
+            var cart = await _cartService.GetCartAsync(id);
+            return Ok(cart ?? new CustomerCart(id));
+        }
 
-        return Ok(cart ?? new CustomerCart(id));
-    }
+        /// <summary>
+        /// Updates the user's cart.
+        /// </summary>
+        [HttpPost("api/updatecart", Name = "UpdateCart")]
+        public async Task<ActionResult<CustomerCart>> UpdateCart([FromBody] CustomerCart cart)
+        {
+            var updatedCart = await _cartService.UpdateCartAsync(cart);
+            return Ok(updatedCart);
+        }
 
-
-    [HttpPost]
-    public async Task<ActionResult<CustomerCart>> UpdateCart(CustomerCart cart)
-    {
-        var updatedCart = await _cartService.UpdateCartAsync(cart);
-
-        return Ok(updatedCart);
-    }
-
-
-    [HttpDelete]
-
-    public async Task<ActionResult<bool>> ClearCart(string id)
-    {
-        var result = await _cartService.ClearCartAsync(id);
-        return Ok(result);
+        /// <summary>
+        /// Clears the cart for a specific user ID.
+        /// </summary>
+        [HttpDelete("api/clearcart/{id}", Name = "ClearCart")]
+        public async Task<ActionResult<bool>> ClearCart(string id)
+        {
+            var result = await _cartService.ClearCartAsync(id);
+            return Ok(result);
+        }
     }
 }
