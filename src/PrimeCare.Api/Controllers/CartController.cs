@@ -7,7 +7,7 @@ namespace PrimeCare.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/cart")]
-    public class CartController : ControllerBase
+    public class CartController : BaseApiController
     {
         private readonly ICartService _cartService;
 
