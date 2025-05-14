@@ -38,4 +38,46 @@ public class CartService : ICartService
 
         return await GetCartAsync(Cart.Id);
     }
+
+
+    public async Task<CustomerCart> AddItemAsync(string cartId, CartItem newItem)
+    {
+        var cart = await GetCartAsync(cartId) ?? new CustomerCart(cartId);
+
+        var existingItem = cart.CartItems.FirstOrDefault(i => i.Id == newItem.Id);
+        if (existingItem != null)
+        {
+            existingItem.Quantity += newItem.Quantity;
+        }
+        else
+        {
+            cart.CartItems.Add(newItem);
+        }
+
+        return await UpdateCartAsync(cart);
+    }
+
+    public async Task<CustomerCart> RemoveItemAsync(string cartId, Guid Id)
+    {
+        var cart = await GetCartAsync(cartId);
+        if (cart == null) return null!;
+
+        cart.CartItems.RemoveAll(i => i.Id == Id);
+
+        return await UpdateCartAsync(cart);
+    }
+
+    public async Task<CustomerCart> UpdateItemQuantityAsync(string cartId, Guid Id, int quantity)
+    {
+        var cart = await GetCartAsync(cartId);
+        if (cart == null) return null!;
+
+        var item = cart.CartItems.FirstOrDefault(i => i.Id == Id);
+        if (item != null)
+        {
+            item.Quantity = quantity;
+        }
+
+        return await UpdateCartAsync(cart);
+    }
 }
