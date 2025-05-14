@@ -8,7 +8,7 @@ namespace PrimeCare.Api.Controllers;
 
 [ApiController]
 [Route("api/v1/categories")]
-public class CategoryController : ControllerBase
+public class CategoryController : BaseApiController
 {
     private readonly ICategoryService _categoryService;
 

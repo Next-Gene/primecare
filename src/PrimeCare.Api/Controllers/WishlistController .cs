@@ -6,7 +6,7 @@ namespace PrimeCare.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/wishlist")]
-    public class WishlistController : ControllerBase
+    public class WishlistController : BaseApiController
     {
         private readonly IWishlistService _wishlistService;
 

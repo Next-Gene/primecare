@@ -7,7 +7,7 @@ namespace PrimeCare.Api.Controllers;
 
 [ApiController]
 [Route("api/v1/product-brands")]
-public class ProductBrandController : ControllerBase
+public class ProductBrandController : BaseApiController
 {
     private readonly IProductBrandService _productBrandService;
 
