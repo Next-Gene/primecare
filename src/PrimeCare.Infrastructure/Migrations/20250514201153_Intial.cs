@@ -5,7 +5,7 @@
 namespace PrimeCare.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initail : Migration
+    public partial class Intial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
