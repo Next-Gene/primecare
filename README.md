@@ -1,45 +1,39 @@
-# PrimeCare 🚑💻
+PrimeCare 🛒📊
+PrimeCare is a C# full-stack e-commerce system tailored for the healthcare sector. It enables users to purchase healthcare products, manage orders and inventory, and allows admins to control everything via a powerful dashboard.
 
-PrimeCare is a **C# healthcare management system** designed to streamline healthcare services. It provides an integrated platform for managing **patient records**, **appointments**, **billing**, and much more.
+🌟 Key Features
+🛍 E-Commerce Store
+Browse and purchase healthcare products, medicines, and medical equipment online.
 
----
+📦 Order & Inventory Management
+Manage product stock, order processing, shipments, and returns.
 
-## 🌟 Features
+🧾 Billing & Invoicing
+Integrated billing for online purchases.
 
-- 🏥 **Patient Records Management**: Organize and access patient data efficiently.
-- 📅 **Appointment Scheduling**: Simplify booking and scheduling of appointments.
-- 💵 **Billing System**: Manage billing and payments seamlessly.
-- 📊 **Reports and Analytics**: Generate reports for better decision-making.
-- 🔒 **Secure Data Handling**: Ensures data privacy and security.
+🖥 Admin Dashboard
+Real-time control over products, categories, brands, users, and finances.
 
----
+📊 Reports & Analytics
+Generate insights and reports to track sales, products, and system usage.
 
-## 🛠️ Technology Stack
+🔐 Role-Based Access Control (RBAC)
+Permissions and access control for admin and users.
 
-- **Language**: C# 🐱‍💻
-- **Framework**: .NET Core
-- **Database**: SQL Server (or any preferred database)
+🛠 Technology Stack
+Language: C# 👨‍💻
 
----
+Framework: ASP.NET Core Web API
 
-## 🚀 Getting Started
+Frontend: Angular
 
-Follow these steps to get started with PrimeCare:
+Database: SQL Server, Redis
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/Next-Gene/primecare.git
-   ```
+ORM: Entity Framework Core
 
-2. **Open in Visual Studio**  
-   Open the solution file (`.sln`) in Visual Studio.
+Authentication: JWT / Identity
 
-3. **Set up the Database**  
-   Configure the connection string in `appsettings.json` (or `Web.config`).
-
-4. **Run the Application**  
-   Build and run the project from Visual Studio.
-
+Dashboard UI: AdminLTE / Tailwind UI / ShadCN
 ---
 
 ## 📁 Project Structure
