@@ -4,22 +4,29 @@ using PrimeCare.Core.Entities;
 
 namespace PrimeCare.Api.Controllers
 {
+    /// <summary>
+    /// API controller for managing customer wishlists.
+    /// </summary>
     [ApiController]
     [Route("api/v1/wishlist")]
     public class WishlistController : BaseApiController
     {
         private readonly IWishlistService _wishlistService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WishlistController"/> class.
+        /// </summary>
+        /// <param name="wishlistService">The wishlist service for wishlist operations.</param>
         public WishlistController(IWishlistService wishlistService)
         {
             _wishlistService = wishlistService;
         }
 
         /// <summary>
-        /// Get customer's wishlist by ID
+        /// Retrieves a customer's wishlist by its identifier.
         /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist</param>
-        /// <returns>Customer's wishlist</returns>
+        /// <param name="wishlistId">The ID of the wishlist.</param>
+        /// <returns>The customer's wishlist, or a new wishlist if not found.</returns>
         [HttpGet("{wishlistId}")]
         public async Task<ActionResult<CustomerWishlist>> GetWishlist(string wishlistId)
         {
@@ -28,10 +35,10 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Clear all items from the wishlist
+        /// Clears all items from the specified wishlist.
         /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist to clear</param>
-        /// <returns>True if operation succeeded</returns>
+        /// <param name="wishlistId">The ID of the wishlist to clear.</param>
+        /// <returns>True if the operation succeeded; otherwise, false.</returns>
         [HttpDelete("{wishlistId}")]
         public async Task<ActionResult<bool>> ClearWishlist(string wishlistId)
         {
@@ -40,10 +47,10 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Update the entire wishlist
+        /// Updates the entire wishlist.
         /// </summary>
-        /// <param name="wishlist">The updated wishlist object</param>
-        /// <returns>The updated wishlist</returns>
+        /// <param name="wishlist">The updated wishlist object.</param>
+        /// <returns>The updated wishlist.</returns>
         [HttpPut]
         public async Task<ActionResult<CustomerWishlist>> UpdateWishlist([FromBody] CustomerWishlist wishlist)
         {
@@ -52,11 +59,11 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Add an item to the wishlist
+        /// Adds an item to the specified wishlist.
         /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist</param>
-        /// <param name="item">The item to add</param>
-        /// <returns>The updated wishlist</returns>
+        /// <param name="wishlistId">The ID of the wishlist.</param>
+        /// <param name="item">The item to add.</param>
+        /// <returns>The updated wishlist.</returns>
         [HttpPost("{wishlistId}/items")]
         public async Task<ActionResult<CustomerWishlist>> AddItem(string wishlistId, [FromBody] WishlistItem item)
         {
@@ -65,11 +72,11 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Remove an item from the wishlist
+        /// Removes an item from the specified wishlist.
         /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist</param>
-        /// <param name="itemId">The ID of the item to remove</param>
-        /// <returns>The updated wishlist</returns>
+        /// <param name="wishlistId">The ID of the wishlist.</param>
+        /// <param name="itemId">The ID of the item to remove.</param>
+        /// <returns>The updated wishlist.</returns>
         [HttpDelete("{wishlistId}/items/{itemId}")]
         public async Task<ActionResult<CustomerWishlist>> RemoveItem(string wishlistId, Guid itemId)
         {
@@ -78,11 +85,11 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Check if an item exists in the wishlist
+        /// Checks if an item exists in the specified wishlist.
         /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist</param>
-        /// <param name="itemId">The ID of the item to check</param>
-        /// <returns>True if item exists in the wishlist</returns>
+        /// <param name="wishlistId">The ID of the wishlist.</param>
+        /// <param name="itemId">The ID of the item to check.</param>
+        /// <returns>True if the item exists in the wishlist; otherwise, false.</returns>
         [HttpGet("{wishlistId}/items/{itemId}/exists")]
         public async Task<ActionResult<bool>> ItemExists(string wishlistId, Guid itemId)
         {

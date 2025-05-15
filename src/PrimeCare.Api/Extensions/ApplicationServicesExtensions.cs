@@ -4,8 +4,17 @@ using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Extensions;
 
+/// <summary>
+/// Provides extension methods for registering application-level services and configurations.
+/// </summary>
 public static class ApplicationServicesExtensions
 {
+    /// <summary>
+    /// Adds application services and configures model validation and Cloudinary settings.
+    /// </summary>
+    /// <param name="services">The service collection to add the services to.</param>
+    /// <param name="configuration">The application configuration for accessing settings.</param>
+    /// <returns>The updated <see cref="IServiceCollection"/> with the registered services.</returns>
     public static IServiceCollection AddApplicationServices
         (this IServiceCollection services, IConfiguration configuration)
     {

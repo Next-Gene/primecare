@@ -6,20 +6,29 @@ using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Controllers;
 
+/// <summary>
+/// API controller for managing product categories.
+/// </summary>
 [ApiController]
 [Route("api/v1/categories")]
 public class CategoryController : BaseApiController
 {
     private readonly ICategoryService _categoryService;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CategoryController"/> class.
+    /// </summary>
+    /// <param name="categoryService">The category service for category operations.</param>
     public CategoryController(ICategoryService categoryService)
     {
         _categoryService = categoryService;
     }
 
     /// <summary>
-    /// Get all categories with optional sorting
+    /// Retrieves all categories with optional sorting.
     /// </summary>
+    /// <param name="sort">The sorting criteria (optional).</param>
+    /// <returns>A list of categories or a not found response if none exist.</returns>
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -32,8 +41,10 @@ public class CategoryController : BaseApiController
     }
 
     /// <summary>
-    /// Get category by ID
+    /// Retrieves a category by its unique identifier.
     /// </summary>
+    /// <param name="id">The unique identifier of the category.</param>
+    /// <returns>The category if found; otherwise, a not found response.</returns>
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -46,8 +57,10 @@ public class CategoryController : BaseApiController
     }
 
     /// <summary>
-    /// Create new category
+    /// Creates a new category.
     /// </summary>
+    /// <param name="category">The category data to create.</param>
+    /// <returns>A result indicating success or failure.</returns>
     [HttpPost]
     public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryDto category)
     {
@@ -61,8 +74,11 @@ public class CategoryController : BaseApiController
     }
 
     /// <summary>
-    /// Update existing category
+    /// Updates an existing category.
     /// </summary>
+    /// <param name="id">The unique identifier of the category to update.</param>
+    /// <param name="category">The updated category data.</param>
+    /// <returns>A result indicating success or failure.</returns>
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateCategory(int id, [FromBody] UpdateCategoryDto category)
     {
@@ -77,8 +93,10 @@ public class CategoryController : BaseApiController
     }
 
     /// <summary>
-    /// Delete category by ID
+    /// Deletes a category by its unique identifier.
     /// </summary>
+    /// <param name="id">The unique identifier of the category to delete.</param>
+    /// <returns>A result indicating success or failure.</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCategory(int id)
     {
@@ -90,8 +108,11 @@ public class CategoryController : BaseApiController
     }
 
     /// <summary>
-    /// Add photo to category
+    /// Adds a photo to a category.
     /// </summary>
+    /// <param name="id">The unique identifier of the category.</param>
+    /// <param name="file">The photo file to add.</param>
+    /// <returns>The added photo or a bad request if the operation fails.</returns>
     [HttpPost("{id}/photo")]
     public async Task<ActionResult<CategoryPhotoDto>> AddPhotoToCategory(int id, IFormFile file)
     {

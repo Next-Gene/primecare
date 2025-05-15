@@ -2,12 +2,14 @@
 
 namespace PrimeCare.Shared.Dtos.Products;
 
+/// <summary>
+/// Data Transfer Object for updating a product.
+/// </summary>
 public class UpdateProductDto
 {
     /// <summary>
-    /// Gets or sets the unique identifier for the entity.
+    /// Gets or sets the unique identifier for the product.
     /// </summary>
-
     public int Id { get; set; }
 
     /// <summary>
@@ -26,10 +28,13 @@ public class UpdateProductDto
     public decimal Price { get; set; }
 
     /// <summary>
-    /// Collection of photos associated with this product.
+    /// Gets or sets the collection of photos associated with this product.
+    /// Initialized as an empty list to avoid null reference exceptions.
     /// </summary>
     public ICollection<ProductPhotoDto> ProductPhotos { get; set; } = null!;
 
+    /// <summary>
+    /// Gets or sets the main image URL for the product.
+    /// </summary>
     public string PhotoUrl { get; set; } = null!;
-
 }

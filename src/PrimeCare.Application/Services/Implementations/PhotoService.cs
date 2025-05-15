@@ -7,10 +7,17 @@ using PrimeCare.Application.Services.Interfaces;
 
 namespace PrimeCare.Application.Services.Implementations;
 
+/// <summary>
+/// Service for handling photo uploads and deletions using Cloudinary.
+/// </summary>
 public class PhotoService : IPhotoService
 {
     private readonly Cloudinary _cloudinary;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PhotoService"/> class.
+    /// </summary>
+    /// <param name="config">The Cloudinary settings configuration.</param>
     public PhotoService(IOptions<CloudinarySettings> config)
     {
         var account = new Account(
@@ -22,6 +29,11 @@ public class PhotoService : IPhotoService
         _cloudinary = new Cloudinary(account);
     }
 
+    /// <summary>
+    /// Asynchronously uploads a photo to Cloudinary.
+    /// </summary>
+    /// <param name="file">The photo file to upload.</param>
+    /// <returns>An <see cref="ImageUploadResult"/> containing the result of the upload operation.</returns>
     public async Task<ImageUploadResult> AddPhotoAsync(IFormFile file)
     {
         var uploadResult = new ImageUploadResult();
@@ -43,6 +55,11 @@ public class PhotoService : IPhotoService
         return uploadResult;
     }
 
+    /// <summary>
+    /// Asynchronously deletes a photo from Cloudinary by its public identifier.
+    /// </summary>
+    /// <param name="publicId">The public identifier of the photo to delete.</param>
+    /// <returns>A <see cref="DeletionResult"/> containing the result of the deletion operation.</returns>
     public async Task<DeletionResult> DeletePhotoAsync(string publicId)
     {
         var deleteParams = new DeletionParams(publicId);

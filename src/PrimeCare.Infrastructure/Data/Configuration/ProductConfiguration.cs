@@ -18,27 +18,31 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder
             .Property(p => p.Id)
             .IsRequired();
+
         builder
             .Property(p => p.Name)
             .HasColumnType("varchar")
             .HasMaxLength(100)
             .IsRequired();
+
         builder
             .Property(p => p.Description)
             .HasColumnType("varchar")
             .HasMaxLength(300)
             .IsRequired();
+
         builder
             .Property(p => p.Price)
             .HasColumnType("decimal(18,2)");
+
         builder
             .HasOne(b => b.ProductBrand)
             .WithMany()
             .HasForeignKey(p => p.ProductBrandId);
+
         builder
             .HasOne(t => t.Category)
             .WithMany()
             .HasForeignKey(p => p.CategoryId);
-
     }
 }

@@ -11,9 +11,16 @@ public class ProductsWithBrandsAndCategoriesAndPhotosSpecification : BaseSpecifi
     /// <summary>
     /// Initializes a new instance of the <see cref="ProductsWithBrandsAndCategoriesAndPhotosSpecification"/> class.
     /// </summary>
-    /// <param name="sort">The sorting criteria. Supported values are "priceAsc" for ascending price and "priceDesc" for descending price. Defaults to sorting by name.</param>
-    /// <param name="brandId">The ID of the product brand to filter by. If null, no filtering by brand is applied.</param>
-    /// <param name="categoryId">The ID of the product category to filter by. If null, no filtering by category is applied.</param>
+    /// <param name="sort">
+    /// The sorting criteria. Supported values are "priceAsc" for ascending price and "priceDesc" for descending price. 
+    /// Defaults to sorting by name.
+    /// </param>
+    /// <param name="brandId">
+    /// The ID of the product brand to filter by. If <c>null</c>, no filtering by brand is applied.
+    /// </param>
+    /// <param name="categoryId">
+    /// The ID of the product category to filter by. If <c>null</c>, no filtering by category is applied.
+    /// </param>
     public ProductsWithBrandsAndCategoriesAndPhotosSpecification(
         string? sort, int? brandId, int? categoryId)
         : base(product =>

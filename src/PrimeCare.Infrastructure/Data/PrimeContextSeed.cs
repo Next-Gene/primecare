@@ -4,12 +4,22 @@ using System.Text.Json;
 
 namespace PrimeCare.Infrastructure.Data;
 
+/// <summary>
+/// Provides methods to seed the PrimeCare database with initial data for brands, categories, and products.
+/// </summary>
 public class PrimeContextSeed
 {
+    /// <summary>
+    /// Seeds the database with initial data from JSON files if the corresponding tables are empty.
+    /// </summary>
+    /// <param name="context">The <see cref="PrimeCareContext"/> used to access the database.</param>
+    /// <param name="loggerFactory">The <see cref="ILoggerFactory"/> used for logging errors.</param>
+    /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
     public static async Task SeedAsync(PrimeCareContext context, ILoggerFactory loggerFactory)
     {
         try
         {
+            // Seed product brands if none exist
             if (!context.ProductBrands.Any())
             {
                 var brandsData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\brands.json");
@@ -19,6 +29,7 @@ public class PrimeContextSeed
                 await context.SaveChangesAsync();
             }
 
+            // Seed categories if none exist
             if (!context.Categories.Any())
             {
                 var categoriesData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\categories.json");
@@ -28,6 +39,7 @@ public class PrimeContextSeed
                 await context.SaveChangesAsync();
             }
 
+            // Seed products if none exist
             if (!context.Products.Any())
             {
                 var productsData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\products.json");

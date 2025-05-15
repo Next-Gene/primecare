@@ -8,7 +8,7 @@ using PrimeCare.Shared.Dtos.ProductBrand;
 namespace PrimeCare.Application.Services.Implementations;
 
 /// <summary>
-/// Service for managing product brands.
+/// Service for managing product brands, including CRUD operations.
 /// </summary>
 public class ProductBrandService : IProductBrandService
 {
@@ -32,7 +32,9 @@ public class ProductBrandService : IProductBrandService
     /// Retrieves a product brand by its identifier asynchronously.
     /// </summary>
     /// <param name="id">The identifier of the product brand.</param>
-    /// <returns>A task that represents the asynchronous operation. The result contains the product brand DTO, or null if not found.</returns>
+    /// <returns>
+    /// A task that represents the asynchronous operation. The result contains the product brand DTO, or <c>null</c> if not found.
+    /// </returns>
     public async Task<ProductBrandDto> GetByIdAsync(int id)
     {
         var product = await _productBrandInterface.GetByIdAsync(id);
@@ -42,7 +44,9 @@ public class ProductBrandService : IProductBrandService
     /// <summary>
     /// Retrieves all product brands asynchronously.
     /// </summary>
-    /// <returns>A task that represents the asynchronous operation. The result contains a read-only list of product brand DTOs.</returns>
+    /// <returns>
+    /// A task that represents the asynchronous operation. The result contains a read-only list of product brand DTOs.
+    /// </returns>
     public async Task<IReadOnlyList<ProductBrandDto>> GetAllAsync()
     {
         var products = await _productBrandInterface.GetAllAsync();
@@ -53,7 +57,9 @@ public class ProductBrandService : IProductBrandService
     /// Adds a new product brand asynchronously.
     /// </summary>
     /// <param name="entity">The product brand data transfer object (DTO) to be added.</param>
-    /// <returns>A task that represents the asynchronous operation. The result contains a service response indicating success or failure.</returns>
+    /// <returns>
+    /// A task that represents the asynchronous operation. The result contains a service response indicating success or failure.
+    /// </returns>
     public async Task<ServiceResponse> AddAsync(CreateProductBrandDto entity)
     {
         var mappedData = _mapper.Map<ProductBrand>(entity);
@@ -68,7 +74,9 @@ public class ProductBrandService : IProductBrandService
     /// Updates an existing product brand asynchronously.
     /// </summary>
     /// <param name="entity">The product brand data transfer object (DTO) to be updated.</param>
-    /// <returns>A task that represents the asynchronous operation. The result contains a service response indicating success or failure.</returns>
+    /// <returns>
+    /// A task that represents the asynchronous operation. The result contains a service response indicating success or failure.
+    /// </returns>
     public async Task<ServiceResponse> UpdateAsync(ProductBrandDto entity)
     {
         var productBrand = await _productBrandInterface.GetByIdAsync(entity.Id);
@@ -84,7 +92,9 @@ public class ProductBrandService : IProductBrandService
     /// Deletes a product brand by its identifier asynchronously.
     /// </summary>
     /// <param name="id">The identifier of the product brand to delete.</param>
-    /// <returns>A task that represents the asynchronous operation. The result contains a service response indicating success or failure.</returns>
+    /// <returns>
+    /// A task that represents the asynchronous operation. The result contains a service response indicating success or failure.
+    /// </returns>
     public async Task<ServiceResponse> DeleteAsync(int id)
     {
         int result = await _productBrandInterface.DeleteAsync(id);
