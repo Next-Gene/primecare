@@ -1,0 +1,92 @@
+[
+  {
+    "Id": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+    "ProductName": "Digital Blood Pressure Cuff",
+    "Price": 89.99,
+    "Quantity": 2,
+    "PicrureUrl": "https://images.unsplash.com/photo-1581595210410-5f756ca5f3c8",
+    "Brand": "Philips Healthcare",
+    "Category": "Diagnostic Equipment"
+  },
+  {
+    "Id": "b2c3d4e5-f6g7-8h9i-0j1k-l2m3n4o5p6q7",
+    "ProductName": "Portable Oxygen Concentrator",
+    "Price": 1899.99,
+    "Quantity": 1,
+    "PicrureUrl": "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144",
+    "Brand": "Medtronic",
+    "Category": "Respiratory Care"
+  },
+  {
+    "Id": "c3d4e5f6-g7h8-9i0j-1k2l-m3n4o5p6q7r8",
+    "ProductName": "Surgical Stapler",
+    "Price": 45.99,
+    "Quantity": 5,
+    "PicrureUrl": "https://images.unsplash.com/photo-1582750433449-296e0a3d8e9e",
+    "Brand": "Johnson & Johnson",
+    "Category": "Surgical Instruments"
+  },
+  {
+    "Id": "d4e5f6g7-h8i9-0j1k-2l3m-n4o5p6q7r8s9",
+    "ProductName": "Nebulizer Machine",
+    "Price": 69.99,
+    "Quantity": 3,
+    "PicrureUrl": "https://images.unsplash.com/photo-1581595210404-75d5a5f07d7a",
+    "Brand": "GE Healthcare",
+    "Category": "Respiratory Care"
+  },
+  {
+    "Id": "e5f6g7h8-i9j0-1k2l-3m4n-o5p6q7r8s9t0",
+    "ProductName": "ECG Machine",
+    "Price": 2999.99,
+    "Quantity": 1,
+    "PicrureUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
+    "Brand": "Siemens Healthineers",
+    "Category": "Diagnostic Equipment"
+  },
+  {
+    "Id": "f6g7h8i9-j0k1-2l3m-4n5o-p6q7r8s9t0u1",
+    "ProductName": "Hospital Bed",
+    "Price": 2499.99,
+    "Quantity": 1,
+    "PicrureUrl": "https://images.unsplash.com/photo-1581595210409-5f756ca5f3c8",
+    "Brand": "Stryker",
+    "Category": "Mobility Aids"
+  },
+  {
+    "Id": "g7h8i9j0-k1l2-3m4n-5o6p-q7r8s9t0u1v2",
+    "ProductName": "Surgical Mask (Box of 50)",
+    "Price": 12.99,
+    "Quantity": 10,
+    "PicrureUrl": "https://images.unsplash.com/photo-1583947215259-38e31be8758f",
+    "Brand": "3M Health Care",
+    "Category": "Disposables"
+  },
+  {
+    "Id": "h8i9j0k1-l2m3-4n5o-6p7q-r8s9t0u1v2w3",
+    "ProductName": "Knee Brace",
+    "Price": 39.99,
+    "Quantity": 2,
+    "PicrureUrl": "https://images.unsplash.com/photo-1598300056393-4aac492f4344",
+    "Brand": "Cardinal Health",
+    "Category": "Orthopedics"
+  },
+  {
+    "Id": "i9j0k1l2-m3n4-5o6p-7q8r-s9t0u1v2w3x4",
+    "ProductName": "Infant Incubator",
+    "Price": 14999.99,
+    "Quantity": 1,
+    "PicrureUrl": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c",
+    "Brand": "Baxter International",
+    "Category": "Neonatal Care"
+  },
+  {
+    "Id": "j0k1l2m3-n4o5-6p7q-8r9s-t0u1v2w3x4y5",
+    "ProductName": "Defibrillator (AED)",
+    "Price": 1999.99,
+    "Quantity": 1,
+    "PicrureUrl": "https://images.unsplash.com/photo-1576091160390-0ba32f11382d",
+    "Brand": "Becton Dickinson",
+    "Category": "Emergency Care"
+  }
+]

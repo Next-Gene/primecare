@@ -1,146 +1,152 @@
 [
   {
-    "Name": "Angular Speedster Board 2000",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
-    "Price": 200,
-    "PictureUrl": "images/products/sb.png",
+    "Id": 1,
+    "Name": "Digital Blood Pressure Cuff",
+    "Description": "FDA-approved automatic monitor",
+    "Price": 89.99,
     "CategoryId": 1,
-    "ProductBrandId": 1
+    "ProductBrandId": 2,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1581595210410-5f756ca5f3c8",
+        "PublicId": "bp1",
+        "IsMain": true
+      }
+    ]
   },
   {
-    "Name": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
-    "PictureUrl": "images/products/sb2.png",
-    "CategoryId": 1,
-    "ProductBrandId": 1
+    "Id": 2,
+    "Name": "Portable Oxygen Concentrator",
+    "Description": "5L flow with pulse dose",
+    "Price": 1899.99,
+    "CategoryId": 4,
+    "ProductBrandId": 1,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144",
+        "PublicId": "oxy1",
+        "IsMain": true
+      }
+    ]
   },
   {
-    "Name": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at,nunc. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/sb3.png",
-    "CategoryId": 1,
-    "ProductBrandId": 2
+    "Id": 3,
+    "Name": "Surgical Stapler",
+    "Description": "Disposable skin stapler",
+    "Price": 45.99,
+    "CategoryId": 3,
+    "ProductBrandId": 8,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1582750433449-296e0a3d8e9e",
+        "PublicId": "stapler1",
+        "IsMain": true
+      }
+    ]
   },
   {
-    "Name": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique  Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 300,
-    "PictureUrl": "images/products/sb4.png",
-    "CategoryId": 1,
-    "ProductBrandId": 2
+    "Id": 4,
+    "Name": "Nebulizer Machine",
+    "Description": "Compressor nebulizer system",
+    "Price": 69.99,
+    "CategoryId": 4,
+    "ProductBrandId": 5,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1581595210404-75d5a5f07d7a",
+        "PublicId": "neb1",
+        "IsMain": true
+      }
+    ]
   },
   {
-    "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 250,
-    "PictureUrl": "images/products/sb5.png",
+    "Id": 5,
+    "Name": "ECG Machine",
+    "Description": "12-lead portable ECG",
+    "Price": 2999.99,
     "CategoryId": 1,
-    "ProductBrandId": 4
+    "ProductBrandId": 7,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
+        "PublicId": "ecg1",
+        "IsMain": true
+      }
+    ]
   },
   {
-    "Name": "Typescript Entry Board",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 120,
-    "PictureUrl": "images/products/sb6.png",
-    "CategoryId": 1,
-    "ProductBrandId": 5
-  },
-  {
-    "Name": "Core Blue Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 10,
-    "PictureUrl": "images/products/sb7.png",
+    "Id": 6,
+    "Name": "Hospital Bed",
+    "Description": "Electric adjustable bed",
+    "Price": 2499.99,
     "CategoryId": 2,
-    "ProductBrandId": 2
+    "ProductBrandId": 4,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1581595210409-5f756ca5f3c8",
+        "PublicId": "bed1",
+        "IsMain": true
+      }
+    ]
   },
   {
-    "Name": "Green React Woolen Hat",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 8,
-    "PictureUrl": "images/products/sb8.png",
-    "CategoryId": 2,
-    "ProductBrandId": 4
+    "Id": 7,
+    "Name": "Surgical Mask (Box of 50)",
+    "Description": "3-ply disposable masks",
+    "Price": 12.99,
+    "CategoryId": 6,
+    "ProductBrandId": 6,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1583947215259-38e31be8758f",
+        "PublicId": "mask1",
+        "IsMain": true
+      }
+    ]
   },
   {
-    "Name": "Purple React Woolen Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 15,
-    "PictureUrl": "images/products/sb9.png",
-    "CategoryId": 2,
-    "ProductBrandId": 4
+    "Id": 8,
+    "Name": "Knee Brace",
+    "Description": "Adjustable orthopedic support",
+    "Price": 39.99,
+    "CategoryId": 7,
+    "ProductBrandId": 9,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1598300056393-4aac492f4344",
+        "PublicId": "brace1",
+        "IsMain": true
+      }
+    ]
   },
   {
-    "Name": "Blue Code Gloves",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 18,
-    "PictureUrl": "images/products/sb10.png",
-    "CategoryId": 4,
-    "ProductBrandId": 3
+    "Id": 9,
+    "Name": "Infant Incubator",
+    "Description": "Neonatal intensive care unit",
+    "Price": 14999.99,
+    "CategoryId": 8,
+    "ProductBrandId": 10,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c",
+        "PublicId": "incub1",
+        "IsMain": true
+      }
+    ]
   },
   {
-    "Name": "Green Code Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 15,
-    "PictureUrl": "images/products/sb11.png",
-    "CategoryId": 4,
-    "ProductBrandId": 3
-  },
-  {
-    "Name": "Purple React Gloves",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-    "Price": 16,
-    "PictureUrl": "images/products/sb12.png",
-    "CategoryId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Green React Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14,
-    "PictureUrl": "images/products/sb13.png",
-    "CategoryId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Redis Red Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 250,
-    "PictureUrl": "images/products/sb14.png",
-    "CategoryId": 3,
-    "ProductBrandId": 6
-  },
-  {
-    "Name": "Core Red Boots",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 189.99,
-    "PictureUrl": "images/products/sb15.png",
-    "CategoryId": 3,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Core Purple Boots",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 199.99,
-    "PictureUrl": "images/products/sb16.png",
-    "CategoryId": 3,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Angular Purple Boots",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 150,
-    "PictureUrl": "images/products/sb17.png",
-    "CategoryId": 3,
-    "ProductBrandId": 1
-  },
-  {
-    "Name": "Angular Blue Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/sb18.png",
-    "CategoryId": 3,
-    "ProductBrandId": 1
+    "Id": 10,
+    "Name": "Defibrillator (AED)",
+    "Description": "Automatic external defibrillator",
+    "Price": 1999.99,
+    "CategoryId": 10,
+    "ProductBrandId": 3,
+    "ProductPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1576091160390-0ba32f11382d",
+        "PublicId": "aed1",
+        "IsMain": true
+      }
+    ]
   }
 ]

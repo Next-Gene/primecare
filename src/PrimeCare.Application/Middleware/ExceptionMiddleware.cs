@@ -7,11 +7,22 @@ using System.Text.Json;
 
 namespace PrimeCare.Application.Middleware;
 
+/// <summary>
+/// Middleware for handling exceptions globally in the application.
+/// Logs exceptions and returns a standardized error response.
+/// </summary>
 public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<ExceptionMiddleware> _logger;
     private readonly IHostEnvironment _env;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ExceptionMiddleware"/> class.
+    /// </summary>
+    /// <param name="next">The next middleware in the pipeline.</param>
+    /// <param name="logger">The logger for logging exceptions.</param>
+    /// <param name="env">The hosting environment.</param>
     public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, IHostEnvironment env)
     {
         _env = env;
@@ -19,6 +30,11 @@ public class ExceptionMiddleware
         _next = next;
     }
 
+    /// <summary>
+    /// Invokes the middleware to handle exceptions during HTTP request processing.
+    /// </summary>
+    /// <param name="context">The HTTP context for the current request.</param>
+    /// <returns>A task that represents the completion of request processing.</returns>
     public async Task InvokeAsync(HttpContext context)
     {
         try

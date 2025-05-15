@@ -8,9 +8,10 @@ using PrimeCare.Shared.Exceptions;
 namespace PrimeCare.Infrastructure.Repositories;
 
 /// <summary>
-/// Generic repository for managing entities.
+/// Provides a generic repository implementation for managing entities in the database.
+/// Supports CRUD operations and querying with specifications.
 /// </summary>
-/// <typeparam name="T">The type of the entity.</typeparam>
+/// <typeparam name="T">The type of the entity, which must inherit from <see cref="BaseEntity"/>.</typeparam>
 public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 {
     private readonly PrimeCareContext _context;
@@ -18,48 +19,48 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     /// <summary>
     /// Initializes a new instance of the <see cref="GenericRepository{T}"/> class.
     /// </summary>
-    /// <param name="context">The database context.</param>
+    /// <param name="context">The database context to use for data operations.</param>
     public GenericRepository(PrimeCareContext context)
     {
         _context = context;
     }
 
     /// <summary>
-    /// Gets an entity by its identifier.
+    /// Gets an entity by its unique identifier asynchronously.
     /// </summary>
-    /// <param name="id">The entity identifier.</param>
-    /// <returns>A task that represents the asynchronous operation. The task result contains the entity.</returns>
+    /// <param name="id">The unique identifier of the entity.</param>
+    /// <returns>The entity if found; otherwise, <c>null</c>.</returns>
     public async Task<T?> GetByIdAsync(int id)
         => await _context.Set<T>().FindAsync(id);
 
     /// <summary>
-    /// Gets all entities.
+    /// Gets all entities of type <typeparamref name="T"/> asynchronously.
     /// </summary>
-    /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of entities.</returns>
+    /// <returns>A read-only list of all entities.</returns>
     public async Task<IReadOnlyList<T>> GetAllAsync()
         => await _context.Set<T>().AsNoTracking().ToListAsync();
 
     /// <summary>
-    /// Gets an entity that matches the given specification.
+    /// Gets a single entity that matches the specified specification asynchronously.
     /// </summary>
-    /// <param name="specification">The specification to apply.</param>
-    /// <returns>A task that represents the asynchronous operation. The task result contains the entity.</returns>
+    /// <param name="specification">The specification to apply to the query.</param>
+    /// <returns>The entity if found; otherwise, <c>null</c>.</returns>
     public async Task<T?> GetEntityWithSpecification(ISpecification<T> specification)
         => await ApplySpecification(specification).FirstOrDefaultAsync();
 
     /// <summary>
-    /// Gets a list of entities that match the given specification.
+    /// Gets all entities that match the specified specification asynchronously.
     /// </summary>
-    /// <param name="specification">The specification to apply.</param>
-    /// <returns>A task that represents the asynchronous operation. The task result contains a read-only list of entities.</returns>
+    /// <param name="specification">The specification to apply to the query.</param>
+    /// <returns>A read-only list of matching entities.</returns>
     public async Task<IReadOnlyList<T>> GetAllWithSpecificationAsync(ISpecification<T> specification)
         => await ApplySpecification(specification).AsNoTracking().ToListAsync();
 
     /// <summary>
-    /// Adds a new entity to the repository.
+    /// Adds a new entity asynchronously.
     /// </summary>
     /// <param name="entity">The entity to add.</param>
-    /// <returns>A task that represents the asynchronous operation. The task result contains the number of state entries written to the database.</returns>
+    /// <returns>The number of state entries written to the database.</returns>
     public async Task<int> AddAsync(T entity)
     {
         _context.Set<T>().Add(entity);
@@ -67,10 +68,10 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     }
 
     /// <summary>
-    /// Updates an existing entity in the repository.
+    /// Updates an existing entity asynchronously.
     /// </summary>
     /// <param name="entity">The entity to update.</param>
-    /// <returns>A task that represents the asynchronous operation. The task result contains the number of state entries written to the database.</returns>
+    /// <returns>The number of state entries written to the database.</returns>
     public async Task<int> UpdateAsync(T entity)
     {
         _context.Set<T>().Update(entity);
@@ -78,10 +79,10 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     }
 
     /// <summary>
-    /// Deletes an entity by its identifier.
+    /// Deletes an entity by its unique identifier asynchronously.
     /// </summary>
-    /// <param name="id">The identifier of the entity to delete.</param>
-    /// <returns>A task that represents the asynchronous operation. The task result contains the number of state entries written to the database.</returns>
+    /// <param name="id">The unique identifier of the entity to delete.</param>
+    /// <returns>The number of state entries written to the database.</returns>
     /// <exception cref="ItemNotFoundException">Thrown when the entity with the specified identifier is not found.</exception>
     public async Task<int> DeleteAsync(int id)
     {
@@ -92,9 +93,9 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     }
 
     /// <summary>
-    /// Saves all changes made in this context to the database.
+    /// Saves all changes made in the context to the database asynchronously.
     /// </summary>
-    /// <returns>A task that represents the asynchronous operation. The task result contains the number of state entries written to the database.</returns>
+    /// <returns><c>true</c> if the changes were saved successfully; otherwise, <c>false</c>.</returns>
     public async Task<bool> SaveAllAsync()
     {
         return await _context.SaveChangesAsync() > 0;

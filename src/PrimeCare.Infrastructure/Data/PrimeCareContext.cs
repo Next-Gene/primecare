@@ -5,7 +5,8 @@ using System.Reflection;
 namespace PrimeCare.Infrastructure.Data;
 
 /// <summary>
-/// Database context for PrimeCare application.
+/// Database context for the PrimeCare application.
+/// Manages entity sets and configuration for database access using Entity Framework Core.
 /// </summary>
 public class PrimeCareContext : DbContext
 {
@@ -19,28 +20,38 @@ public class PrimeCareContext : DbContext
     }
 
     /// <summary>
-    /// Gets or sets the products.
+    /// Gets or sets the products in the database.
     /// </summary>
     public DbSet<Product> Products { get; set; }
 
     /// <summary>
-    /// Gets or sets the product brands.
+    /// Gets or sets the product brands in the database.
     /// </summary>
     public DbSet<ProductBrand> ProductBrands { get; set; }
 
     /// <summary>
-    /// Gets or sets the Categories.
+    /// Gets or sets the categories in the database.
     /// </summary>
     public DbSet<Category> Categories { get; set; }
 
+    /// <summary>
+    /// Gets or sets the product photos in the database.
+    /// </summary>
     public DbSet<ProductPhoto> ProductPhotos { get; set; }
+
+    /// <summary>
+    /// Gets or sets the category photos in the database.
+    /// </summary>
     public DbSet<CategoryPhoto> CategoryPhotos { get; set; }
 
-
+    /// <summary>
+    /// Configures the entity mappings and relationships for the context.
+    /// Applies all configurations from the current assembly.
+    /// </summary>
+    /// <param name="modelBuilder">The builder used to construct the model for the context.</param>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.ApplyConfigurationsFromAssembly(Assembly
-            .GetExecutingAssembly());
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 }
