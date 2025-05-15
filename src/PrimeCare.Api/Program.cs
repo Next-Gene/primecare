@@ -5,29 +5,30 @@ using PrimeCare.Application.Middleware;
 using PrimeCare.Infrastructure;
 using PrimeCare.Infrastructure.Data;
 
-/// <summary>
-/// The main entry point for the PrimeCare API application.
-/// Configures services, middleware, and the HTTP request pipeline.
-/// </summary>
 public class Program
 {
-    /// <summary>
-    /// The main method that configures and runs the web application.
-    /// </summary>
-    /// <param name="args">The command-line arguments.</param>
     public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
         builder.Services.AddControllers();
-
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddSwaggerDecumentation();
 
         builder.Services.AddApplicationService(); // for application layer
         builder.Services.AddInfrastructureService(builder.Configuration);
         builder.Services.AddApplicationServices(builder.Configuration); // for api layer
+
+        // Add CORS
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll", policy =>
+            {
+                policy.AllowAnyOrigin()
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+            });
+        });
 
         var app = builder.Build();
 
@@ -38,18 +39,16 @@ public class Program
         }
 
         app.UseMiddleware<ExceptionMiddleware>();
-
         app.UseStatusCodePagesWithReExecute("/error/{0}");
 
         app.UseHttpsRedirection();
-
         app.UseStaticFiles();
-
+        app.UseCors("AllowAll");
         app.UseAuthorization();
 
         app.MapControllers();
 
-        // Apply database migrations and seed data if necessary.
+        // Apply database migrations and seed data
         using var scope = app.Services.CreateScope();
         var services = scope.ServiceProvider;
         var loggerFactory = services.GetRequiredService<ILoggerFactory>();

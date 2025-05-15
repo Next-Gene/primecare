@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Infrastructure.Data;
+using PrimeCare.Infrastructure.Identity;
 using PrimeCare.Infrastructure.Repositories;
 using StackExchange.Redis;
 
@@ -30,6 +31,12 @@ public static class ServiceContainer
         {
             options.UseSqlServer(configuration.GetConnectionString("Default"));
         });
+
+        services.AddDbContext<AppIdentityDbContext>(options =>
+        {
+            options.UseSqlServer(configuration.GetConnectionString("Identity"));
+        });
+
 
         /// <summary>
         /// Registers the generic repository for dependency injection.
