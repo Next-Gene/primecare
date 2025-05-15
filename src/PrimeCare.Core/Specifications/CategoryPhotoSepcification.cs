@@ -2,18 +2,23 @@
 
 namespace PrimeCare.Core.Specifications;
 
-
 /// <summary>
-/// Specification for products with their Categories and brands included.
+/// Provides specification logic for querying <see cref="Category"/> entities with their associated <see cref="CategoryPhoto"/> entities included.
+/// Supports sorting and filtering by category ID or name.
 /// </summary>
 public class CategoryPhotoSepcification : BaseSpecification<Category>
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="CategoryPhotoSepcification"/> class.
+    /// Initializes a new instance of the <see cref="CategoryPhotoSepcification"/> class
+    /// with optional sorting by category name.
     /// </summary>
+    /// <param name="sort">
+    /// The sorting criteria. If "nameDesc", sorts by name descending; otherwise, sorts by name ascending.
+    /// </param>
     public CategoryPhotoSepcification(string? sort)
         : base(null!)
     {
+        // Include related category photos
         AddInclude(x => x.CategoryPhotos);
 
         // Default sorting by name
@@ -35,14 +40,14 @@ public class CategoryPhotoSepcification : BaseSpecification<Category>
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="CategoryPhotoSepcification"/> class with a specific product ID.
+    /// Initializes a new instance of the <see cref="CategoryPhotoSepcification"/> class
+    /// for a specific category by its identifier.
     /// </summary>
-    /// <param name="id">The product identifier.</param>
+    /// <param name="id">The unique identifier of the category.</param>
     public CategoryPhotoSepcification(int id)
         : base(x => x.Id == id)
     {
+        // Include related category photos
         AddInclude(x => x.CategoryPhotos);
     }
-
 }
-

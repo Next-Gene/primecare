@@ -5,20 +5,29 @@ using PrimeCare.Shared.Dtos.Cart;
 
 namespace PrimeCare.Api.Controllers
 {
+    /// <summary>
+    /// API controller for managing customer shopping carts.
+    /// </summary>
     [ApiController]
     [Route("api/v1/cart")]
     public class CartController : BaseApiController
     {
         private readonly ICartService _cartService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CartController"/> class.
+        /// </summary>
+        /// <param name="cartService">The cart service for cart operations.</param>
         public CartController(ICartService cartService)
         {
             _cartService = cartService;
         }
 
         /// <summary>
-        /// Get cart by ID
+        /// Retrieves a cart by its identifier.
         /// </summary>
+        /// <param name="cartId">The unique identifier of the cart.</param>
+        /// <returns>The customer's cart, or a new cart if not found.</returns>
         [HttpGet("{cartId}")]
         public async Task<ActionResult<CustomerCart>> GetCartByID(string cartId)
         {
@@ -27,8 +36,10 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Clear cart
+        /// Clears all items from the specified cart.
         /// </summary>
+        /// <param name="cartId">The unique identifier of the cart to clear.</param>
+        /// <returns><c>true</c> if the cart was cleared successfully; otherwise, <c>false</c>.</returns>
         [HttpDelete("{cartId}")]
         public async Task<ActionResult<bool>> ClearCart(string cartId)
         {
@@ -37,8 +48,10 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Update entire cart
+        /// Updates the entire cart.
         /// </summary>
+        /// <param name="cart">The cart object with updated information.</param>
+        /// <returns>The updated customer cart.</returns>
         [HttpPut]
         public async Task<ActionResult<CustomerCart>> UpdateCart([FromBody] CustomerCart cart)
         {
@@ -47,8 +60,11 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Add item to cart
+        /// Adds an item to the specified cart.
         /// </summary>
+        /// <param name="cartId">The unique identifier of the cart.</param>
+        /// <param name="item">The item to add to the cart.</param>
+        /// <returns>The updated customer cart.</returns>
         [HttpPost("{cartId}/items")]
         public async Task<ActionResult<CustomerCart>> AddItem(string cartId, [FromBody] CartItem item)
         {
@@ -57,8 +73,11 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Remove item from cart
+        /// Removes an item from the specified cart.
         /// </summary>
+        /// <param name="cartId">The unique identifier of the cart.</param>
+        /// <param name="productId">The unique identifier of the product to remove.</param>
+        /// <returns>The updated customer cart.</returns>
         [HttpDelete("{cartId}/items/{productId}")]
         public async Task<ActionResult<CustomerCart>> RemoveItem(string cartId, Guid productId)
         {
@@ -67,8 +86,12 @@ namespace PrimeCare.Api.Controllers
         }
 
         /// <summary>
-        /// Update item quantity in cart
+        /// Updates the quantity of a specific item in the cart.
         /// </summary>
+        /// <param name="cartId">The unique identifier of the cart.</param>
+        /// <param name="productId">The unique identifier of the product to update.</param>
+        /// <param name="dto">The DTO containing the new quantity for the item.</param>
+        /// <returns>The updated customer cart, or an error if the cart or item is not found.</returns>
         [HttpPut("{cartId}/items/{productId}/quantity")]
         public async Task<ActionResult<CustomerCart>> UpdateItemQuantity(string cartId, Guid productId, [FromBody] UpdateQuantityDto dto)
         {
@@ -87,5 +110,4 @@ namespace PrimeCare.Api.Controllers
             return Ok(updatedCart);
         }
     }
-
 }

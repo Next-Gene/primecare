@@ -5,20 +5,31 @@ using PrimeCare.Shared.Dtos.Products;
 
 namespace PrimeCare.Api.Controllers;
 
+/// <summary>
+/// API controller for managing products, including CRUD operations and photo management.
+/// </summary>
 [ApiController]
 [Route("api/v1/products")]
 public class ProductController : BaseApiController
 {
     private readonly IProductService _productService;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProductController"/> class.
+    /// </summary>
+    /// <param name="productService">The product service for product operations.</param>
     public ProductController(IProductService productService)
     {
         _productService = productService;
     }
 
     /// <summary>
-    /// Get all products with optional filters and sorting.
+    /// Retrieves all products with optional filters and sorting.
     /// </summary>
+    /// <param name="sort">The sorting criteria (optional).</param>
+    /// <param name="brandId">The brand ID to filter by (optional).</param>
+    /// <param name="categoryId">The category ID to filter by (optional).</param>
+    /// <returns>A list of products matching the criteria, or a not found response if none exist.</returns>
     [HttpGet]
     public async Task<ActionResult<IReadOnlyList<ProductDto>>> GetAllProducts(
         string? sort, int? brandId, int? categoryId)
@@ -31,8 +42,10 @@ public class ProductController : BaseApiController
     }
 
     /// <summary>
-    /// Get product by ID
+    /// Retrieves a product by its unique identifier.
     /// </summary>
+    /// <param name="id">The unique identifier of the product.</param>
+    /// <returns>The product if found; otherwise, a not found response.</returns>
     [HttpGet("{id}")]
     public async Task<ActionResult<ProductDto>> GetProductById(int id)
     {
@@ -41,8 +54,10 @@ public class ProductController : BaseApiController
     }
 
     /// <summary>
-    /// Create new product
+    /// Creates a new product.
     /// </summary>
+    /// <param name="product">The product data to create.</param>
+    /// <returns>A result indicating success or failure.</returns>
     [HttpPost]
     public async Task<IActionResult> CreateProduct([FromBody] CreateProductDto product)
     {
@@ -54,8 +69,11 @@ public class ProductController : BaseApiController
     }
 
     /// <summary>
-    /// Update product
+    /// Updates an existing product.
     /// </summary>
+    /// <param name="id">The unique identifier of the product to update.</param>
+    /// <param name="product">The updated product data.</param>
+    /// <returns>A result indicating success or failure.</returns>
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateProduct(int id, [FromBody] UpdateProductDto product)
     {
@@ -68,8 +86,10 @@ public class ProductController : BaseApiController
     }
 
     /// <summary>
-    /// Delete product by ID
+    /// Deletes a product by its unique identifier.
     /// </summary>
+    /// <param name="id">The unique identifier of the product to delete.</param>
+    /// <returns>A result indicating success or failure.</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteProduct(int id)
     {
@@ -78,8 +98,11 @@ public class ProductController : BaseApiController
     }
 
     /// <summary>
-    /// Add photo to product
+    /// Adds a photo to a product.
     /// </summary>
+    /// <param name="id">The unique identifier of the product.</param>
+    /// <param name="file">The photo file to add.</param>
+    /// <returns>The added photo or a bad request if the operation fails.</returns>
     [HttpPost("{id}/photo")]
     public async Task<ActionResult<ProductPhotoDto>> AddProductPhoto(int id, IFormFile file)
     {

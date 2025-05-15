@@ -1,7 +1,8 @@
 ﻿namespace PrimeCare.Core.Entities;
 
 /// <summary>
-/// Base class for all entities.
+/// Represents the base class for all entities in the PrimeCare domain.
+/// Provides a unique identifier property that is inherited by all derived entities.
 /// </summary>
 public class BaseEntity
 {
