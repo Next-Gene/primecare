@@ -1,34 +1,152 @@
 [
-    {
-        "Name": "Boards",
-        "Slug": "boards",
-        "ImageUrl": "images/category/boards.png",
-        "CreatedAt": "2025-04-18T00:00:00Z",
-        "UpdatedAt": "2025-04-18T00:00:00Z",
-        "Description": "Category for various types of boards."
-    },
-    {
-        "Name": "Hats",
-        "Slug": "hats",
-        "ImageUrl": "images/category/hats.png",
-        "CreatedAt": "2025-04-18T00:00:00Z",
-        "UpdatedAt": "2025-04-18T00:00:00Z",
-        "Description": "Category for headwear and hats."
-    },
-    {
-        "Name": "Boots",
-        "Slug": "boots",
-        "ImageUrl": "images/category/boots.png",
-        "CreatedAt": "2025-04-18T00:00:00Z",
-        "UpdatedAt": "2025-04-18T00:00:00Z",
-        "Description": "Category for different types of boots."
-    },
-    {
-        "Name": "Gloves",
-        "Slug": "gloves",
-        "ImageUrl": "images/category/gloves.png",
-        "CreatedAt": "2025-04-18T00:00:00Z",
-        "UpdatedAt": "2025-04-18T00:00:00Z",
-        "Description": "Category for gloves and handwear."
-    }
+  {
+    "Id": 1,
+    "Name": "Diagnostic Equipment",
+    "Slug": "diagnostic-equipment",
+    "Description": "Devices for medical diagnostics",
+    "CreatedAt": "2023-01-01T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1581595210410-5f756ca5f3c8",
+        "PublicId": "diag1",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Mobility Aids",
+    "Slug": "mobility-aids",
+    "Description": "Wheelchairs and walkers",
+    "CreatedAt": "2023-01-02T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1617870952347-1f0f2a113e3f",
+        "PublicId": "mob1",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Surgical Instruments",
+    "Slug": "surgical-instruments",
+    "Description": "Sterilized surgical tools",
+    "CreatedAt": "2023-01-03T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1582750433449-296e0a3d8e9e",
+        "PublicId": "surg1",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Respiratory Care",
+    "Slug": "respiratory-care",
+    "Description": "Oxygen therapy equipment",
+    "CreatedAt": "2023-01-04T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144",
+        "PublicId": "resp1",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Patient Monitoring",
+    "Slug": "patient-monitoring",
+    "Description": "Vital signs monitors",
+    "CreatedAt": "2023-01-05T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
+        "PublicId": "monitor1",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "Name": "Disposables",
+    "Slug": "disposables",
+    "Description": "Single-use medical supplies",
+    "CreatedAt": "2023-01-06T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1583947215259-38e31be8758f",
+        "PublicId": "disp1",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "Name": "Orthopedics",
+    "Slug": "orthopedics",
+    "Description": "Bracing and support devices",
+    "CreatedAt": "2023-01-07T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1598300056393-4aac492f4344",
+        "PublicId": "ortho1",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "Name": "Neonatal Care",
+    "Slug": "neonatal-care",
+    "Description": "Infant medical equipment",
+    "CreatedAt": "2023-01-08T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c",
+        "PublicId": "neo1",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "Name": "Dental Equipment",
+    "Slug": "dental-equipment",
+    "Description": "Dental chairs and tools",
+    "CreatedAt": "2023-01-09T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1588776814543-32234c66f3d1",
+        "PublicId": "dental1",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "Name": "Emergency Care",
+    "Slug": "emergency-care",
+    "Description": "First response equipment",
+    "CreatedAt": "2023-01-10T08:00:00Z",
+    "UpdatedAt": "2023-09-01T12:30:00Z",
+    "CategoryPhotos": [
+      {
+        "Url": "https://images.unsplash.com/photo-1576091160390-0ba32f11382d",
+        "PublicId": "emerg1",
+        "IsMain": true
+      }
+    ]
+  }
 ]
