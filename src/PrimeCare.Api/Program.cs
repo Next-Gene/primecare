@@ -17,8 +17,20 @@ builder.Services.AddSwaggerDecumentation();
 builder.Services.AddApplicationService(); // for application layer
 builder.Services.AddInfrastructureService(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration); // for api layer
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -33,10 +45,11 @@ app.UseStatusCodePagesWithReExecute("/error/{0}");
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-
+app.UseCors("AllowAll");
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
@@ -52,5 +65,4 @@ catch (Exception ex)
     var logger = loggerFactory.CreateLogger<Program>();
     logger.LogError(ex, "An error occurred during migration");
 }
-
 app.Run();

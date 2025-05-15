@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace PrimeCare.Core.Entities
+namespace PrimeCare.Core.Entities.Identity
 {
     public class ApplicationUser : IdentityUser
     {

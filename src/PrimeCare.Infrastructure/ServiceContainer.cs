@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Infrastructure.Data;
+using PrimeCare.Infrastructure.Identity;
 using PrimeCare.Infrastructure.Repositories;
 using StackExchange.Redis;
 
@@ -25,6 +26,11 @@ public static class ServiceContainer
         services.AddDbContext<PrimeCareContext>(options =>
         {
             options.UseSqlServer(configuration.GetConnectionString("Default"));
+        });
+
+        services.AddDbContext<AppIdentityDbContext>(options =>
+        {
+            options.UseSqlServer(configuration.GetConnectionString("Identity"));
         });
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
