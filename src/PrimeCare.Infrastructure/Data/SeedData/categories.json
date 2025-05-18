@@ -1,152 +1,259 @@
 [
   {
-    "Id": 1,
-    "Name": "Diagnostic Equipment",
-    "Slug": "diagnostic-equipment",
-    "Description": "Devices for medical diagnostics",
-    "CreatedAt": "2023-01-01T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1581595210410-5f756ca5f3c8",
-        "PublicId": "diag1",
-        "IsMain": true
-      }
-    ]
+    "_id": "1",
+    "name": "Medical Equipment",
+    "slug": "Medical Equipment",
+    "image": "/images/category/Medical-Equipment.png",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 3,
+    "description": "Essential devices for patient care."
   },
   {
-    "Id": 2,
-    "Name": "Mobility Aids",
-    "Slug": "mobility-aids",
-    "Description": "Wheelchairs and walkers",
-    "CreatedAt": "2023-01-02T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1617870952347-1f0f2a113e3f",
-        "PublicId": "mob1",
-        "IsMain": true
-      }
-    ]
+    "_id": "2",
+    "name": "Diagnostic Equipment",
+    "slug": "Diagnostic Equipment",
+    "image": "/images/category/Diagnostic-Equipment.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 2,
+    "description": "Tools for accurate health diagnostics."
   },
   {
-    "Id": 3,
-    "Name": "Surgical Instruments",
-    "Slug": "surgical-instruments",
-    "Description": "Sterilized surgical tools",
-    "CreatedAt": "2023-01-03T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1582750433449-296e0a3d8e9e",
-        "PublicId": "surg1",
-        "IsMain": true
-      }
-    ]
+    "_id": "3",
+    "name": "Medical Supplies",
+    "slug": "Medical Supplies",
+    "image": "/images/category/Medical-Supplies.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 3,
+    "description": "Explore essential medical products for quality care and reliability."
   },
   {
-    "Id": 4,
-    "Name": "Respiratory Care",
-    "Slug": "respiratory-care",
-    "Description": "Oxygen therapy equipment",
-    "CreatedAt": "2023-01-04T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144",
-        "PublicId": "resp1",
-        "IsMain": true
-      }
-    ]
+    "_id": "4",
+    "name": "Hygiene",
+    "slug": "Hygiene",
+    "image": "/images/category/Hygiene.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 1,
+    "description": "Products for personal cleanliness and safety."
   },
   {
-    "Id": 5,
-    "Name": "Patient Monitoring",
-    "Slug": "patient-monitoring",
-    "Description": "Vital signs monitors",
-    "CreatedAt": "2023-01-05T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
-        "PublicId": "monitor1",
-        "IsMain": true
-      }
-    ]
+    "_id": "5",
+    "name": "Surgical Instruments",
+    "slug": "Surgical Instruments",
+    "image": "/images/category/Surgical-Instruments.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 1,
+    "description": "Precision instruments for surgical procedures."
   },
   {
-    "Id": 6,
-    "Name": "Disposables",
-    "Slug": "disposables",
-    "Description": "Single-use medical supplies",
-    "CreatedAt": "2023-01-06T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1583947215259-38e31be8758f",
-        "PublicId": "disp1",
-        "IsMain": true
-      }
-    ]
+    "_id": "6",
+    "name": "Offers",
+    "slug": "Offers",
+    "image": "/images/category/image.png",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Offers updated every day."
   },
   {
-    "Id": 7,
-    "Name": "Orthopedics",
-    "Slug": "orthopedics",
-    "Description": "Bracing and support devices",
-    "CreatedAt": "2023-01-07T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1598300056393-4aac492f4344",
-        "PublicId": "ortho1",
-        "IsMain": true
-      }
-    ]
+    "_id": "7",
+    "name": "Mother Child Care",
+    "slug": "mother-child-care",
+    "image": "/images/category/image 7.png",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Everything about your baby."
   },
   {
-    "Id": 8,
-    "Name": "Neonatal Care",
-    "Slug": "neonatal-care",
-    "Description": "Infant medical equipment",
-    "CreatedAt": "2023-01-08T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c",
-        "PublicId": "neo1",
-        "IsMain": true
-      }
-    ]
+    "_id": "8",
+    "name": "Prescription Medications",
+    "slug": "prescription-medications",
+    "image": "/images/category/image 6.png",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "That is permitted to be dispensed only to those with a medical prescription."
   },
   {
-    "Id": 9,
-    "Name": "Dental Equipment",
-    "Slug": "dental-equipment",
-    "Description": "Dental chairs and tools",
-    "CreatedAt": "2023-01-09T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1588776814543-32234c66f3d1",
-        "PublicId": "dental1",
-        "IsMain": true
-      }
-    ]
+    "_id": "9",
+    "name": "Medicines Without a Prescription",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image 5.png",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "The medicines can buy without prescripition."
   },
   {
-    "Id": 10,
-    "Name": "Emergency Care",
-    "Slug": "emergency-care",
-    "Description": "First response equipment",
-    "CreatedAt": "2023-01-10T08:00:00Z",
-    "UpdatedAt": "2023-09-01T12:30:00Z",
-    "CategoryPhotos": [
-      {
-        "Url": "https://images.unsplash.com/photo-1576091160390-0ba32f11382d",
-        "PublicId": "emerg1",
-        "IsMain": true
-      }
-    ]
+    "_id": "11",
+    "name": "Blood Sugar Monitoring",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image53.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "A glucose meter for accurate health tracking."
+  },
+  {
+    "_id": "12",
+    "name": "Cosmetic Treatments",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image76.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Advanced medical techniques to enhance and maintain skin beauty."
+  },
+  {
+    "_id": "13",
+    "name": "Medical Ampoules",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image98.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "High-quality pharmaceutical ampoules used for various treatments."
+  },
+  {
+    "_id": "14",
+    "name": "Injections & Medical Care",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image88.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Medical injection tools ensuring precision and safety in treatments."
+  },
+  {
+    "_id": "15",
+    "name": "Doctor’s Essentials",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image22.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "A stethoscope and digital device for efficient medical diagnosis."
+  },
+  {
+    "_id": "16",
+    "name": "Medications & Medical Solutions",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image111.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "A collection of essential medical solutions for various conditions."
+  },
+  {
+    "_id": "17",
+    "name": "Creative Medical Frame",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image222.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "An innovative design combining medical elements in a unique layout."
+  },
+  {
+    "_id": "18",
+    "name": "Telemedicine Services",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image1213.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Modern technology enabling remote medical consultations with ease."
+  },
+  {
+    "_id": "19",
+    "name": "Patient Care",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image13112.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Compassionate and professional medical care."
+  },
+  {
+    "_id": "20",
+    "name": "Family Healthcare",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image112.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Medical tools designed for family health and optimal care."
+  },
+  {
+    "_id": "21",
+    "name": "Medical Consultation",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image15.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Professional doctors providing expert health advice and treatment."
+  },
+  {
+    "_id": "22",
+    "name": "Health Protection Supplies",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image16.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Protective essentials for daily safety."
+  },
+  {
+    "_id": "23",
+    "name": "Online Medical Consultation",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image18.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0
+  },
+  {
+    "_id": "24",
+    "name": "Medical Research & Laboratory",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image937.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0
+  },
+  {
+    "_id": "25",
+    "name": "Time & Health Management",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image38774.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Prioritizing timely medical care to enhance well-being and longevity."
+  },
+  {
+    "_id": "26",
+    "name": "Health Monitoring Devices",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image59.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0,
+    "description": "Essential medical tools for accurate temperature and vital sign tracking."
+  },
+  {
+    "_id": "27",
+    "name": "Medical Work Environment",
+    "slug": "medicines-without-prescription",
+    "image": "/images/category/image2836.jpg",
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z",
+    "productsCount": 0
   }
 ]
