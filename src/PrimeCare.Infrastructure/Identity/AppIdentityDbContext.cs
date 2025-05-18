@@ -9,11 +9,18 @@ namespace PrimeCare.Infrastructure.Identity
         public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
+            builder.Entity<ApplicationUser>()
+                .HasOne(u => u.Address)
+                .WithOne(a => a.AppUser)
+                .HasForeignKey<Address>(a => a.AppUserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
+
     }
 
 }

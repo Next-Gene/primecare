@@ -1,9 +1,12 @@
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PrimeCare.Api.Extensions;
 using PrimeCare.Application;
 using PrimeCare.Application.Middleware;
+using PrimeCare.Core.Entities.Identity;
 using PrimeCare.Infrastructure;
 using PrimeCare.Infrastructure.Data;
+using PrimeCare.Infrastructure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +18,7 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerDecumentation();
 
 builder.Services.AddApplicationService(); // for application layer
+builder.Services.AddIdentityServices(builder.Configuration); // for identity layer
 builder.Services.AddInfrastructureService(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration); // for api layer
 builder.Services.AddCors(options =>
@@ -46,8 +50,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseCors("AllowAll");
+app.UseAuthentication(); // 🟢 مهمة علشان JWT Token يتقرى
 app.UseAuthorization();
-
 app.MapControllers();
 
 
@@ -59,6 +63,10 @@ try
     var context = services.GetRequiredService<PrimeCareContext>();
     await context.Database.MigrateAsync();
     //await PrimeContextSeed.SeedAsync(context, loggerFactory);
+    var userManger = services.GetRequiredService<UserManager<ApplicationUser>>();
+    var identityContext = services.GetRequiredService<AppIdentityDbContext>();
+    await identityContext.Database.MigrateAsync();
+    await AppIdentityDbContextSeed.SeedUserAsync(userManger);
 }
 catch (Exception ex)
 {

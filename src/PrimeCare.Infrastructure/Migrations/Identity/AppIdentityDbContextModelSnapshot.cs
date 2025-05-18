@@ -332,8 +332,7 @@ namespace PrimeCare.Infrastructure.Migrations.Identity
 
             modelBuilder.Entity("PrimeCare.Core.Entities.Identity.ApplicationUser", b =>
                 {
-                    b.Navigation("Address")
-                        .IsRequired();
+                    b.Navigation("Address");
                 });
 #pragma warning restore 612, 618
         }
