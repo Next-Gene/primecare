@@ -14,26 +14,28 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
+        // Add services to the container
         builder.Services.AddControllers();
         builder.Services.AddSwaggerDecumentation();
 
-builder.Services.AddApplicationService(); // for application layer
-builder.Services.AddInfrastructureService(builder.Configuration);
-builder.Services.AddApplicationServices(builder.Configuration); // for api layer
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
-});
+        builder.Services.AddApplicationService(); // for application layer
+        builder.Services.AddInfrastructureService(builder.Configuration);
+        builder.Services.AddIdentityServices(builder.Configuration); // ✅ Identity Services
+        builder.Services.AddApplicationServices(builder.Configuration); // for API layer
+
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll", policy =>
+            {
+                policy.AllowAnyOrigin()
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+            });
+        });
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
+        // Configure the HTTP request pipeline
         if (app.Environment.IsDevelopment())
         {
             app.UseSwaggerDecumentation();
@@ -42,27 +44,37 @@ builder.Services.AddCors(options =>
         app.UseMiddleware<ExceptionMiddleware>();
         app.UseStatusCodePagesWithReExecute("/error/{0}");
 
-app.UseHttpsRedirection();
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+        app.UseCors("AllowAll");
 
-app.UseStaticFiles();
-app.UseCors("AllowAll");
-app.UseAuthorization();
+        app.UseAuthentication(); // ✅ مهم جداً
+        app.UseAuthorization();
 
-app.MapControllers();
+        app.MapControllers();
 
+        // Apply migrations
+        using var scope = app.Services.CreateScope();
+        var services = scope.ServiceProvider;
+        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
 
-using var scope = app.Services.CreateScope();
-var services = scope.ServiceProvider;
-var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-try
-{
-    var context = services.GetRequiredService<PrimeCareContext>();
-    await context.Database.MigrateAsync();
-    //await PrimeContextSeed.SeedAsync(context, loggerFactory);
+        try
+        {
+            var context = services.GetRequiredService<PrimeCareContext>();
+            await context.Database.MigrateAsync();
+
+            var identityContext = services.GetRequiredService<AppIdentityDbContext>();
+            await identityContext.Database.MigrateAsync();
+
+            var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+            // await AppIdentityDbContextSeed.SeedUserAsync(userManager); // Uncomment for seeding
+        }
+        catch (Exception ex)
+        {
+            var logger = loggerFactory.CreateLogger<Program>();
+            logger.LogError(ex, "An error occurred during migration");
+        }
+
+        app.Run();
+    }
 }
-catch (Exception ex)
-{
-    var logger = loggerFactory.CreateLogger<Program>();
-    logger.LogError(ex, "An error occurred during migration");
-}
-app.Run();
