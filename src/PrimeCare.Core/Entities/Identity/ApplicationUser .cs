@@ -4,8 +4,8 @@ namespace PrimeCare.Core.Entities.Identity
 {
     public class ApplicationUser : IdentityUser
     {
-        public string FullName { get; set; }
-        public Address Address { get; set; }
+        public string FullName { get; set; } = null!;
+        public Address? Address { get; set; }
 
     }
 }

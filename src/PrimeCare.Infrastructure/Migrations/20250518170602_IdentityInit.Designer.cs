@@ -9,11 +9,11 @@ using PrimeCare.Infrastructure.Identity;
 
 #nullable disable
 
-namespace PrimeCare.Infrastructure.Migrations.Identity
+namespace PrimeCare.Infrastructure.Migrations
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20250515181555_Identity")]
-    partial class Identity
+    [Migration("20250518170602_IdentityInit")]
+    partial class IdentityInit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -335,8 +335,7 @@ namespace PrimeCare.Infrastructure.Migrations.Identity
 
             modelBuilder.Entity("PrimeCare.Core.Entities.Identity.ApplicationUser", b =>
                 {
-                    b.Navigation("Address")
-                        .IsRequired();
+                    b.Navigation("Address");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,10 +6,10 @@ namespace PrimeCare.Infrastructure.Identity
     public class AppIdentityDbContextSeed
     {
 
-        public async Task SeedUserAsync(UserManager<ApplicationUser> UserManager)
+        public static async Task SeedUserAsync(UserManager<ApplicationUser> UserManager)
         {
 
-            if (UserManager.Users.Any())
+            if (!UserManager.Users.Any())
             {
                 var user = new ApplicationUser
                 {
@@ -28,7 +28,7 @@ namespace PrimeCare.Infrastructure.Identity
                     }
                 };
 
-                await UserManager.CreateAsync(user, "Pa$$w0rd ");
+                await UserManager.CreateAsync(user, "Pa$$w0rd");
 
             }
 
