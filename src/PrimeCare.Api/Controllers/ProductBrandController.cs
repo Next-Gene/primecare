@@ -5,12 +5,19 @@ using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Controllers;
 
+/// <summary>
+/// API controller for managing product brands.
+/// </summary>
 [ApiController]
 [Route("api/v1/product-brands")]
 public class ProductBrandController : BaseApiController
 {
     private readonly IProductBrandService _productBrandService;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProductBrandController"/> class.
+    /// </summary>
+    /// <param name="productBrandService">The product brand service for brand operations.</param>
     public ProductBrandController(IProductBrandService productBrandService)
     {
         _productBrandService = productBrandService;

@@ -1,0 +1,12 @@
+[
+  {"Id": 1, "Name": "Medtronic"},
+  {"Id": 2, "Name": "Philips Healthcare"},
+  {"Id": 3, "Name": "Becton Dickinson"},
+  {"Id": 4, "Name": "Stryker"},
+  {"Id": 5, "Name": "GE Healthcare"},
+  {"Id": 6, "Name": "3M Health Care"},
+  {"Id": 7, "Name": "Siemens Healthineers"},
+  {"Id": 8, "Name": "Johnson & Johnson"},
+  {"Id": 9, "Name": "Cardinal Health"},
+  {"Id": 10, "Name": "Baxter International"}
+]

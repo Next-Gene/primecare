@@ -8,17 +8,17 @@ using PrimeCare.Infrastructure;
 using PrimeCare.Infrastructure.Data;
 using PrimeCare.Infrastructure.Identity;
 
-var builder = WebApplication.CreateBuilder(args);
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddSwaggerDecumentation();
+        // Add services to the container.
+        builder.Services.AddControllers();
+        builder.Services.AddSwaggerDecumentation();
 
 builder.Services.AddApplicationService(); // for application layer
-builder.Services.AddIdentityServices(builder.Configuration); // for identity layer
 builder.Services.AddInfrastructureService(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration); // for api layer
 builder.Services.AddCors(options =>
@@ -31,27 +31,23 @@ builder.Services.AddCors(options =>
     });
 });
 
+        var app = builder.Build();
 
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwaggerDecumentation();
+        }
 
-var app = builder.Build();
-
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwaggerDecumentation();
-}
-
-app.UseMiddleware<ExceptionMiddleware>();
-
-app.UseStatusCodePagesWithReExecute("/error/{0}");
+        app.UseMiddleware<ExceptionMiddleware>();
+        app.UseStatusCodePagesWithReExecute("/error/{0}");
 
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseCors("AllowAll");
-app.UseAuthentication(); // 🟢 مهمة علشان JWT Token يتقرى
 app.UseAuthorization();
+
 app.MapControllers();
 
 
@@ -63,10 +59,6 @@ try
     var context = services.GetRequiredService<PrimeCareContext>();
     await context.Database.MigrateAsync();
     //await PrimeContextSeed.SeedAsync(context, loggerFactory);
-    var userManger = services.GetRequiredService<UserManager<ApplicationUser>>();
-    var identityContext = services.GetRequiredService<AppIdentityDbContext>();
-    await identityContext.Database.MigrateAsync();
-    await AppIdentityDbContextSeed.SeedUserAsync(userManger);
 }
 catch (Exception ex)
 {
