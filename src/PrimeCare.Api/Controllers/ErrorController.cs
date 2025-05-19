@@ -19,4 +19,12 @@ public class ErrorController : BaseApiController
     {
         return new ObjectResult(new ApiResponse(code));
     }
+
+    //[HttpGet("testauth")]
+    //[Authorize]
+    //public ActionResult<string> GetSecretText()
+    //{
+    //    return "Secret stuff";
+
+    //}
 }
