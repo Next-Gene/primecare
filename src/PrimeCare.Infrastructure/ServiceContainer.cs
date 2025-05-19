@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PrimeCare.Application.Services.Implementations;
+using PrimeCare.Application.Services.Interfaces;
+using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Infrastructure.Data;
 using PrimeCare.Infrastructure.Identity;
@@ -9,24 +12,12 @@ using StackExchange.Redis;
 
 namespace PrimeCare.Infrastructure;
 
-/// <summary>
-/// Provides extension methods for adding infrastructure services to the service collection.
-/// </summary>
 public static class ServiceContainer
 {
-    /// <summary>
-    /// Adds the infrastructure services to the specified <see cref="IServiceCollection"/>.
-    /// Configures the database context, generic repository, and Redis connection.
-    /// </summary>
-    /// <param name="services">The service collection to add the services to.</param>
-    /// <param name="configuration">The configuration to use for setting up the services.</param>
-    /// <returns>The service collection with the added services.</returns>
     public static IServiceCollection AddInfrastructureService
        (this IServiceCollection services, IConfiguration configuration)
     {
-        /// <summary>
-        /// Registers the PrimeCareContext with SQL Server using the connection string from configuration.
-        /// </summary>
+        // Database Contexts
         services.AddDbContext<PrimeCareContext>(options =>
         {
             options.UseSqlServer(configuration.GetConnectionString("Default"));
@@ -37,20 +28,20 @@ public static class ServiceContainer
             options.UseSqlServer(configuration.GetConnectionString("Identity"));
         });
 
-
-        /// <summary>
-        /// Registers the generic repository for dependency injection.
-        /// </summary>
+        // Repositories
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
-        /// <summary>
-        /// Registers a singleton Redis connection multiplexer using the connection string from configuration.
-        /// </summary>
+        // Redis
         services.AddSingleton<IConnectionMultiplexer>(c =>
         {
             var config = ConfigurationOptions.Parse(configuration.GetConnectionString("Redis"), true);
             return ConnectionMultiplexer.Connect(config);
         });
+
+        // Email Settings and Email Service
+        services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
+        services.AddScoped<IEmailService, EmailService>();
+
         return services;
     }
 }

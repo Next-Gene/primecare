@@ -17,6 +17,7 @@ namespace PrimeCare.Api.Extensions
             builder = new IdentityBuilder(builder.UserType, builder.Services);
             builder.AddEntityFrameworkStores<AppIdentityDbContext>();
             builder.AddSignInManager<SignInManager<ApplicationUser>>();
+            builder.AddDefaultTokenProviders();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -25,6 +26,8 @@ namespace PrimeCare.Api.Extensions
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Token:Key"])),
                     ValidIssuer = configuration["Token:Issuer"],
                     ValidateIssuer = true,
+                    ValidateAudience = false,
+
 
                 };
 

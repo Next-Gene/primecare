@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using PrimeCare.Core.Entities;
+using PrimeCare.Core.Entities.Identity;
 using PrimeCare.Shared.Dtos.Categories;
 using PrimeCare.Shared.Dtos.Photos;
 using PrimeCare.Shared.Dtos.ProductBrand;
 using PrimeCare.Shared.Dtos.Products;
+using PrimeCare.Shared.Dtos.User;
 
 namespace PrimeCare.Api.Helpers;
 
@@ -74,5 +76,7 @@ public class MappingProfiles : Profile
         /// Maps <see cref="CategoryPhoto"/> to <see cref="CategoryPhotoDto"/>.
         /// </summary>
         CreateMap<CategoryPhoto, CategoryPhotoDto>();
+
+        CreateMap<Address, AddressDto>().ReverseMap();
     }
 }
