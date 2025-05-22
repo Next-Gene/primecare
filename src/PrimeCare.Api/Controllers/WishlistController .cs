@@ -1,99 +1,82 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
+using PrimeCare.Shared.Dtos.Cart;
+using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Controllers
 {
-    /// <summary>
-    /// API controller for managing customer wishlists.
-    /// </summary>
+    [Authorize]
     [ApiController]
     [Route("api/v1/wishlist")]
     public class WishlistController : BaseApiController
     {
         private readonly IWishlistService _wishlistService;
+        private readonly IMapper _mapper;
+        private readonly IProductService _productService;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WishlistController"/> class.
-        /// </summary>
-        /// <param name="wishlistService">The wishlist service for wishlist operations.</param>
-        public WishlistController(IWishlistService wishlistService)
+        public WishlistController(IWishlistService wishlistService, IMapper mapper, IProductService productService)
         {
             _wishlistService = wishlistService;
+            _mapper = mapper;
+            _productService = productService;
         }
 
-        /// <summary>
-        /// Retrieves a customer's wishlist by its identifier.
-        /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist.</param>
-        /// <returns>The customer's wishlist, or a new wishlist if not found.</returns>
-        [HttpGet("{wishlistId}")]
-        public async Task<ActionResult<CustomerWishlist>> GetWishlist(string wishlistId)
+        private string GetUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+
+
+        [HttpGet]
+        public async Task<ActionResult<CustomerWihListDto>> GetWishlist()
         {
-            var wishlist = await _wishlistService.GetWishlistAsync(wishlistId);
-            return Ok(wishlist ?? new CustomerWishlist(wishlistId));
+            var wishlist = await _wishlistService.GetWishlistAsync(GetUserId()) ?? new CustomerWishlist(GetUserId());
+            var dto = _mapper.Map<CustomerWihListDto>(wishlist);
+            return Ok(dto);
         }
 
-        /// <summary>
-        /// Clears all items from the specified wishlist.
-        /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist to clear.</param>
-        /// <returns>True if the operation succeeded; otherwise, false.</returns>
-        [HttpDelete("{wishlistId}")]
-        public async Task<ActionResult<bool>> ClearWishlist(string wishlistId)
+        [HttpDelete]
+        public async Task<ActionResult<bool>> ClearWishlist()
         {
-            var result = await _wishlistService.ClearWishlistAsync(wishlistId);
+            var result = await _wishlistService.ClearWishlistAsync(GetUserId());
             return Ok(result);
         }
 
-        /// <summary>
-        /// Updates the entire wishlist.
-        /// </summary>
-        /// <param name="wishlist">The updated wishlist object.</param>
-        /// <returns>The updated wishlist.</returns>
         [HttpPut]
         public async Task<ActionResult<CustomerWishlist>> UpdateWishlist([FromBody] CustomerWishlist wishlist)
         {
+            wishlist.Id = GetUserId();
             var updatedWishlist = await _wishlistService.UpdateWishlistAsync(wishlist);
             return Ok(updatedWishlist);
         }
-
-        /// <summary>
-        /// Adds an item to the specified wishlist.
-        /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist.</param>
-        /// <param name="item">The item to add.</param>
-        /// <returns>The updated wishlist.</returns>
-        [HttpPost("{wishlistId}/items")]
-        public async Task<ActionResult<CustomerWishlist>> AddItem(string wishlistId, [FromBody] WishlistItem item)
+        [HttpPost("items")]
+        public async Task<ActionResult<CustomerWishlist>> AddItem([FromBody] AddToWishlistDto dto)
         {
-            var updatedWishlist = await _wishlistService.AddItemAsync(wishlistId, item);
+            if (await _wishlistService.ItemExistsAsync(GetUserId(), dto.ProductId))
+                return Conflict(new ApiResponse(409, "Item already exists in the wishlist."));
+
+            var product = await _productService.GetByIdAsync(dto.ProductId);
+            if (product == null)
+                return NotFound(new ApiResponse(404, "Product not found."));
+
+            var item = _mapper.Map<WishlistItem>(product);
+
+            var updatedWishlist = await _wishlistService.AddItemAsync(GetUserId(), item);
             return Ok(updatedWishlist);
         }
 
-        /// <summary>
-        /// Removes an item from the specified wishlist.
-        /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist.</param>
-        /// <param name="itemId">The ID of the item to remove.</param>
-        /// <returns>The updated wishlist.</returns>
-        [HttpDelete("{wishlistId}/items/{itemId}")]
-        public async Task<ActionResult<CustomerWishlist>> RemoveItem(string wishlistId, Guid itemId)
+        [HttpDelete("items/{productId}")]
+        public async Task<ActionResult<CustomerWishlist>> RemoveItem(int productId)
         {
-            var updatedWishlist = await _wishlistService.RemoveItemAsync(wishlistId, itemId);
+            var updatedWishlist = await _wishlistService.RemoveItemAsync(GetUserId(), productId);
             return Ok(updatedWishlist);
         }
 
-        /// <summary>
-        /// Checks if an item exists in the specified wishlist.
-        /// </summary>
-        /// <param name="wishlistId">The ID of the wishlist.</param>
-        /// <param name="itemId">The ID of the item to check.</param>
-        /// <returns>True if the item exists in the wishlist; otherwise, false.</returns>
-        [HttpGet("{wishlistId}/items/{itemId}/exists")]
-        public async Task<ActionResult<bool>> ItemExists(string wishlistId, Guid itemId)
+        [HttpGet("items/{productId}/exists")]
+        public async Task<ActionResult<bool>> ItemExists(int productId)
         {
-            var exists = await _wishlistService.ItemExistsAsync(wishlistId, itemId);
+            var exists = await _wishlistService.ItemExistsAsync(GetUserId(), productId);
             return Ok(exists);
         }
     }

@@ -34,6 +34,14 @@
         /// <summary>
         /// Gets the total price of all items in the cart.
         /// </summary>
+
+
+        private const decimal TaxRate = 0.15m; // 15% ضريبة
+
         public decimal TotalPrice => CartItems.Sum(item => item.Price * item.Quantity);
+
+        public decimal TaxAmount => TotalPrice * TaxRate; // قيمة الضريبة
+
+        public decimal TotalPriceWithTax => TotalPrice + TaxAmount; // السعر شامل الضري
     }
 }
