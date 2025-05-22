@@ -1,113 +1,103 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
 using PrimeCare.Shared.Dtos.Cart;
+using PrimeCare.Shared.Errors;
 
 namespace PrimeCare.Api.Controllers
 {
-    /// <summary>
-    /// API controller for managing customer shopping carts.
-    /// </summary>
+    [Authorize]
     [ApiController]
     [Route("api/v1/cart")]
     public class CartController : BaseApiController
     {
         private readonly ICartService _cartService;
+        private readonly IMapper _mapper;
+        private readonly IProductService _productService;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CartController"/> class.
-        /// </summary>
-        /// <param name="cartService">The cart service for cart operations.</param>
-        public CartController(ICartService cartService)
+        public CartController(ICartService cartService, IMapper mapper, IProductService productService)
         {
             _cartService = cartService;
+            _mapper = mapper;
+            _productService = productService;
         }
 
-        /// <summary>
-        /// Retrieves a cart by its identifier.
-        /// </summary>
-        /// <param name="cartId">The unique identifier of the cart.</param>
-        /// <returns>The customer's cart, or a new cart if not found.</returns>
-        [HttpGet("{cartId}")]
-        public async Task<ActionResult<CustomerCart>> GetCartByID(string cartId)
+        private string GetUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+
+        [HttpGet]
+        public async Task<ActionResult<CustomerCartDto>> GetCart()
         {
-            var cart = await _cartService.GetCartAsync(cartId);
-            return Ok(cart ?? new CustomerCart(cartId));
+            var userId = GetUserId();
+            var cart = await _cartService.GetCartAsync(userId);
+            if (cart == null)
+                return Ok(new CustomerCartDto { Id = userId, CartItems = new List<CartItemDto>() });
+
+            var cartDto = _mapper.Map<CustomerCartDto>(cart);
+            return Ok(cartDto);
         }
 
-        /// <summary>
-        /// Clears all items from the specified cart.
-        /// </summary>
-        /// <param name="cartId">The unique identifier of the cart to clear.</param>
-        /// <returns><c>true</c> if the cart was cleared successfully; otherwise, <c>false</c>.</returns>
-        [HttpDelete("{cartId}")]
-        public async Task<ActionResult<bool>> ClearCart(string cartId)
+        [HttpDelete]
+        public async Task<ActionResult<bool>> ClearCart()
         {
-            var result = await _cartService.ClearCartAsync(cartId);
+            var result = await _cartService.ClearCartAsync(GetUserId());
             return Ok(result);
         }
 
-        /// <summary>
-        /// Updates the entire cart.
-        /// </summary>
-        /// <param name="cart">The cart object with updated information.</param>
-        /// <returns>The updated customer cart.</returns>
         [HttpPut]
-        public async Task<ActionResult<CustomerCart>> UpdateCart([FromBody] CustomerCart cart)
+        public async Task<ActionResult<CustomerCartDto>> UpdateCart([FromBody] CustomerCartDto cartDto)
         {
+            cartDto.Id = GetUserId();
+            var cart = _mapper.Map<CustomerCart>(cartDto);
             var updatedCart = await _cartService.UpdateCartAsync(cart);
-            return Ok(updatedCart);
+            var updatedCartDto = _mapper.Map<CustomerCartDto>(updatedCart);
+            return Ok(updatedCartDto);
         }
 
-        /// <summary>
-        /// Adds an item to the specified cart.
-        /// </summary>
-        /// <param name="cartId">The unique identifier of the cart.</param>
-        /// <param name="item">The item to add to the cart.</param>
-        /// <returns>The updated customer cart.</returns>
-        [HttpPost("{cartId}/items")]
-        public async Task<ActionResult<CustomerCart>> AddItem(string cartId, [FromBody] CartItem item)
+        [HttpPost("items")]
+        public async Task<ActionResult<CustomerCartDto>> AddItem([FromBody] AddToCartDto dto)
         {
-            var updatedCart = await _cartService.AddItemAsync(cartId, item);
-            return Ok(updatedCart);
+            var product = await _productService.GetByIdAsync(dto.ProductId);
+            if (product == null)
+                return NotFound(new ApiResponse(404, "Product not found."));
+            var cartItem = _mapper.Map<CartItem>(product);
+            cartItem.Quantity = dto.Quantity;
+            cartItem.Id = product.Id;
+
+            var updatedCart = await _cartService.AddItemAsync(GetUserId(), cartItem);
+            var updatedCartDto = _mapper.Map<CustomerCartDto>(updatedCart);
+            return Ok(updatedCartDto);
         }
 
-        /// <summary>
-        /// Removes an item from the specified cart.
-        /// </summary>
-        /// <param name="cartId">The unique identifier of the cart.</param>
-        /// <param name="productId">The unique identifier of the product to remove.</param>
-        /// <returns>The updated customer cart.</returns>
-        [HttpDelete("{cartId}/items/{productId}")]
-        public async Task<ActionResult<CustomerCart>> RemoveItem(string cartId, Guid productId)
+        [HttpDelete("items/{productId}")]
+        public async Task<ActionResult<CustomerCartDto>> RemoveItem(int productId)
         {
-            var updatedCart = await _cartService.RemoveItemAsync(cartId, productId);
-            return Ok(updatedCart);
+            var updatedCart = await _cartService.RemoveItemAsync(GetUserId(), productId);
+            var updatedCartDto = _mapper.Map<CustomerCartDto>(updatedCart);
+            return Ok(updatedCartDto);
         }
 
-        /// <summary>
-        /// Updates the quantity of a specific item in the cart.
-        /// </summary>
-        /// <param name="cartId">The unique identifier of the cart.</param>
-        /// <param name="productId">The unique identifier of the product to update.</param>
-        /// <param name="dto">The DTO containing the new quantity for the item.</param>
-        /// <returns>The updated customer cart, or an error if the cart or item is not found.</returns>
-        [HttpPut("{cartId}/items/{productId}/quantity")]
-        public async Task<ActionResult<CustomerCart>> UpdateItemQuantity(string cartId, Guid productId, [FromBody] UpdateQuantityDto dto)
+        [HttpPut("items/{productId}/quantity")]
+        public async Task<ActionResult<CustomerCartDto>> UpdateItemQuantity(int productId, [FromBody] UpdateQuantityDto dto)
         {
             if (dto.Quantity <= 0)
-                return BadRequest("Quantity must be greater than zero.");
+                return BadRequest(new ApiResponse(400, "Quantity must be greater than zero."));
 
-            var cart = await _cartService.GetCartAsync(cartId);
+            var cart = await _cartService.GetCartAsync(GetUserId());
             if (cart == null)
-                return NotFound($"Cart with ID {cartId} not found.");
+                return NotFound(new ApiResponse(404, "Cart not found."));
 
             var itemExists = cart.CartItems.Any(i => i.Id == productId);
             if (!itemExists)
-                return NotFound($"Item with ID {productId} not found in the cart.");
+                return NotFound(new ApiResponse(404, $"Item with ID {productId} not found in the cart."));
 
-            var updatedCart = await _cartService.UpdateItemQuantityAsync(cartId, productId, dto.Quantity);
-            return Ok(updatedCart);
+            var updatedCart = await _cartService.UpdateItemQuantityAsync(GetUserId(), productId, dto.Quantity);
+            var updatedCartDto = _mapper.Map<CustomerCartDto>(updatedCart);
+            return Ok(updatedCartDto);
         }
+
+
     }
 }

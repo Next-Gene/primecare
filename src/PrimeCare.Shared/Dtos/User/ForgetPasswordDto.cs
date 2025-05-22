@@ -1,8 +1,8 @@
-﻿namespace PrimeCare.Shared.Dtos.User
-{
-    public class ForgetPasswordDto
-    {
-        public string Email { get; set; }
-    }
-}
+﻿using System.ComponentModel.DataAnnotations;
 
+public class ForgetPasswordDto
+{
+    [Required]
+    [EmailAddress(ErrorMessage = "Invalid email format")]
+    public string Email { get; set; }
+}

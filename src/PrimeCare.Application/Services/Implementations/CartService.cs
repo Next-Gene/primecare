@@ -21,48 +21,27 @@ public class CartService : ICartService
         _database = redis.GetDatabase();
     }
 
-    /// <summary>
-    /// Retrieves a customer's cart by its identifier.
-    /// </summary>
-    /// <param name="cartId">The unique identifier of the cart.</param>
-    /// <returns>The customer's cart if found; otherwise, <c>null</c>.</returns>
-    public async Task<CustomerCart?> GetCartAsync(string cartId)
+    public async Task<CustomerCart?> GetCartAsync(string userId)
     {
-        var data = await _database.StringGetAsync(cartId);
+        var data = await _database.StringGetAsync(userId);
         return data.IsNullOrEmpty ? null : JsonSerializer.Deserialize<CustomerCart>(data);
     }
 
-    /// <summary>
-    /// Clears all items from the specified cart.
-    /// </summary>
-    /// <param name="cartId">The unique identifier of the cart to clear.</param>
-    /// <returns><c>true</c> if the cart was cleared successfully; otherwise, <c>false</c>.</returns>
-    public async Task<bool> ClearCartAsync(string cartId)
+    public async Task<bool> ClearCartAsync(string userId)
     {
-        return await _database.KeyDeleteAsync(cartId);
+        return await _database.KeyDeleteAsync(userId);
     }
 
-    /// <summary>
-    /// Updates the specified customer cart in Redis.
-    /// </summary>
-    /// <param name="Cart">The cart to update.</param>
-    /// <returns>The updated customer cart.</returns>
-    public async Task<CustomerCart> UpdateCartAsync(CustomerCart Cart)
+    public async Task<CustomerCart> UpdateCartAsync(CustomerCart cart)
     {
-        var created = await _database.StringSetAsync(Cart.Id, JsonSerializer.Serialize(Cart), TimeSpan.FromDays(30));
+        var created = await _database.StringSetAsync(cart.Id, JsonSerializer.Serialize(cart), TimeSpan.FromDays(30));
         if (!created) return null!;
-        return await GetCartAsync(Cart.Id);
+        return await GetCartAsync(cart.Id);
     }
 
-    /// <summary>
-    /// Adds an item to the specified cart. If the item already exists, its quantity is increased.
-    /// </summary>
-    /// <param name="cartId">The unique identifier of the cart.</param>
-    /// <param name="newItem">The item to add to the cart.</param>
-    /// <returns>The updated customer cart.</returns>
-    public async Task<CustomerCart> AddItemAsync(string cartId, CartItem newItem)
+    public async Task<CustomerCart> AddItemAsync(string userId, CartItem newItem)
     {
-        var cart = await GetCartAsync(cartId) ?? new CustomerCart(cartId);
+        var cart = await GetCartAsync(userId) ?? new CustomerCart(userId);
         var existingItem = cart.CartItems.FirstOrDefault(i => i.Id == newItem.Id);
         if (existingItem != null)
         {
@@ -75,35 +54,28 @@ public class CartService : ICartService
         return await UpdateCartAsync(cart);
     }
 
-    /// <summary>
-    /// Removes an item from the specified cart by its identifier.
-    /// </summary>
-    /// <param name="cartId">The unique identifier of the cart.</param>
-    /// <param name="Id">The unique identifier of the item to remove.</param>
-    /// <returns>The updated customer cart.</returns>
-    public async Task<CustomerCart> RemoveItemAsync(string cartId, Guid Id)
+    public async Task<CustomerCart> RemoveItemAsync(string userId, int itemId)
     {
-        var cart = await GetCartAsync(cartId);
+        var cart = await GetCartAsync(userId);
         if (cart == null) return null!;
-        cart.CartItems.RemoveAll(i => i.Id == Id);
+        cart.CartItems.RemoveAll(i => i.Id == itemId);
         return await UpdateCartAsync(cart);
     }
-
-    /// <summary>
-    /// Updates the quantity of a specific item in the cart.
-    /// </summary>
-    /// <param name="cartId">The unique identifier of the cart.</param>
-    /// <param name="Id">The unique identifier of the item to update.</param>
-    /// <param name="quantity">The new quantity for the item.</param>
-    /// <returns>The updated customer cart.</returns>
-    public async Task<CustomerCart> UpdateItemQuantityAsync(string cartId, Guid Id, int quantity)
+    public async Task<CustomerCart> UpdateItemQuantityAsync(string userId, int itemId, int quantity)
     {
-        var cart = await GetCartAsync(cartId);
+        var cart = await GetCartAsync(userId);
         if (cart == null) return null!;
-        var item = cart.CartItems.FirstOrDefault(i => i.Id == Id);
+        var item = cart.CartItems.FirstOrDefault(i => i.Id == itemId);
         if (item != null)
         {
-            item.Quantity = quantity;
+            if (quantity <= 0)
+            {
+                cart.CartItems.Remove(item);
+            }
+            else
+            {
+                item.Quantity = quantity;
+            }
         }
         return await UpdateCartAsync(cart);
     }

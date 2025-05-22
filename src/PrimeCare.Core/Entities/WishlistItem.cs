@@ -8,7 +8,7 @@
         /// <summary>
         /// Gets or sets the unique identifier for the wishlist item.
         /// </summary>
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the product.

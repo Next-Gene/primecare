@@ -44,6 +44,8 @@ namespace PrimeCare.Api.Controllers
         public async Task<ActionResult<UserDto>> GetCurrentUser()
         {
             var user = await _userManager.FindEmailFromPrincipal(HttpContext.User);
+            if (user == null)
+                return Unauthorized(new ApiResponse(401));
 
             return new UserDto
             {
@@ -64,6 +66,9 @@ namespace PrimeCare.Api.Controllers
         public async Task<ActionResult<AddressDto>> GetUserAddress()
         {
             var user = await _userManager.FinddUserByClaimsPrincipallWithAddressAsync(HttpContext.User);
+            if (user == null)
+                return Unauthorized(new ApiResponse(401));
+
             return _mapper.Map<Address, AddressDto>(user.Address);
         }
 
@@ -72,15 +77,20 @@ namespace PrimeCare.Api.Controllers
         public async Task<ActionResult<AddressDto>> UpdateUserAddress(AddressDto address)
         {
             var user = await _userManager.FinddUserByClaimsPrincipallWithAddressAsync(HttpContext.User);
+            if (user == null)
+                return Unauthorized(new ApiResponse(401));
+
             user.Address = _mapper.Map<AddressDto, Address>(address);
             var result = await _userManager.UpdateAsync(user);
+
             if (result.Succeeded)
                 return Ok(_mapper.Map<Address, AddressDto>(user.Address));
-            return BadRequest("Problem updating the user address");
+
+            return BadRequest(new ApiResponse(400, "Problem updating the user address"));
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
+        public async Task<ActionResult<UserDto>> Login([FromBody] LoginDto loginDto)
         {
             var user = await _userManager.FindByEmailAsync(loginDto.Email);
             if (user == null) return Unauthorized(new ApiResponse(401));
@@ -97,10 +107,16 @@ namespace PrimeCare.Api.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
+        public async Task<ActionResult<UserDto>> Register([FromBody] RegisterDto registerDto)
         {
             if (registerDto.Password != registerDto.Repassword)
                 return BadRequest(new ApiResponse(400, "Passwords do not match"));
+
+            if ((await CheckEmailExists(registerDto.Email)).Value)
+                return new BadRequestObjectResult(new ApiValidationErrorResponse
+                {
+                    Errors = new[] { "Email is already in use" }
+                });
 
             var user = new ApplicationUser
             {
@@ -126,24 +142,19 @@ namespace PrimeCare.Api.Controllers
                 return BadRequest(new ApiResponse(400, $"Registration failed: {errors}"));
             }
 
-            var token = _tokenService.CreateToken(user);
-
             return Ok(new UserDto
             {
                 UserName = user.UserName,
-                Token = token,
-                Email = user.Email,
+                Token = _tokenService.CreateToken(user),
+                Email = user.Email
             });
         }
-
 
         [HttpGet("reset-password")]
         public IActionResult ResetPasswordPage(string email, string token)
         {
             return Ok(new { Email = email, Token = token, Message = "Ready for password reset" });
         }
-
-
 
         [HttpPost("forget-password")]
         public async Task<ActionResult> ForgetPassword([FromBody] ForgetPasswordDto model)
@@ -167,9 +178,6 @@ namespace PrimeCare.Api.Controllers
             return Ok(new { message = "Verification code sent to email" });
         }
 
-
-
-
         [HttpPost("verify-code")]
         public async Task<IActionResult> VerifyCode([FromBody] VerifyCodeDto verifyCodeDto)
         {
@@ -181,7 +189,6 @@ namespace PrimeCare.Api.Controllers
             if (savedCode != verifyCodeDto.Code)
                 return BadRequest(new ApiResponse(400, "Invalid verification code"));
 
-            // Mark verified and remove code
             await _database.StringSetAsync($"verified-reset-{verifyCodeDto.Email}", "true", TimeSpan.FromMinutes(15));
             await _database.KeyDeleteAsync($"reset-code-{verifyCodeDto.Email}");
 
@@ -211,7 +218,6 @@ namespace PrimeCare.Api.Controllers
                 return BadRequest(new ApiResponse(400, $"Reset password failed: {errors}"));
             }
 
-            // Remove verified state after success
             await _database.KeyDeleteAsync($"verified-reset-{resetPasswordDto.Email}");
 
             return Ok(new { Message = "Password reset successful" });

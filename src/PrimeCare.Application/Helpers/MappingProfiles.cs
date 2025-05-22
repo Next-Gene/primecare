@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Entities.Identity;
+using PrimeCare.Shared.Dtos.Cart;
 using PrimeCare.Shared.Dtos.Categories;
 using PrimeCare.Shared.Dtos.Photos;
 using PrimeCare.Shared.Dtos.ProductBrand;
@@ -78,5 +79,36 @@ public class MappingProfiles : Profile
         CreateMap<CategoryPhoto, CategoryPhotoDto>();
 
         CreateMap<Address, AddressDto>().ReverseMap();
+
+        //CreateMap<CustomerCartDto, CustomerCart>();
+        //CreateMap<CartItemDto, CartItem>();
+        CreateMap<ProductDto, CartItem>()
+        .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+        .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Name))
+        .ForMember(dest => dest.PicrureUrl, opt => opt.MapFrom(src => src.PhotoUrl))
+        .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
+        .ForMember(dest => dest.Brand, opt => opt.MapFrom(src => src.ProductBrand))
+        .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category));
+
+        CreateMap<ProductDto, WishlistItem>()
+       .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+       .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Name))
+       .ForMember(dest => dest.PicrureUrl, opt => opt.MapFrom(src => src.PhotoUrl))
+       .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
+       .ForMember(dest => dest.Brand, opt => opt.MapFrom(src => src.ProductBrand))
+       .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category));
+        // CustomerCart ↔ CustomerCartDto
+
+        CreateMap<CustomerCart, CustomerCartDto>()
+       .ForMember(dest => dest.TotalPrice, opt => opt.MapFrom(src => src.TotalPrice))
+       .ForMember(dest => dest.TaxAmount, opt => opt.MapFrom(src => src.TaxAmount))
+       .ForMember(dest => dest.TotalPriceWithTax, opt => opt.MapFrom(src => src.TotalPriceWithTax));
+
+        CreateMap<CustomerCartDto, CustomerCart>();
+
+        // CartItem ↔ CartItemDto
+        CreateMap<CartItem, CartItemDto>();
+        CreateMap<CartItemDto, CartItem>();
+
     }
 }

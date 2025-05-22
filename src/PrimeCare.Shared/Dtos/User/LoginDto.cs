@@ -1,10 +1,11 @@
-﻿namespace PrimeCare.Shared.Dtos.User
+﻿using System.ComponentModel.DataAnnotations;
+
+public class LoginDto
 {
-    public class LoginDto
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
+    [Required]
+    [EmailAddress(ErrorMessage = "Invalid email format")]
+    public string Email { get; set; }
 
-    }
-
+    [Required]
+    public string Password { get; set; }
 }
