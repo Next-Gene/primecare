@@ -41,6 +41,7 @@ public static class ServiceContainer
         // Email Settings and Email Service
         services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
         services.AddScoped<IEmailService, EmailService>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
     }

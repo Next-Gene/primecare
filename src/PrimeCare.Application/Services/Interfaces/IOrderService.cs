@@ -7,7 +7,7 @@ namespace PrimeCare.Application.Services.Interfaces
     {
 
         Task<Order> CreateOrderAsync(string BuyerEmail, int deliveryMethod, string userId, Address ShippingAddress);
-        Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string userId);
+        Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail);
         Task<Order> GetOrderByIdAsync(int id, string BuyerEmail);
 
         Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync();

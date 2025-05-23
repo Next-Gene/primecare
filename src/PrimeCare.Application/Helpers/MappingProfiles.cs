@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using PrimeCare.Core.Entities;
-
-using PrimeCare.Core.Entities.Identity;
+using PrimeCare.Core.Entities.Order;
+using PrimeCare.Core.Entities.OrderAggregate;
 using PrimeCare.Shared.Dtos.Cart;
 using PrimeCare.Shared.Dtos.Categories;
+using PrimeCare.Shared.Dtos.Order;
 using PrimeCare.Shared.Dtos.Photos;
 using PrimeCare.Shared.Dtos.ProductBrand;
 using PrimeCare.Shared.Dtos.Products;
@@ -79,7 +80,7 @@ public class MappingProfiles : Profile
         /// </summary>
         CreateMap<CategoryPhoto, CategoryPhotoDto>();
 
-        CreateMap<Address, AddressDto>().ReverseMap();
+        CreateMap<Core.Entities.Identity.Address, AddressDto>().ReverseMap();
         //CreateMap<CustomerCartDto, CustomerCart>();
         //CreateMap<CartItemDto, CartItem>();
         CreateMap<ProductDto, CartItem>()
@@ -110,6 +111,13 @@ public class MappingProfiles : Profile
         CreateMap<CartItem, CartItemDto>();
         CreateMap<CartItemDto, CartItem>();
         CreateMap<AddressDto, PrimeCare.Core.Entities.Order.Address>();
+        CreateMap<Order, OrderToReturnDto>()
+            .ForMember(dest => dest.DeliveryMethod, opt => opt.MapFrom(src => src.DeliveryMethod.ShortName))
+            .ForMember(dest => dest.ShippingPrice, opt => opt.MapFrom(src => src.DeliveryMethod.Price));
+        CreateMap<OrderItem, OrderItemDto>().ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ItemOrderd.ProductItemId))
+            .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ItemOrderd.ProductName))
+            .ForMember(dest => dest.PictureUrl, opt => opt.MapFrom(src => src.ItemOrderd.ProductImageUrl));
+
 
     }
 }
