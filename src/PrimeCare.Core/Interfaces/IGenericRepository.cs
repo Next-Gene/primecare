@@ -21,7 +21,6 @@ public interface IGenericRepository<T> where T : BaseEntity
     /// </summary>
     /// <returns>A read-only list of all entities.</returns>
     Task<IReadOnlyList<T>> GetAllAsync();
-
     /// <summary>
     /// Gets a single entity that matches the specified specification asynchronously.
     /// </summary>
@@ -62,4 +61,9 @@ public interface IGenericRepository<T> where T : BaseEntity
     /// </summary>
     /// <returns><c>true</c> if the changes were saved successfully; otherwise, <c>false</c>.</returns>
     Task<bool> SaveAllAsync();
+
+    void Add(T entity);
+    void Update(T entity);
+
+    void Delete(T entity);
 }

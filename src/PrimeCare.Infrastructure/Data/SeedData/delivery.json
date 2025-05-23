@@ -1,0 +1,15 @@
+
+[
+  {
+    "shortName": "Express",
+    "deliveryTime": "1-2 days",
+    "description": "Fastest delivery option",
+    "price": 10.0
+  },
+  {
+    "shortName": "Standard",
+    "deliveryTime": "3-5 days",
+    "description": "Standard delivery",
+    "price": 5.0
+  }
+]

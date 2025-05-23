@@ -17,7 +17,7 @@ public class CartItemDto
     public int Quantity { get; set; }
 
     [Required]
-    public string PicrureUrl { get; set; } = null!;
+    public string PictureUrl { get; set; } = null!;
 
     [Required]
     public string Brand { get; set; } = null!;

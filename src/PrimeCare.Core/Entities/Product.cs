@@ -25,6 +25,7 @@ public class Product : BaseEntity
     /// </summary>
     public ICollection<ProductPhoto> ProductPhotos { get; set; } = new List<ProductPhoto>();
 
+
     /// <summary>
     /// Gets or sets the category of the product.
     /// </summary>
