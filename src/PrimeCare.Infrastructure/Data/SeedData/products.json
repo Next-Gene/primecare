@@ -1,3436 +1,452 @@
 [
-  {
-    "id": 1,
-    "name": "Stethoscope Pro",
-    "description": "High quality stethoscope with advanced acoustics for accurate heart and lung sound diagnosis.",
-    "price": 120,
-    "productBrand": 1,
-    "category": 1,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "/images/product/stethoscope-pro.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "/images/product/stethoscope-pro-1.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "/images/product/stethoscope-pro-2.jpg",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "/images/product/stethoscope-pro-3.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": ["/images/product/stethoscope-pro.jpg"]
-  },
-  {
-    "id": 2,
-    "name": "Digital Blood Pressure Monitor",
-    "description": "Accurate digital blood pressure monitor with an easy-to-read display and ergonomic design.",
-    "price": 80,
-    "productBrand": 2,
-    "category": 2,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "/images/product/digital-blood-pressure-monitor.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "/images/product/digital-blood-pressure-monitor-1.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "/images/product/digital-blood-pressure-monitor-2.jpg",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "/images/product/digital-blood-pressure-monitor-3.jpg",
-        "isMain": false
-      },
-      {
-        "id": "5",
-        "url": "/images/product/digital-blood-pressure-monitor-4.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": ["/images/product/digital-blood-pressure-monitor.jpg"]
-  },
-  {
-    "id": 3,
-    "name": "Digital Thermometer",
-    "description": "Fast and accurate digital thermometer for measuring body temperature with an easy digital readout.",
-    "price": 25.5,
-    "productBrand": 3,
-    "category": 1,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "/images/product/digital-thermometer.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "/images/product/digital-thermometer-1.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "/images/product/digital-thermometer-2.jpg",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "/images/product/digital-thermometer-3.jpg",
-        "isMain": false
-      },
-      {
-        "id": "5",
-        "url": "/images/product/digital-thermometer-4.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": ["/images/product/digital-thermometer.jpg"]
-  },
-  {
-    "id": 4,
-    "name": "Disposable Syringes Pack",
-    "description": "Pack of 100 disposable syringes for safe and hygienic injections and medical procedures.",
-    "price": 15,
-    "productBrand": 4,
-    "category": 3,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "/images/product/disposable-syringes-pack.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "/images/product/disposable-syringes-pack-1.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "/images/product/disposable-syringes-pack-2.jpg",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "/images/product/disposable-syringes-pack-3.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": ["/images/product/disposable-syringes-pack.jpg"]
-  },
-  {
-    "id": 5,
-    "name": "Latex Medical Gloves",
-    "description": "High quality latex gloves for medical examinations, available in multiple sizes.",
-    "price": 20,
-    "productBrand": 5,
-    "category": 3,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "/images/product/latex-medical-gloves.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "/images/product/latex-medical-gloves-1.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "/images/product/latex-medical-gloves-2.jpg",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "/images/product/latex-medical-gloves-3.jpg",
-        "isMain": false
-      },
-      {
-        "id": "5",
-        "url": "/images/product/latex-medical-gloves-4.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": ["/images/product/latex-medical-gloves.jpg"]
-  },
-  {
-    "id": 6,
-    "name": "Surgical Face Mask",
-    "description": "Disposable surgical face masks for protection against airborne particles and germs.",
-    "price": 10,
-    "productBrand": 6,
-    "category": 3,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "/images/product/surgical-face-mask.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "/images/product/surgical-face-mask-1.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "/images/product/surgical-face-mask-2.jpg",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "/images/product/surgical-face-mask-3.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": ["/images/product/surgical-face-mask.jpg"]
-  },
-  {
-    "id": 7,
-    "name": "Hand Sanitizer Gel",
-    "description": "Alcohol-based hand sanitizer gel that kills 99.9% of germs and bacteria.",
-    "price": 8,
-    "productBrand": 7,
-    "category": 3,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "/images/product/hand-sanitizer-gel.jpg",
-        "isMain": true
-      }
-    ],
-    "photoUrl": ["/images/product/hand-sanitizer-gel.jpg"]
-  },
-  {
-    "id": 8,
-    "name": "IV Drip Set",
-    "description": "Complete IV drip set including tubing, needle, and drip chamber for intravenous therapy.",
-    "price": 50,
-    "productBrand": 8,
-    "category": 19,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "/images/product/iv-drip-set.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "/images/product/iv-drip-set-1.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "/images/product/iv-drip-set-2.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": ["/images/product/iv-drip-set.jpg"]
-  },
-  {
-    "id": 9,
-    "name": "Surgical Scissors",
-    "description": "Precision surgical scissors designed for clean cuts during operations.",
-    "price": 35,
-    "productBrand": 9,
-    "category": 5,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "/images/product/surgical-scissors.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "/images/product/surgical-scissors-1.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "/images/product/surgical-scissors-2.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": ["/images/product/surgical-scissors.jpg"]
-  },
-  {
-    "id": 10,
-    "name": "Automated Defibrillator",
-    "description": "Portable automated external defibrillator for emergency cardiac care with voice prompts.",
-    "price": 1500.0,
-    "productBrand": 10,
-    "category": 1,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "/images/product/automated-defibrillator.jpg",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "/images/product/automated-defibrillator-1.jpg",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "/images/product/automated-defibrillator-2.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "/images/product/automated-defibrillator.jpg"
-  },
-  {
-    "id": 11,
-    "name": "Insulin Glargine",
-    "description": "Used to keep insulin levels stable all day.Injected once daily at the same time.Starts working in a few hours, lasts up to 24+ hours.",
-    "price": 30.0,
-    "productBrand": 11,
-    "category": 11,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "../../images/product/111.jpeg",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/1111.webp",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "../../images/product/111111.jpeg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/111.jpeg"
-  },
-  {
-    "id": 12,
-    "name": "Sun screen bobai",
-    "description": "a skincare product applied to the skin to protect it from harmful ultraviolet (UV) rays from the sun. It helps prevent sunburn, premature aging, and reduces the risk of skin cancer.",
-    "price": 250.0,
-    "productBrand": 12,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "/images/product/12112.webp",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/1212.jpg",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "../../images/product/121212.png",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "/images/product/12112.webp"
-  },
-  {
-    "id": 13,
-    "name": "Genesis Anti-Hair Fall Ampoules",
-    "description": "A powerful blend that boosts scalp health and rebuilds hair, making it thicker and healthier",
-    "price": 400.0,
-    "productBrand": 13,
-    "category": 13,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "./images/product/1333.jpg",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/13133.jpeg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "/images/product/1333.jpg"
-  },
-  {
-    "id": 14,
-    "name": "Cetrocare 0.25mg",
-    "description": "",
-    "price": 75.0,
-    "productBrand": 14,
-    "category": 14,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "../../images/product/141414.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/141414.webp"
-  },
-  {
-    "id": 15,
-    "name": "Stethoscope",
-    "description": "A tool used by doctors to listen to the heart, lungs, and other body sounds to help diagnose health problems.",
-    "price": 1500.0,
-    "productBrand": 15,
-    "category": 15,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "../../images/product/sma3aa.jpg",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/hhhhhh.webp",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "../../images/product/hh.png",
-        "isMain": false
-      },
-      {
-        "id": 4,
-        "url": "../../images/product/hh.png",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/sma3aa.jpg"
-  },
-  {
-    "id": 16,
-    "name": "Congestal",
-    "description": " used to treat symptoms of the common cold and flu, such as nasal congestion, runny nose, headache, and body aches.",
-    "price": 150.0,
-    "productBrand": 16,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "../../images/product/mmmm.png",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/mr.jpg",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "../../images/product/mm.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/mmmm.png"
-  },
-  {
-    "id": 17,
-    "name": "Glucophage",
-    "description": "a medication that contains the active ingredient Metformin. It is primarily used to treat type 2 diabetes. ",
-    "price": 20.0,
-    "productBrand": 17,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "../../images/product/qq.jpeg",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/qqqqq.jpeg",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "../../images/product/q.jpeg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/qq.jpeg"
-  },
-  {
-    "id": 18,
-    "name": "Heart Rate Monitor",
-    "description": "A device used to measure heartbeats per minute, helping monitor heart health and detect irregularities in heart rate.",
-    "price": 1500.0,
-    "productBrand": 18,
-    "category": 11,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "../../images/product/kkkkk.webp",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/kkk.avif",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "../../images/product/time.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/kkkkk.webp"
-  },
-  {
-    "id": 19,
-    "name": "Cardiac Defibrillator",
-    "description": "A device used to restore a normal heart rhythm by delivering an electric shock to the heart in cases of severe arrhythmia or cardiac arrest.",
-    "price": 1500.0,
-    "productBrand": 19,
-    "category": 11,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "../../images/product/aaaaa.png",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/timer.jpg",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "../../images/product/aaa.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "/images/product/aaaaa.png"
-  },
-  {
-    "id": 20,
-    "name": "Pampers-pants",
-    "description": "Comfort for Babies,High Absorption: They contain absorbent layers that keep the baby dry for long periods.",
-    "price": 500.0,
-    "productBrand": 20,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "../../images/product/OIP (3).jpeg",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/OIP (4).jpeg",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "../../images/product/download (3).jpeg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/OIP (3).jpeg"
-  },
-  {
-    "id": 21,
-    "name": "Mechanical Ventilation Machine",
-    "description": "The machine can control breathing entirely or assist the patient’s natural breaths.",
-    "price": 1500.0,
-    "productBrand": 21,
-    "category": 1,
-    "productPhotos": [
-      {
-        "id": 1,
-        "url": "../../images/product/R.jpeg",
-        "isMain": true
-      },
-      {
-        "id": 2,
-        "url": "../../images/product/rrr.jpeg",
-        "isMain": false
-      },
-      {
-        "id": 3,
-        "url": "../../images/product/rr.avif",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/R.jpeg"
-  },
-
-  {
-    "id": 22,
-    "name": "Protective Glasses",
-    "description": "Provides protection from blood splashes or chemical exposure in the operating room.",
-    "price": 1500.0,
-    "productBrand": 22,
-    "category": 3,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/66666.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/66.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/666.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/66666.jpg"
-  },
-  {
-    "id": 23,
-    "name": "Mercury Thermometer",
-    "description": "Contains liquid mercury that expands with heat and rises in the glass tube to show temperature.Commonly marked in Celsius (°C) or Fahrenheit (°F).",
-    "price": 50.0,
-    "productBrand": 23,
-    "category": 22,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/2444.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/24.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/244.jpeg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/2444.jpg"
-  },
-  {
-    "id": 24,
-    "name": "Surgical gloves",
-    "description": "",
-    "price": 1500.0,
-    "productBrand": 24,
-    "category": 22,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/latex-medical-gloves-3.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/latex-medical-gloves-4.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/latex-medical-gloves.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/latex-medical-gloves-3.jpg"
-  },
-  {
-    "id": 25,
-    "name": "Heart Rate Monitor Watch",
-    "description": "is a wearable device that tracks your heartbeats in real time. It’s commonly used in fitness, health monitoring",
-    "price": 1500.0,
-    "productBrand": 25,
-    "category": 22,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/5555.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/555555.jpeg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/555.jpg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/5555.jpg"
-  },
-  {
-    "id": 26,
-    "name": "Digital Thermometer",
-    "description": "Provides quick readings (usually within 10–60 seconds).Easy to read display screen showing temperature in Celsius (°C) or Fahrenheit (°F).",
-    "price": 1500.0,
-    "productBrand": 26,
-    "category": 19,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/266.jpg",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/26.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/26666.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/266.jpg"
-  },
-  {
-    "id": 27,
-    "name": "Automatic Hand Sanitizer Dispenser",
-    "description": "a hands-free device commonly used in medical environments like hospitals, clinics",
-    "price": 500.0,
-    "productBrand": 27,
-    "category": 3,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/777.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/77.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/7.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/777.webp"
-  },
-  {
-    "id": 28,
-    "name": "CENTRUMSILVER30TAB",
-    "description": "",
-    "price": 100.0,
-    "productBrand": 28,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/11425-CENTRUMSILVER30TAB.-inside.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/11425-CENTRUMSILVER30TAB.-international.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/11425-CENTRUMSILVER30TAB.-backside.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/11425-CENTRUMSILVER30TAB.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/11425-CENTRUMSILVER30TAB.-inside.webp"
-  },
-  {
-    "id": 29,
-    "name": "HEALTHLIFEVITC1000M",
-    "description": "A dietary supplement rich in Vitamin C (1000mg) to support immune function and fight oxidative stress.",
-    "price": 100.0,
-    "productBrand": 29,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/12093-HEALTHLIFEVITC1000MG20EFFTAB_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/12093-HEALTHLIFEVITC1000MG20EFFTAB-backside_JPG.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/12093-HEALTHLIFEVITC1000MG20EFFTAB_JPG.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/12093-HEALTHLIFEVITC1000MG20EFFTAB_JPG.webp"
-  },
-  {
-    "id": 30,
-    "name": "FEROGLOBIN",
-    "description": "An iron-rich supplement with essential vitamins to support blood formation, energy, and overall vitality.",
-    "price": 500.0,
-    "productBrand": 30,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/12322-VITABIOTICS_FEROGLOBIN_B12_30_CAP_Front_Side_ac956e77-b47a-453d-82f8-6c77f150ec50.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/12322-VITABIOTICS_FEROGLOBIN_B12_30_CAP_Back_Side_c5e24c45-916d-4151-8114-2496bf4386c6.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/12322-VITABIOTICS_FEROGLOBIN_B12_30_CAP_Left_Side_82cc6f37-fb8c-4b8d-9c0d-655d6c0083c1.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/12322-VITABIOTICS_FEROGLOBIN_B12_30_CAP_Right_Side_63efe56e-5e53-4475-b2e6-d28dbea48636.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/12322-VITABIOTICS_FEROGLOBIN_B12_30_CAP_Front_Side_ac956e77-b47a-453d-82f8-6c77f150ec50.webp"
-  },
-  {
-    "id": 31,
-    "name": "XYLOLIN_CHILDREN_SPRAY_10ML",
-    "description": "Nasal spray for children that helps relieve nasal congestion caused by colds and allergies.",
-    "price": 500.0,
-    "productBrand": 31,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/15251-XYLOLIN_CHILDREN_SPRAY_10ML_inside.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/15251-XYLOLIN_CHILDREN_SPRAY_10ML_Front_Side.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/15251-XYLOLIN_CHILDREN_SPRAY_10ML_Left_Side.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/15251-XYLOLIN_CHILDREN_SPRAY_10ML_inside2.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/15251-XYLOLIN_CHILDREN_SPRAY_10ML_inside.webp"
-  },
-  {
-    "id": 32,
-    "name": "Nivea SunInt 200ml",
-    "description": "Intensive sun protection lotion from Nivea, provides effective UV protection while moisturizing the skin.",
-    "price": 500.0,
-    "productBrand": 32,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/15512-NiveaSunIntenseBronzeCaroteneSpf6OilSpray200ml.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/15512-NiveaSunIntenseBronzeCaroteneSpf6OilSpray200ml.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/15512-NiveaSunIntenseBronzeCaroteneSpf6OilSpray200ml.webp"
-  },
-  {
-    "id": 33,
-    "name": "VASELINE-ORIGINAL-100ml",
-    "description": "Pure petroleum jelly that moisturizes dry skin, protects from chapping, and promotes healing.",
-    "price": 500.0,
-    "productBrand": 33,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/16999-VASELINE-ORIGINAL-HEALING-JELLY-100-ML.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/16999-VASELINE-ORIGINAL-HEALING-JELLY-100-ML.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/16999-VASELINE-ORIGINAL-HEALING-JELLY-100-ML-back-side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/16999-VASELINE-ORIGINAL-HEALING-JELLY-100-ML.webp"
-  },
-  {
-    "id": 34,
-    "name": "Sudo-Cream-250gm",
-    "description": "A versatile skincare cream ideal for treating diaper rash, minor burns, and skin irritation.",
-    "price": 500.0,
-    "productBrand": 34,
-    "category": 1,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/17018-Sudo-Cream-250gm.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/17018-Sudo-Cream-250gm-right-side.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/17018-Sudo-Cream-250gm-left-side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/17018-Sudo-Cream-250gm.webp"
-  },
-  {
-    "id": 35,
-    "name": "Infrared Massage Device",
-    "description": "Provides comfortable and deep muscle massage.Includes infrared function to relieve pain and improve blood circulation.Ergonomic design for ease of use",
-    "price": 500.0,
-    "productBrand": 35,
-    "category": 18,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/17483_000_001_0d07be20-fbbd-4be0-9927-4228ce3ddae4.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/17483_000_001_0d07be20-fbbd-4be0-9927-4228ce3ddae4.webp"
-  },
-  {
-    "id": 36,
-    "name": "BABY-SOFT-LOTION-500ml",
-    "description": "Gentle baby lotion formulated to moisturize and soften delicate skin all day long.",
-    "price": 500.0,
-    "productBrand": 36,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/18535.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/18535.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/18535.webp"
-  },
-  {
-    "id": 37,
-    "name": "FESS_LITTLE_SALINE_NASAL_SPRAY_ASPIRATOR_15ml",
-    "description": "A saline nasal spray with aspirator, specially designed for infants to gently clear nasal congestion.",
-    "price": 500.0,
-    "productBrand": 37,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/18992_000_001_731c4129-c51f-479b-9430-476885237322.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/18992-FESS_LITTLE_SALINE_NASAL_SPRAY_ASPIRATOR_15ML.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/18992-FESS_LITTLE_SALINE_NASAL_SPRAY_ASPIRATOR_15ML-left_side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/18992_000_001_731c4129-c51f-479b-9430-476885237322.webp"
-  },
-  {
-    "id": 38,
-    "name": "Listerine_Total_Care_Tartar_Protect_Mouthwash_500ml",
-    "description": "Listerine Total Care Tartar Protect offers complete oral care in one rinse. It helps prevent tartar buildup, strengthens teeth, fights bad breath, and maintains healthy gums. Leaves your mouth feeling fresh and clean all day.",
-    "price": 500.0,
-    "productBrand": 38,
-    "category": 19,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/19109-Listerine_Total_Care_Tartar_Protect_Mouthwash_500ml_front_d4624813-9a4f-4ef0-916f-7aeabbc13287.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/19109-Listerine_Total_Care_Tartar_Protect_Mouthwash_500ml_back_2b798233-0375-4bb1-ac81-a9ab347609cd.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/19109-Listerine_Total_Care_Tartar_Protect_Mouthwash_500ml_front_d4624813-9a4f-4ef0-916f-7aeabbc13287.webp"
-  },
-  {
-    "id": 39,
-    "name": "PRIORINN",
-    "description": "Priorin Capsules support hair growth from within using a unique blend of natural ingredients including millet extract, biotin, and L-cystine. Ideal for those experiencing thinning hair or hair loss. Promotes stronger, healthier hair.",
-    "price": 500.0,
-    "productBrand": 39,
-    "category": 14,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/20846-PRIORINN90CAPS_53a6349b-7a4f-471e-9a81-c2d0c0fed281.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/20846-PRIORINN90CAPS-BACKSIDE.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/20846-PRIORINN90CAPS-LEFTSIDE.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/20846-PRIORINN90CAPS-RIGHTSIDE.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/20846-PRIORINN90CAPS_53a6349b-7a4f-471e-9a81-c2d0c0fed281.webp"
-  },
-  {
-    "id": 40,
-    "name": "BIODER MASE-BIUM-FOAMING-GEL200ml",
-    "description": "",
-    "price": 500.0,
-    "productBrand": 40,
-    "category": 21,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/21351-BIODERMASEBIUMFOAMINGGEL200ML34171_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/21351-BIODERMASEBIUMFOAMINGGEL200ML34171_BACKSIDE_JPG.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/21351-BIODERMASEBIUMFOAMINGGEL200ML34171_JPG.webp"
-  },
-  {
-    "id": 41,
-    "name": "Lacalut-Aktiv Tooth-paste-75ml",
-    "description": "",
-    "price": 500.0,
-    "productBrand": 41,
-    "category": 5,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/22277-LacalutAktivToothpaste75ml_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/22277-LacalutAktivToothpaste75ml_leftside_JPG_1.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/22277-LacalutAktivToothpaste75ml_rightside_JPG_1.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/22277-LacalutAktivToothpaste75ml_JPG.webp"
-  },
-  {
-    "id": 42,
-    "name": "REVITOL_KERATIN_HAIR_MASK_500m_REKHM",
-    "description": "",
-    "price": 500.0,
-    "productBrand": 42,
-    "category": 1,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/23559-REVITOL_KERATIN_HAIR_MASK_500M_REKHM_-inside_2_01cb46eb-dc15-42f9-80eb-87ec89d8d74d.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/23559-REVITOL_KERATIN_HAIR_MASK_500M_REKHM_940a89e1-fc77-4794-bc94-49d3d37a1cb9.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/23559-REVITOL_KERATIN_HAIR_MASK_500M_REKHM_back_side_de9bdf4f-fe1b-4015-b4f7-1f448e0d5def.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/23559-REVITOL_KERATIN_HAIR_MASK_500M_REKHM_-inside_7a54476f-c9e9-4d3f-81c3-750dd757b2de.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/23559-REVITOL_KERATIN_HAIR_MASK_500M_REKHM_-inside_2_01cb46eb-dc15-42f9-80eb-87ec89d8d74d.webp"
-  },
-  {
-    "id": 43,
-    "name": "acalut Aktiv-Toothbrush",
-    "description": "A toothbrush designed for effective cleaning, offering a gentle brushing experience. It helps to maintain oral hygiene while ensuring comfort.",
-    "price": 500.0,
-    "productBrand": 43,
-    "category": 21,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/23913-LacalutAktivToothbrush.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/23913-LacalutAktivToothbrush_backside.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/23913-LacalutAktivToothbrush.webp"
-  },
-  {
-    "id": 44,
-    "name": "Melatime-SunScreen-Gel-SPF50+-Velvet-Touch-50-GM",
-    "description": "The formula includes Aquagel, Panthenol, Tocopheryl Acetate, and Niacinamide, ensuring deep hydration and protection against free radicals. Additionally, it contains chemical and physical sunscreen blockers like Titanium Dioxide and Zinc Oxide for ultimate sun defense ",
-    "price": 500.0,
-    "productBrand": 44,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../Melatime-SunScreen-Gel-SPF50+-Velvet-Touch-50-GM.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../51l8cfhUWnL._AC_SX569_.jpg",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../OIP (6).jpeg",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../Melatime-SunScreen-Gel-SPF50+-Velvet-Touch-50-GM.webp"
-  },
-  {
-    "id": 45,
-    "name": "LAROCHE POSAYE-FFACLARFOAMINGGEL-400ml",
-    "description": "A gentle foaming gel that cleanses the skin effectively. It is suitable for oily and acne-prone skin, helping to remove excess oil without causing dryness.",
-    "price": 500.0,
-    "productBrand": 45,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/29841-LAROCHEPOSAYEFFACLARFOAMINGGEL400ML_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/29841-LAROCHEPOSAYEFFACLARFOAMINGGEL400ML_backside.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/29841-LAROCHEPOSAYEFFACLARFOAMINGGEL400ML_JPG.webp"
-  },
-  {
-    "id": 46,
-    "name": "Lansinoh_Breastmilk_Storage_Bags_25Bags",
-    "description": " High-quality storage bags for breastmilk, providing a safe and convenient way to store milk for later use. These bags are durable and designed to prevent leaks.",
-    "price": 500.0,
-    "productBrand": 46,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/30013-Lansinoh_Breastmilk_Storage_Bags_25Bags_Front_Side.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/30013-Lansinoh_Breastmilk_Storage_Bags_25Bags_Back_Side.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/30013-Lansinoh_Breastmilk_Storage_Bags_25Bags_Left_Side.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/30013-Lansinoh_Breastmilk_Storage_Bags_25Bags_Right_Side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/30013-Lansinoh_Breastmilk_Storage_Bags_25Bags_Front_Side.webp"
-  },
-  {
-    "id": 47,
-    "name": "ENERGYALCOHOLSOLUTION95_SPRAY500ml",
-    "description": "An alcohol solution in spray form, ideal for sanitizing surfaces and hands. It offers 95% alcohol content, ensuring effective disinfection.",
-    "price": 500.0,
-    "productBrand": 47,
-    "category": 14,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/31945-ENERGYALCOHOLSOLUTION95_SPRAY500ML.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/31945-ENERGYALCOHOLSOLUTION95_SPRAY500ML_backside.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/31945-ENERGYALCOHOLSOLUTION95_SPRAY500ML.webp"
-  },
-  {
-    "id": 48,
-    "name": "FERRONAM",
-    "description": "A supplement designed to help with iron deficiency. It comes in convenient sachets that are easy to mix and consume, providing essential nutrients.",
-    "price": 500.0,
-    "productBrand": 48,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/32293-FERRONAMOROSOLUBLE28SACHETS.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/32293-FERRONAMOROSOLUBLE28SACHETS-rightside.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/32293-FERRONAMOROSOLUBLE28SACHETS-leftside.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/32293-FERRONAMOROSOLUBLE28SACHETS-backside.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/32293-FERRONAMOROSOLUBLE28SACHETS.webp"
-  },
-  {
-    "id": 49,
-    "name": "TynorWristSplintAmbidextrous",
-    "description": "A versatile wrist splint suitable for both hands, offering support for injured or weak wrists. It is comfortable and provides necessary stabilization.",
-    "price": 500.0,
-    "productBrand": 49,
-    "category": 19,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/32829-TynorWristSplintAmbidextrous-E43L_JPG_b2edb62a-390d-4f69-a5e6-2106a770abba.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/32829-TynorWristSplintAmbidextrous-E43L_JPG_b2edb62a-390d-4f69-a5e6-2106a770abba.webp"
-  },
-  {
-    "id": 50,
-    "name": "A_NATURES_BOUNTY_VITAMIN_C-1000_mg",
-    "description": " A vitamin C supplement that helps to support the immune system. It comes in easy-to-swallow tablets, providing the body with an essential vitamin for overall health.",
-    "price": 500.0,
-    "productBrand": 50,
-    "category": "",
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/35036_-A_NATURES_BOUNTY_VITAMIN_C-1000_MG_100TAB_Front_SideA.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/35036_-A_NATURES_BOUNTY_VITAMIN_C-1000_MG_100TAB_Back_SideA.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/35036_-A_NATURES_BOUNTY_VITAMIN_C-1000_MG_100TAB_Front_SideA.webp"
-  },
-  {
-    "id": 51,
-    "name": "NATURES-BOUNTY-CO-Q-10-200MG",
-    "description": " A supplement that supports heart health and energy production. Coenzyme Q10 plays a vital role in cellular energy and antioxidant protection.",
-    "price": 500.0,
-    "productBrand": 51,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/35039-NATURES-BOUNTY-CO-Q-10-200MG-45CAP.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/35039-NATURES-BOUNTY-CO-Q-10-200MG-45CAP-LEFT-SIDE.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/32293-FERRONAMOROSOLUBLE28SACHETS-rightside.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/35039-NATURES-BOUNTY-CO-Q-10-200MG-45CAP.webp"
-  },
-  {
-    "id": 52,
-    "name": "AMERIX-GUMMY-MELATONIN-5mg",
-    "description": "A melatonin supplement in gummy form, designed to help improve sleep quality. It's an easy and tasty way to enhance your sleep routine.",
-    "price": 500.0,
-    "productBrand": 52,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/37719-AMERIX-GUMMY-MELATONIN-5MG-ADULTS-60PCS.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/37719-AMERIX-GUMMY-MELATONIN-5MG-ADULTS-60PCS-right-side.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/37719-AMERIX-GUMMY-MELATONIN-5MG-ADULTS-60PCS-left-side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/37719-AMERIX-GUMMY-MELATONIN-5MG-ADULTS-60PCS.webp"
-  },
-  {
-    "id": 53,
-    "name": "Cala_Eye_Brow_Razor",
-    "description": " A set of eyebrow razors designed for precise grooming and shaping. It allows for quick and easy removal of unwanted eyebrow hair.",
-    "price": 500.0,
-    "productBrand": 53,
-    "category": 1,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/38283-Cala_Eye_Brow_Razor_2Pcs-70-724B_Front_Side_9cf1f1aa-0e6d-44b2-8d2a-25af5af15f7a.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/38283-Cala_Eye_Brow_Razor_2Pcs-70-724B_Back_Side_2b0084e1-0d95-4a62-811f-9e198dfc5d6e.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/38283-Cala_Eye_Brow_Razor_2Pcs-70-724B_Front_Side_9cf1f1aa-0e6d-44b2-8d2a-25af5af15f7a.webp"
-  },
-  {
-    "id": 54,
-    "name": "Cala Oval Pumice Stone",
-    "description": "Smooths rough, calloused skin, making it soft and refreshed.",
-    "price": 500.0,
-    "productBrand": 54,
-    "category": 1,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/38286_000_001.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/38286_000_001.webp"
-  },
-  {
-    "id": 55,
-    "name": "REVITOLKERATINE-FORTEAMPFORWOMEN8X3ML",
-    "description": " A hair care treatment that strengthens and nourishes hair. The ampoules contain keratin and essential nutrients to support hair health and shine.",
-    "price": 500.0,
-    "productBrand": 55,
-    "category": 25,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/38323-REVITOLKERATINE-FORTEAMPFORWOMEN8X3ML.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/38323-REVITOLKERATINE-FORTEAMPFORWOMEN8X3ML-rightside.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/38323-REVITOLKERATINE-FORTEAMPFORWOMEN8X3ML-leftside.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/38323-REVITOLKERATINE-FORTEAMPFORWOMEN8X3ML.webp"
-  },
-  {
-    "id": 56,
-    "name": "Laica_Ultrasonic_Portable_Nebulizer",
-    "description": "A portable nebulizer that helps in the effective delivery of medication for respiratory issues. It is compact and easy to use, making it convenient for on-the-go use.",
-    "price": 500.0,
-    "productBrand": 56,
-    "category": 19,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/38359-2Laica_Ultrasonic_Portable_Nebulizer-NE1005.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/38359-1Laica_Ultrasonic_Portable_Nebulizer-NE1005.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/38359-3.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/38359-2Laica_Ultrasonic_Portable_Nebulizer-NE1005.webp"
-  },
-  {
-    "id": 57,
-    "name": "VIDROP_ORAL_DROPS_VIT",
-    "description": "A vitamin D3 supplement in oral drop form, ideal for supporting bone health and immune system function. It provides an easy way to get your daily dose of vitamin D.",
-    "price": 500.0,
-    "productBrand": 57,
-    "category": 15,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/39691-VIDROP_ORAL_DROPS_VIT.D3_2800_I.U.ML_15ML_inside.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/39691-VIDROP_ORAL_DROPS_VIT.D3_2800_I.U.ML_15ML_Back_Side.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/39691-VIDROP_ORAL_DROPS_VIT.D3_2800_I.U.ML_15ML_inside1.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/39691-VIDROP_ORAL_DROPS_VIT.D3_2800_I.U.ML_15ML_inside.webp"
-  },
-  {
-    "id": 58,
-    "name": "DEESLINE-SOAP",
-    "description": "This DEESLINE soap is an ideal choice for skin care, specifically designed for sensitive skin. It provides a deep clean while also offering hydration, leaving your skin soft and refreshed.",
-    "price": 500.0,
-    "productBrand": 58,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/39980_000_001_05a52527-5ab6-428a-8c7f-91491bc8d42c.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/39980-BEESLINE-WHITENING-SENSITIVE-ZONE-SOAP-110G-back-side.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/39980-BEESLINE-WHITENING-SENSITIVE-ZONE-SOAP-110G.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/39980_000_001_05a52527-5ab6-428a-8c7f-91491bc8d42c.webp"
-  },
-  {
-    "id": 59,
-    "name": "Laica_Upper_Arm_BP_Monitor_Large_Display_White",
-    "description": "The Laica upper arm blood pressure monitor features a comfortable design with a large display, making it easy to read results. Perfect for accurate and reliable blood pressure measurements at home.",
-    "price": 500.0,
-    "productBrand": 59,
-    "category": 2,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/40024-3Laica_Upper_Arm_BP_Monitor_Large_Display_White-BM2605.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/40024-2Laica_Upper_Arm_BP_Monitor_Large_Display_White-BM2605.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/40024-1Laica_Upper_Arm_BP_Monitor_Large_Display_White-BM2605.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/40024-3Laica_Upper_Arm_BP_Monitor_Large_Display_White-BM2605.webp"
-  },
-  {
-    "id": 60,
-    "name": "LA-ROCHE-POSAY-LIPIKAR-SYNDET-AP_-400ML",
-    "description": "La Roche-Posay Lipikar Syndet AP+ is a gentle, hydrating body wash designed to cleanse and soothe sensitive skin. Its formula helps to restore the skin's natural moisture balance, making it ideal for dry and atopic skin.",
-    "price": 500.0,
-    "productBrand": 60,
-    "category": 21,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/40384-LA-ROCHE-POSAY-LIPIKAR-SYNDET-AP_-400ML.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/40384-LA-ROCHE-POSAY-LIPIKAR-SYNDET-AP_-400ML-back-side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/40384-LA-ROCHE-POSAY-LIPIKAR-SYNDET-AP_-400ML.webp"
-  },
-  {
-    "id": 61,
-    "name": "BEESLINE_WHITENING_SENSITIVE_ZONE_CREAM_50ml",
-    "description": "This Beesline Whitening Sensitive Zone Cream is formulated to lighten and even the skin tone in sensitive areas, offering a gentle solution for intimate skin care. It provides effective results while keeping the skin soft and moisturized.",
-    "price": 500.0,
-    "productBrand": 61,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/40646-BEESLINE_WHITENING_SENSITIVE_ZONE_CREAM_50ML-inside_c09d8683-4448-4be7-bdbe-d51e3dc0a4bd.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/40646-BEESLINE_WHITENING_SENSITIVE_ZONE_CREAM_50ML-inside_2_8524d318-1c32-49b7-add3-f59eaa73cc9c.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/40646-BEESLINE_WHITENING_SENSITIVE_ZONE_CREAM_50ML-inside_3_e6068a6b-21de-4f2f-9209-bd058bd96a57.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/40646-BEESLINE_WHITENING_SENSITIVE_ZONE_CREAM_50ML-left_side_2b54a01c-230f-448e-b034-13c8cb855017.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/40646-BEESLINE_WHITENING_SENSITIVE_ZONE_CREAM_50ML-inside_c09d8683-4448-4be7-bdbe-d51e3dc0a4bd.webp"
-  },
-  {
-    "id": 62,
-    "name": "Acu-Life_Weekly_Pill_Reminder_Large-300B",
-    "description": "The Acu-Life Weekly Pill Reminder helps you stay organized with your medication. It has multiple compartments to hold daily doses of medicine, ensuring you never miss a dose. It's large and easy to use, perfect for organizing pills for the week.",
-    "price": 500.0,
-    "productBrand": 62,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/40675-Acu-Life_Weekly_Pill_Reminder_Large-300B_front_c13930ba-95a8-4f11-8d6d-376f49573f3b.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/40675-Acu-Life_Weekly_Pill_Reminder_Large-300B_back_927fbe41-24c8-4cc0-84bc-fe425edad46c.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/40675-Acu-Life_Weekly_Pill_Reminder_Large-300B_front_c13930ba-95a8-4f11-8d6d-376f49573f3b.webp"
-  },
-  {
-    "id": 63,
-    "name": "Colgate_Optic_White_Mouthwash_500ml",
-    "description": "Colgate Optic White Mouthwash is designed to whiten your teeth while fighting bad breath. This refreshing mouthwash helps to remove surface stains, leaving your mouth clean and your smile brighter.",
-    "price": 500.0,
-    "productBrand": 63,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/40695-Colgate_Optic_White_Mouthwash_500ml_Front_Side_3a4a84f7-8d01-4424-ae5c-fa1a4363e10c.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/40695-Colgate_Optic_White_Mouthwash_500ml_Back_Side_8afea1f3-4600-4395-b44c-9d434d8adcf3.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/40695-Colgate_Optic_White_Mouthwash_500ml_Front_Side_3a4a84f7-8d01-4424-ae5c-fa1a4363e10c.webp"
-  },
-  {
-    "id": 64,
-    "name": "Back Support Brace",
-    "description": "The back brace in the image is from Tynor, a well-known brand specializing in orthopedic support products. It offers stability and posture correction",
-    "price": 500.0,
-    "productBrand": 64,
-    "category": 14,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/41812.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/41812-1.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/41812.webp"
-  },
-  {
-    "id": 65,
-    "name": "DERMA_ROLLER_600_NEEDLES_SIZE-0.5MM.",
-    "description": "The Derma Roller with 600 needles, size 0.5mm, is the perfect tool for skin rejuvenation and effective treatment. It helps improve skin appearance and reduces wrinkles and fine lines through microneedling",
-    "price": 500.0,
-    "productBrand": 65,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/42146-9REVITOL_DERMA_ROLLER_600_NEEDLES_SIZE-0.5MM.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/42146-5REVITOL_DERMA_ROLLER_600_NEEDLES_SIZE-0.5MM.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/42146-REVITOL_DERMA_ROLLER_600_NEEDLES_SIZE-0.5MM-back_side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/42146-9REVITOL_DERMA_ROLLER_600_NEEDLES_SIZE-0.5MM.webp"
-  },
-  {
-    "id": 66,
-    "name": "Derma-Pin",
-    "description": "The Derma-Pin is a cutting-edge skincare tool designed for advanced treatment. It stimulates collagen production and enhances the absorption of skincare products, improving overall skin health",
-    "price": 500.0,
-    "productBrand": 66,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/42148_000_001.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/42148_000_001.webp"
-  },
-  {
-    "id": 67,
-    "name": "Sumbow-Poros-Capsicum-Plaster-1pc",
-    "description": "The Sumbow Poros Capsicum Plaster is a therapeutic patch designed to help relieve pain and inflammation. It contains capsicum extract, known for its warming and soothing properties, perfect for muscle pain relief.",
-    "price": 500.0,
-    "productBrand": 67,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/43496-Sumbow-Poros-Capsicum-Plaster-1pc.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/43496-Sumbow-Poros-Capsicum-Plaster-1pc-back-side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/43496-Sumbow-Poros-Capsicum-Plaster-1pc.webp"
-  },
-  {
-    "id": 68,
-    "name": "A_Tynor_Anklet_Comfeel_Pair-D25",
-    "description": "A comfortable and supportive anklet designed to provide stability and relief for ankle injuries or strains, featuring a soft comfeel material for all-day wear.",
-    "price": 500.0,
-    "productBrand": 68,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/45120-A_Tynor_Anklet_Comfeel_Pair-D25_M_Front_SideA.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/45120-A_Tynor_Anklet_Comfeel_Pair-D25_M_Left_SideA.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/45120-A_Tynor_Anklet_Comfeel_Pair-D25_M_Front_SideA.webp"
-  },
-  {
-    "id": 69,
-    "name": "HELIABRINEEXFOLIATING-LIP-BRUSH",
-    "description": "A gentle exfoliating lip brush to remove dead skin, smooth lips, and prep them for moisturizing treatments or lipstick application.",
-    "price": 500.0,
-    "productBrand": 69,
-    "category": 19,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/45568-HELIABRINEEXFOLIATINGLIPBRUSHFrontSide.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/45568-HELIABRINEEXFOLIATINGLIPBRUSHBackSide.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/45568-HELIABRINEEXFOLIATINGLIPBRUSHFrontSide.webp"
-  },
-  {
-    "id": 70,
-    "name": "HELIABRINE_QUARTZ_FACIAL_ROLLER",
-    "description": "A luxurious quartz facial roller to massage the skin, reduce puffiness, and promote lymphatic drainage for a glowing, refreshed complexion.",
-    "price": 500.0,
-    "productBrand": 70,
-    "category": 21,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/45569-HELIABRINE_QUARTZ_FACIAL_ROLLER_Front_Side_bf97a5a6-fe12-4888-867f-365e613807d8.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/45569-HELIABRINE_QUARTZ_FACIAL_ROLLER_Back_Side_1933a57a-7bbc-45c5-9df3-61282de66046.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/45569-HELIABRINE_QUARTZ_FACIAL_ROLLER_Front_Side_bf97a5a6-fe12-4888-867f-365e613807d8.webp"
-  },
-  {
-    "id": 71,
-    "name": "FOLTENEWOMENVALUEPACK",
-    "description": "A comprehensive hair care value pack for women, featuring nourishing treatments to strengthen, revitalize, and promote healthy hair growth.",
-    "price": 500.0,
-    "productBrand": 71,
-    "category": 22,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/45657-FOLTENEWOMENVALUEPACK-24VIALS.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/45657-FOLTENEWOMENVALUEPACK-24VIALS-rightside.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/45657-FOLTENEWOMENVALUEPACK-24VIALS-leftside.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/45657-FOLTENEWOMENVALUEPACK-24VIALS.webp"
-  },
-  {
-    "id": 72,
-    "name": "ANTI-AGINGHAI-RRESCUE-SHAMPOO-200ml",
-    "description": "A revitalizing shampoo formulated to combat signs of aging in hair, restoring thickness, shine, and vitality with each wash.",
-    "price": 500.0,
-    "productBrand": 72,
-    "category": 15,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/46624-FOLTENEANTI-AGINGHAIRRESCUESHAMPOO200MLinside.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/46624-FOLTENEANTI-AGINGHAIRRESCUESHAMPOO200MLFrontSide.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/46624-FOLTENEANTI-AGINGHAIRRESCUESHAMPOO200MLinside1.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/46624-FOLTENEANTI-AGINGHAIRRESCUESHAMPOO200MLinside.webp"
-  },
-  {
-    "id": 73,
-    "name": "LA_ROCHE_POSAY_RETINOL_B3_SERUM_30ML",
-    "description": "A potent retinol and vitamin B3 serum to reduce wrinkles, even skin tone, and improve skin elasticity for a youthful glow.",
-    "price": 500.0,
-    "productBrand": 73,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47213-LA_ROCHE_POSAY_RETINOL_B3_SERUM_30ML2.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/47213-LA-ROCHE-POSAY-RETINOL-B3-SERUM-30ML-LEFT-SIDE.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/47213-LA-ROCHE-POSAY-RETINOL-B3-SERUM-30ML.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/47213-LA_ROCHE_POSAY_RETINOL_B3_SERUM_30ML2.webp"
-  },
-  {
-    "id": 74,
-    "name": "LA_ROCHE_POSAY_VITAMIN_C_C10_SERUM_30ML",
-    "description": "A brightening vitamin C serum with 10% concentration to reduce dark spots, boost radiance, and protect against environmental damage.",
-    "price": 500.0,
-    "productBrand": 74,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47214-LA_ROCHE_POSAY_VITAMIN_C_C10_SERUM_30ML2.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/47214-LA-ROCHE-POSAY-VITAMIN-C-C10-SERUM-30ML-LEFT-SIDE.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/47214-LA-ROCHE-POSAY-VITAMIN-C-C10-SERUM-30ML-RIGHT-SIDE.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/47214-LA-ROCHE-POSAY-VITAMIN-C-C10-SERUM-30ML.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/47214-LA_ROCHE_POSAY_VITAMIN_C_C10_SERUM_30ML2.webp"
-  },
-  {
-    "id": 75,
-    "name": "CERAVE_MOISTURIZING_LOTION_236ML",
-    "description": "A lightweight, hydrating lotion with ceramides to restore the skin's natural barrier and provide 24-hour moisture.",
-    "price": 500.0,
-    "productBrand": 75,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47379-CERAVE_MOISTURIZING_LOTION_236ML.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/47379-2CERAVE_MOISTURIZING_LOTION_236ML.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/47379-CERAVE_MOISTURIZING_LOTION_236ML.webp"
-  },
-  {
-    "id": 76,
-    "name": "CERAVE_MOISTURIZING_CREAM_340GM",
-    "description": "A rich, non-greasy cream with essential ceramides to deeply hydrate and protect dry to very dry skin.",
-    "price": 500.0,
-    "productBrand": 76,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47380-4CERAVE_MOISTURIZING_CREAM_340GM.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/47380-2CERAVE_MOISTURIZING_CREAM_340GM.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/47380-CERAVE_MOISTURIZING_CREAMs_340GM.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/47380-4CERAVE_MOISTURIZING_CREAM_340GM.webp"
-  },
-  {
-    "id": 77,
-    "name": "CERAVE_FOAMING_CLEANSER_GEL_MOUSSANT_473ML",
-    "description": "A gentle foaming cleanser that removes excess oil and impurities without stripping the skin's natural moisture.",
-    "price": 500.0,
-    "productBrand": 77,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47387-CERAVE_FOAMING_CLEANSER_GEL_MOUSSANT_473ML.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/47387-2CERAVE_FOAMING_CLEANSER_GEL_MOUSSANT_473ML.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/47387-CERAVE_FOAMING_CLEANSER_GEL_MOUSSANT_473ML.webp"
-  },
-  {
-    "id": 78,
-    "name": "PROTEM_PHARMA_MIGRANOL_45",
-    "description": "A specialized supplement designed to support migraine relief and improve overall neurological health.",
-    "price": 500.0,
-    "productBrand": 78,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47550-PROTEM_PHARMA_MIGRANOL_45_CAPSULES_inside.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/47550-PROTEM_PHARMA_MIGRANOL_45_CAPSULES_inside1.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/47550-PROTEM_PHARMA_MIGRANOL_45_CAPSULES_inside2.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/47550-PROTEM_PHARMA_MIGRANOL_45_CAPSULES_inside3.webp",
-        "isMain": false
-      },
-      {
-        "id": "5",
-        "url": "../../images/product/47550-PROTEM_PHARMA_MIGRANOL_45_CAPSULES_left.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/47550-PROTEM_PHARMA_MIGRANOL_45_CAPSULES_inside.webp"
-  },
-  {
-    "id": 79,
-    "name": "PURE-HEALTH-VITAMIN-C-1000MG",
-    "description": "A high-potency vitamin C supplement with zinc to boost immunity, promote collagen synthesis, and enhance skin health.",
-    "price": 500.0,
-    "productBrand": 79,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47728-PURE-HEALTH-VITAMIN-C-1000MG_ZINC-50MG-30-TABLETS.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/47728-PURE-HEALTH-VITAMIN-C-1000MG_ZINC-50MG-30-TABLETS-left-side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/47728-PURE-HEALTH-VITAMIN-C-1000MG_ZINC-50MG-30-TABLETS.webp"
-  },
-  {
-    "id": 80,
-    "name": "LAROCHEPOSAYANTHELIOSSPF50_INVISIBLEFLUID50ML",
-    "description": "A lightweight, high-protection sunscreen with SPF 50 for broad-spectrum UV defense without a white cast.",
-    "price": 500.0,
-    "productBrand": 80,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47931-LAROCHEPOSAYANTHELIOSSPF50_INVISIBLEFLUID50ML_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/47931-LAROCHEPOSAYANTHELIOSSPF50_INVISIBLEFLUID50ML-LEFTSIDE_JPG.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/47931-LAROCHEPOSAYANTHELIOSSPF50_INVISIBLEFLUID50ML-INSIDE_JPG.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/47932-LAROCHEPOSAYANTHELIOSSPF50_HYDRATINGCREAM50ML-leftside_JPG.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/47931-LAROCHEPOSAYANTHELIOSSPF50_INVISIBLEFLUID50ML_JPG.webp"
-  },
-  {
-    "id": 81,
-    "name": "Ezycare",
-    "description": "",
-    "price": 500.0,
-    "productBrand": 81,
-    "category": 19,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47945_000_001.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/47945_000_001.webp"
-  },
-  {
-    "id": 82,
-    "name": "EZYCAREPLUSCALIBRATEDMEDICINEDROPPER2_5ML",
-    "description": "A precise medicine dropper for accurate dosing of liquid medications or supplements.",
-    "price": 500.0,
-    "productBrand": 82,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/47952-EZYCAREPLUSCALIBRATEDMEDICINEDROPPER2_5ML-17001_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/47952-EZYCAREPLUSCALIBRATEDMEDICINEDROPPER2_5ML-17001-BACKSIDE_JPG.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/47952-EZYCAREPLUSCALIBRATEDMEDICINEDROPPER2_5ML-17001_JPG.webp"
-  },
-  {
-    "id": 83,
-    "name": "Rossmax_Automatic_BP_Monitor",
-    "description": "A reliable automatic blood pressure monitor for easy and accurate at-home blood pressure tracking.",
-    "price": 500.0,
-    "productBrand": 83,
-    "category": 2,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/48425-4Rossmax_Automatic_BP_Monitor-Z1.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/48425-1Rossmax_Automatic_BP_Monitor-Z1.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/48425-2Rossmax_Automatic_BP_Monitor-Z1.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/48425-3Rossmax_Automatic_BP_Monitor-Z1.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/48425-4Rossmax_Automatic_BP_Monitor-Z1.webp"
-  },
-  {
-    "id": 84,
-    "name": "Blood Pressure Monitor",
-    "description": "This digital device is used to measure blood pressure and display readings on a screen, including systolic and diastolic values along with pulse rate.",
-    "price": 500.0,
-    "productBrand": 84,
-    "category": 2,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/48654.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/48654.webp"
-  },
-  {
-    "id": 85,
-    "name": "MICROLIFE_PROFESSIONAL_2IN1_COMPRESSOR_NEBULISER-NEBPRO",
-    "description": "A versatile 2-in-1 compressor nebulizer for effective respiratory treatments at home or in clinical settings.",
-    "price": 500.0,
-    "productBrand": 85,
-    "category": 1,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/48778-2MICROLIFE_PROFESSIONAL_2IN1_COMPRESSOR_NEBULISER-NEBPRO.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/48778-4MICROLIFE_PROFESSIONAL_2IN1_COMPRESSOR_NEBULISER-NEBPRO.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/48778-5MICROLIFE_PROFESSIONAL_2IN1_COMPRESSOR_NEBULISER-NEBPRO.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/48778-6MICROLIFE_PROFESSIONAL_2IN1_COMPRESSOR_NEBULISER-NEBPRO.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/48778-2MICROLIFE_PROFESSIONAL_2IN1_COMPRESSOR_NEBULISER-NEBPRO.webp"
-  },
-  {
-    "id": 86,
-    "name": "LAROCHEPOSAYEFFACLARMICROPEELINGPURIFYINGGEL200ML",
-    "description": "A purifying face wash with micro-peeling action to deep clean pores and exfoliate dead skin cells.",
-    "price": 500.0,
-    "productBrand": 86,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/48917-LAROCHEPOSAYEFFACLARMICROPEELINGPURIFYINGGEL200ML_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/48917-LAROCHEPOSAYEFFACLARMICROPEELINGPURIFYINGGEL200ML-BACKSIDE_JPG.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/48917-LAROCHEPOSAYEFFACLARMICROPEELINGPURIFYINGGEL200ML_JPG.webp"
-  },
-  {
-    "id": 87,
-    "name": "Rossmax_Sphygmomanometer-GB",
-    "description": "A professional-grade manual blood pressure monitor for accurate clinical measurements.",
-    "price": 500.0,
-    "productBrand": 87,
-    "category": 15,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/48951-Rossmax_Sphygmomanometer-GB_Series_front_4b721c05-d4b2-4966-96dd-385644b90447.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/48951-Rossmax_Sphygmomanometer-GB_Series_back_4ee0e508-4449-4c1e-9fb8-bd852bff74f1.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/48951-Rossmax_Sphygmomanometer-GB_Series_left_d535f8c0-1474-4c08-91d6-827621898fd3.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/48951-Rossmax_Sphygmomanometer-GB_Series_front_4b721c05-d4b2-4966-96dd-385644b90447.webp"
-  },
-  {
-    "id": 88,
-    "name": "JOHNSONSBABYJELLYLIGHTLYFRAGRANCED100ML",
-    "description": "A gentle, lightly fragranced baby jelly to moisturize and protect delicate baby skin.",
-    "price": 500.0,
-    "productBrand": 88,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/49329-JOHNSONSBABYJELLYLIGHTLYFRAGRANCED100ML.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/49329-JOHNSONSBABYJELLYLIGHTLYFRAGRANCED100ML.webp"
-  },
-  {
-    "id": 89,
-    "name": "BEESLINE-OFFER-WHITENING-ROLL-ON-DEO-48H-INSTANT-WHITE",
-    "description": "A whitening roll-on deodorant offering 48-hour protection while gently lightening underarm skin.",
-    "price": 500.0,
-    "productBrand": 89,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/49615_97b6eef0-5192-4a15-b653-abd022ad6ce7.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/49615-BEESLINE-OFFER-WHITENING-ROLL-ON-DEO-48H-INSTANT-WHITE-_1_1.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/49615-BEESLINE-OFFER-WHITENING-ROLL-ON-DEO-48H-INSTANT-WHITE-_1_1_-back-side.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/49615_97b6eef0-5192-4a15-b653-abd022ad6ce7.webp"
-  },
-  {
-    "id": 90,
-    "name": "tepe",
-    "description": "",
-    "price": 500.0,
-    "productBrand": 90,
-    "category": 19,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/49981_000_001.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/49981_000_001.webp"
-  },
-  {
-    "id": 91,
-    "name": "CERAVE_MOISTURIZING_CREAM_50ML",
-    "description": "A travel-sized version of the cult-favorite moisturizing cream with ceramides for intense hydration.",
-    "price": 500.0,
-    "productBrand": 91,
-    "category": 21,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/50012-CERAVE_MOISTURIZING_CREAM_50ML.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/50012-2CERAVE_MOISTURIZING_CREAM_50ML.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/50012-CERAVE_MOISTURIZING_CREAM_50ML.webp"
-  },
-  {
-    "id": 92,
-    "name": "GARNIED-SKINACTIVE",
-    "description": "A skincare product designed to revitalize and nourish the skin, promoting a healthy and radiant complexion.",
-    "price": 500.0,
-    "productBrand": 92,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/50207_000_001.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/50202_000_001.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/50207_000_001.webp"
-  },
-  {
-    "id": 93,
-    "name": "PREVALIN-ALLARGY",
-    "description": "An allergy relief solution that helps alleviate symptoms such as nasal congestion, sneezing, and itchy eyes.",
-    "price": 500.0,
-    "productBrand": 93,
-    "category": 22,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/50256_000_001.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/50256_000_001.webp"
-  },
-  {
-    "id": 94,
-    "name": "VASELINE-COCOBUTTER-250ml",
-    "description": "A deeply moisturizing body lotion enriched with cocoa butter to hydrate and soften the skin.",
-    "price": 500.0,
-    "productBrand": 94,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/50645_000_001.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/50645_000_001.webp"
-  },
-  {
-    "id": 95,
-    "name": "VASELINEBABYMOISTURIZINGJELLY250ML",
-    "description": "A gentle and protective jelly formulated for baby's delicate skin, providing long-lasting moisture.",
-    "price": 500.0,
-    "productBrand": 95,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/50646-VASELINEBABYMOISTURIZINGJELLY250ML.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/50646-VASELINEBABYMOISTURIZINGJELLY250ML-backside.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/50646-VASELINEBABYMOISTURIZINGJELLY250ML.webp"
-  },
-  {
-    "id": 96,
-    "name": "EnokonKoolNSootheMigraineCoolingPatch6pcs",
-    "description": "Cooling gel patches designed to relieve migraine headaches and provide soothing comfort.",
-    "price": 500.0,
-    "productBrand": 96,
-    "category": 16,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/50774-EnokonKoolNSootheMigraineCoolingPatch6pcs.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/50774-EnokonKoolNSootheMigraineCoolingPatch6pcs-backside.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/50774-EnokonKoolNSootheMigraineCoolingPatch6pcs.webp"
-  },
-  {
-    "id": 97,
-    "name": "MIELLEROSEMARYMINTSCALP_HAIROIL59M",
-    "description": "A nourishing hair oil infused with rosemary and mint to promote scalp health and hair growth.",
-    "price": 500.0,
-    "productBrand": 97,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/50837-MIELLEROSEMARYMINTSCALP_HAIROIL59ML_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/50837-MIELLEROSEMARYMINTSCALP_HAIROIL59ML-LEFTSIDE_JPG.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/50837-MIELLEROSEMARYMINTSCALP_HAIROIL59ML-RIGHTSIDE_JPG.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/50837-MIELLEROSEMARYMINTSCALP_HAIROIL59ML_JPG.webp"
-  },
-  {
-    "id": 98,
-    "name": "MIELLE-HEIR MASQU-340G",
-    "description": "",
-    "price": 500.0,
-    "productBrand": 98,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/51030_000_001.webp",
-        "isMain": true
-      }
-    ],
-    "photoUrl": "../../images/product/51030_000_001.webp"
-  },
-  {
-    "id": 99,
-    "name": "VaselineLipTherapy20g",
-    "description": "A classic lip balm that locks in moisture to keep lips soft and protected.",
-    "price": 500.0,
-    "productBrand": 99,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/51125-VaselineLipTherapy20g-Original_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/51125-VaselineLipTherapy20g-Original-backside_JPG.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/51125-VaselineLipTherapy20g-Original_JPG.webp"
-  },
-  {
-    "id": 100,
-    "name": "VaselineLipTherapy20g",
-    "description": "A tinted lip balm that moisturizes while adding a subtle rosy glow.",
-    "price": 500.0,
-    "productBrand": 100,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/51126-VaselineLipTherapy20g-RosyLips_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/51126-VaselineLipTherapy20g-RosyLips-backside_JPG.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/51126-VaselineLipTherapy20g-RosyLips_JPG.webp"
-  },
-  {
-    "id": 101,
-    "name": "VaselineLipTherapy20g",
-    "description": "A soothing lip balm infused with aloe vera to hydrate and calm dry lips.",
-    "price": 500.0,
-    "productBrand": 101,
-    "category": 12,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/51127-VaselineLipTherapy20g-Aloe_JPG.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/51127-VaselineLipTherapy20g-Aloe-backside_JPG.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/51127-VaselineLipTherapy20g-Aloe_JPG.webp"
-  },
-  {
-    "id": 102,
-    "name": "Beurer_Compressor_Nebulizer",
-    "description": "A medical-grade nebulizer for efficient respiratory treatment at home.",
-    "price": 500.0,
-    "productBrand": 102,
-    "category": 20,
-    "productPhotos": [
-      {
-        "id": "1",
-        "url": "../../images/product/51151-4Beurer_Compressor_Nebulizer-IH18.webp",
-        "isMain": true
-      },
-      {
-        "id": "2",
-        "url": "../../images/product/51151-1Beurer_Compressor_Nebulizer-IH18.webp",
-        "isMain": false
-      },
-      {
-        "id": "3",
-        "url": "../../images/product/51151-2Beurer_Compressor_Nebulizer-IH18.webp",
-        "isMain": false
-      },
-      {
-        "id": "4",
-        "url": "../../images/product/51151-3Beurer_Compressor_Nebulizer-IH18.webp",
-        "isMain": false
-      },
-      {
-        "id": "5",
-        "url": "../../images/product/51151-5Beurer_Compressor_Nebulizer-IH18.webp",
-        "isMain": false
-      }
-    ],
-    "photoUrl": "../../images/product/51151-4Beurer_Compressor_Nebulizer-IH18.webp"
-  },
-  [
     {
-      "id": 103,
-      "name": "Beurer Upper Arm BP Monitor Adaptor BM40",
-      "description": "An upper arm blood pressure monitor for accurate and easy at-home readings.",
-      "price": 500,
-      "productBrand": 103,
-      "category": 26,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/51153-3Beurer_Upper_Arm_BP_Monitor_Adaptor-BM40.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/51153-2Beurer_Upper_Arm_BP_Monitor_Adaptor-BM40.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": ["../../images/product/51153-3Beurer_Upper_Arm_BP_Monitor_Adaptor-BM40.webp"]
+        "Name": "Stethoscope Pro",
+        "Description": "High quality stethoscope with advanced acoustics for accurate heart and lung sound diagnosis.",
+        "Price": 120,
+        "ProductBrandId": 1,
+        "CategoryId": 1,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": "104",
-      "name": "Beurer PhysioLine Massage Gun Compact MG99",
-      "description": "A portable massage gun designed to relieve muscle tension and improve recovery.",
-      "price": 500,
-      "productBrand": "104",
-      "category": 22,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/51155-2Beurer_PhysioLine_Massage_Gun_Compact-MG99.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/51155-1Beurer_PhysioLine_Massage_Gun_Compact-MG99.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/51155-3Beurer_PhysioLine_Massage_Gun_Compact-MG99.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": ["../../images/product/51155-2Beurer_PhysioLine_Massage_Gun_Compact-MG99.webp"]
+        "Name": "Digital Blood Pressure Monitor",
+        "Description": "Accurate digital blood pressure monitor with an easy-to-read display and ergonomic design.",
+        "Price": 80,
+        "ProductBrandId": 2,
+        "CategoryId": 2,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 105,
-      "name": "ChiccoFreshTeetherFun Colourful 6M",
-      "description": "A fun and safe teether for babies aged 6 months and above, designed to soothe sore gums.",
-      "price": 500,
-      "productBrand": 105,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/51182-ChiccoFreshTeetherFun_Colourful_6M*-3481_JPG.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/51182-ChiccoFreshTeetherFun_Colourful_6M*-3481-backside_JPG.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/51182-ChiccoFreshTeetherFun_Colourful_6M*-3481_JPG.webp"
+        "Name": "Digital Thermometer",
+        "Description": "Fast and accurate digital thermometer for measuring body temperature with an easy digital readout.",
+        "Price": 25.5,
+        "ProductBrandId": 3,
+        "CategoryId": 1,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 106,
-      "name": "Byphasse-Intimate-Wipes-20pcs",
-      "description": "Gentle and pH-balanced wipes for intimate hygiene, providing freshness and comfort.",
-      "price": 500,
-      "productBrand": 106,
-      "category": 5,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/51433-Byphasse-Intimate-Wipes-20pcs---5414.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/51433-Byphasse-Intimate-Wipes-20pcs---5414-back-side.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/51433-Byphasse-Intimate-Wipes-20pcs---5414.webp"
+        "Name": "Disposable Syringes Pack",
+        "Description": "Pack of 100 disposable syringes for safe and hygienic injections and medical procedures.",
+        "Price": 15,
+        "ProductBrandId": 4,
+        "CategoryId": 3,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 107,
-      "name": "Touch-Select-Plus-Glucometer_50",
-      "description": "A blood glucose monitoring system for accurate and easy diabetes management.",
-      "price": 500,
-      "productBrand": 107,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/51627.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/51627-One-Touch-Select-Plus-Glucometer_50-Strips-right-side_2acf2dbe-e677-4708-b61c-a97ed650ba4f.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/51627-One-Touch-Select-Plus-Glucometer_50-Strips_ef7ecae9-5d1b-45f5-83e7-be6b5fbc9c4f.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/51627.webp"
+        "Name": "Latex Medical Gloves",
+        "Description": "High quality latex gloves for medical examinations, available in multiple sizes.",
+        "Price": 20,
+        "ProductBrandId": 5,
+        "CategoryId": 3,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 108,
-      "name": "TresemmeKeratinSmoothHairSpray72h200ml",
-      "description": "A long-lasting hair spray that provides 72-hour smoothness and frizz control.",
-      "price": 500,
-      "productBrand": 108,
-      "category": 12,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/51785-TresemmeKeratinSmoothHairSpray72h200ml.webp",
-          "isMain": true
-        }
-      ],
-      "photoUrl": "../../images/product/51785-TresemmeKeratinSmoothHairSpray72h200ml.webp"
+        "Name": "Surgical Face Mask",
+        "Description": "Disposable surgical face masks for protection against airborne particles and germs.",
+        "Price": 10,
+        "ProductBrandId": 6,
+        "CategoryId": 3,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 109,
-      "name": "VaselineLipBalm4.8g-CocoaButter",
-      "description": "A rich lip balm with cocoa butter for deep hydration and protection.",
-      "price": 500,
-      "productBrand": 109,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/51852-VaselineLipBalm4.8g-CocoaButter.webp",
-          "isMain": true
-        }
-      ],
-      "photoUrl": "../../images/product/51852-VaselineLipBalm4.8g-CocoaButter.webp"
+        "Name": "Hand Sanitizer Gel",
+        "Description": "Alcohol-based hand sanitizer gel that kills 99.9% of germs and bacteria.",
+        "Price": 8,
+        "ProductBrandId": 7,
+        "CategoryId": 3,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 110,
-      "name": "Cathy-Doll-15_-8-Hya-Ampoule-30ml",
-      "description": "A hydrating ampoule with 15% hyaluronic acid to plump and moisturize the skin",
-      "price": 500,
-      "productBrand": 110,
-      "category": 13,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/51942-1_c754f56b-4e01-4125-81fe-e53500ddf912.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/51942-2_5840208b-e79c-4e43-b09d-aecabd1a2e91.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/51942-Cathy-Doll-15_-8-Hya-Ampoule-30ml-inside.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/51942-1_c754f56b-4e01-4125-81fe-e53500ddf912.webp"
+        "Name": "IV Drip Set",
+        "Description": "Complete IV drip set including tubing, needle, and drip chamber for intravenous therapy.",
+        "Price": 50,
+        "ProductBrandId": 8,
+        "CategoryId": 19,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 111,
-      "name": "CathyDoll2_Collagen_HyaDayAndNightCream50ml",
-      "description": "A dual-action cream with collagen and hyaluronic acid for day and night hydration.",
-      "price": 500,
-      "productBrand": 111,
-      "category": 12,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/51946-2_282e7542-d850-4d4e-89a5-3e49a1362f74.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/51946-1_01f02592-c217-4130-8352-31a5c62b9be4.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/51946-3_77c5d081-7186-4146-bece-07ae5d1ae6b4.webp",
-          "isMain": false
-        },
-        {
-          "id": "4",
-          "url": "../../images/product/51946-CathyDoll2_Collagen_HyaDayAndNightCream50ml.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/51946-2_282e7542-d850-4d4e-89a5-3e49a1362f74.webp"
+        "Name": "Surgical Scissors",
+        "Description": "Precision surgical scissors designed for clean cuts during operations.",
+        "Price": 35,
+        "ProductBrandId": 9,
+        "CategoryId": 5,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 112,
-      "name": "Vitron-Argi-Vitro-Liquid-200ml",
-      "description": "A liquid iron supplement designed to support energy levels and overall health.",
-      "price": 500,
-      "productBrand": 112,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/52207-Vitron-Argi-Vitro-Liquid-200ml-inside.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/52207-Vitron-Argi-Vitro-Liquid-200ml-inside-2.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/52207-Vitron-Argi-Vitro-Liquid-200ml-inside-3.webp",
-          "isMain": false
-        },
-        {
-          "id": "4",
-          "url": "../../images/product/52207-Vitron_Argi_Vitro_Liquid_200ml-left_side.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/52207-Vitron-Argi-Vitro-Liquid-200ml-inside.webp"
+        "Name": "Automated Defibrillator",
+        "Description": "Portable automated external defibrillator for emergency cardiac care with voice prompts.",
+        "Price": 1500.0,
+        "ProductBrandId": 10,
+        "CategoryId": 1,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 113,
-      "name": "FingerCots",
-      "description": "Disposable finger coverings for hygiene and protection during medical or cosmetic applications.",
-      "price": 500,
-      "productBrand": 113,
-      "category": 12,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/52213-EzycarePlus12FingerCots-11405.webp",
-          "isMain": true
-        }
-      ],
-      "photoUrl": "../../images/product/52213-EzycarePlus12FingerCots-11405.webp"
+        "Name": "Insulin Glargine",
+        "Description": "Used to keep insulin levels stable all day.Injected once daily at the same time.Starts working in a few hours, lasts up to 24+ hours.",
+        "Price": 30.0,
+        "ProductBrandId": 11,
+        "CategoryId": 11,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 114,
-      "name": "Chicco_Respira_Sano_Humi_Fresh_Cold_Humidifier",
-      "description": "A cool-mist humidifier to maintain optimal air moisture for babies and adults.",
-      "price": 500,
-      "productBrand": 114,
-      "category": 12,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/52241-3Chicco_Respira_Sano_Humi_Fresh_Cold_Humidifier.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/52241-10Chicco_Respira_Sano_Humi_Fresh_Cold_Humidifier.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/52241-2Chicco_Respira_Sano_Humi_Fresh_Cold_Humidifier.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/52241-3Chicco_Respira_Sano_Humi_Fresh_Cold_Humidifier.webp"
+        "Name": "Sun screen bobai",
+        "Description": "a skincare product applied to the skin to protect it from harmful ultraviolet (UV) rays from the sun. It helps prevent sunburn, premature aging, and reduces the risk of skin cancer.",
+        "Price": 250.0,
+        "ProductBrandId": 12,
+        "CategoryId": 12,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 115,
-      "name": "Cleana_Day_Pure_Solution_2ml_X_30Ampoule",
-      "description": "A concentrated ampoule treatment for clear and refreshed skin.",
-      "price": 500,
-      "productBrand": 115,
-      "category": 26,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/52425-CleanaDayPureSolution2mlX30Ampoule.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/52425-Cleana_Day_Pure_Solution_2ml_X_30Ampoule-left_side.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/52425-CleanaDayPureSolution2mlX30Ampoule.webp"
+        "Name": "Genesis Anti-Hair Fall Ampoules",
+        "Description": "A powerful blend that boosts scalp health and rebuilds hair, making it thicker and healthier",
+        "Price": 400.0,
+        "ProductBrandId": 13,
+        "CategoryId": 13,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 116,
-      "name": "Garnier_Concentrated_Sheet_Mask-Vitamin_C",
-      "description": "Garnier_Concentrated_Sheet_Mask-Vitamin_C : very dood to face",
-      "price": 500,
-      "productBrand": 116,
-      "category": 12,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/52496-Garnier_Concentrated_Sheet_Mask-Vitamin_C_Front_Side_a592d547-a6b2-45fb-acc8-f65279c31a61.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/52496-GarnierSkinActiveVitaminCSheetMask15g.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/52496-Garnier_Concentrated_Sheet_Mask-Vitamin_C_Back_Side_bd70edd9-fcfa-42a9-ad91-2ea6b7290ca4.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/52496-Garnier_Concentrated_Sheet_Mask-Vitamin_C_Front_Side_a592d547-a6b2-45fb-acc8-f65279c31a61.webp"
+        "Name": "Cetrocare 0.25mg",
+        "Description": "",
+        "Price": 75.0,
+        "ProductBrandId": 14,
+        "CategoryId": 14,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 117,
-      "name": "Arm_HammerUltraMaxRoll-OnStick73g",
-      "description": "An effective deodorant with odor-neutralizing baking soda for long-lasting freshness.",
-      "price": 500,
-      "productBrand": 117,
-      "category": 19,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/52785-Arm_HammerUltraMaxRoll-OnStick73g.webp",
-          "isMain": true
-        }
-      ],
-      "photoUrl": "../../images/product/52785-Arm_HammerUltraMaxRoll-OnStick73g.webp"
+        "Name": "Stethoscope",
+        "Description": "A tool used by doctors to listen to the heart, lungs, and other body sounds to help diagnose health problems.",
+        "Price": 1500.0,
+        "ProductBrandId": 15,
+        "CategoryId": 15,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 118,
-      "name": "Republic-Scalp-Repairing-Mask-200ml",
-      "description": "A nourishing hair mask formulated to repair and strengthen the scalp.",
-      "price": 500,
-      "productBrand": 118,
-      "category": 25,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/53533-The-Cosmetic-Republic-Scalp-Repairing-Mask-200ml.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/53533-The-Cosmetic-Republic-Scalp-Repairing-Mask-200ml-BACK-SIDE.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/53533-The-Cosmetic-Republic-Scalp-Repairing-Mask-200ml.webp"
+        "Name": "Congestal",
+        "Description": " used to treat symptoms of the common cold and flu, such as nasal congestion, runny nose, headache, and body aches.",
+        "Price": 150.0,
+        "ProductBrandId": 16,
+        "CategoryId": 16,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 119,
-      "name": "Beesline_Adaptogen_Barrier_Cream_50ml",
-      "description": "A protective cream that strengthens the skin barrier and soothes irritation.",
-      "price": 500,
-      "productBrand": 119,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/53624-2Beesline_Adaptogen_Barrier_Cream_50ml.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/53624-Beesline-Adaptogen-Barrier-Cream-50ml.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/53624Beesline_Adaptogen_Barrier_Cream_50ml.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/53624-2Beesline_Adaptogen_Barrier_Cream_50ml.webp"
+        "Name": "Glucophage",
+        "Description": "a medication that contains the active ingredient Metformin. It is primarily used to treat type 2 diabetes. ",
+        "Price": 20.0,
+        "ProductBrandId": 17,
+        "CategoryId": 16,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 120,
-      "name": "VaselineEssentialEvenTonePerfect10BodyLotion400ml",
-      "description": "A brightening body lotion that helps even out skin tone and improve texture.",
-      "price": 500,
-      "productBrand": 120,
-      "category": 12,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54013-VaselineEssentialEvenTonePerfect10BodyLotion400ml.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54013-VaselineEssentialEvenTonePerfect10BodyLotion400ml-backside_a6360590-76f9-4f1a-a8cb-97b07763383d.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54013-VaselineEssentialEvenTonePerfect10BodyLotion400ml.webp"
+        "Name": "Heart Rate Monitor",
+        "Description": "A device used to measure heartbeats per minute, helping monitor heart health and detect irregularities in heart rate.",
+        "Price": 1500.0,
+        "ProductBrandId": 18,
+        "CategoryId": 11,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 121,
-      "name": "Johnson Baby SoftLotion-200ml",
-      "description": "A gentle baby lotion that keeps skin soft and smooth with a light, fresh scent.",
-      "price": 500,
-      "productBrand": 121,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54167-JohnsonBabySoftLotion200ml_JPG.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54167-JohnsonBabySoftLotion200ml-backside_JPG.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54167-JohnsonBabySoftLotion200ml_JPG.webp"
+        "Name": "Cardiac Defibrillator",
+        "Description": "A device used to restore a normal heart rhythm by delivering an electric shock to the heart in cases of severe arrhythmia or cardiac arrest.",
+        "Price": 1500.0,
+        "ProductBrandId": 19,
+        "CategoryId": 11,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 122,
-      "name": "Pigeon-Cooling-Teether-_4m",
-      "description": "A cooling teether designed to soothe baby's gums during teething.",
-      "price": 500,
-      "productBrand": 122,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54391-Pigeon-Cooling-Teether-_4m-13898.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54391-Pigeon-Cooling-Teether-_4m-13898-back-side.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54391-Pigeon-Cooling-Teether-_4m-13898.webp"
+        "Name": "Pampers-pants",
+        "Description": "Comfort for Babies,High Absorption: They contain absorbent layers that keep the baby dry for long periods.",
+        "Price": 500.0,
+        "ProductBrandId": 20,
+        "CategoryId": 20,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 123,
-      "name": "Bio_Balance_Perfect_Glow_Super_Ampoule_10x2ml",
-      "description": "A radiance-boosting ampoule for a luminous and even complexion.",
-      "price": 500,
-      "productBrand": 123,
-      "category": 13,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54441-Bio_Balance_Perfect_Glow_Super_Ampoule_10x2ml.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54441-Bio_Balance_Perfect_Glow_Super_Ampoule_10x2ml-back_side.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54441-Bio_Balance_Perfect_Glow_Super_Ampoule_10x2ml.webp"
+        "Name": "Mechanical Ventilation Machine",
+        "Description": "The machine can control breathing entirely or assist the patient's natural breaths.",
+        "Price": 1500.0,
+        "ProductBrandId": 21,
+        "CategoryId": 1,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 124,
-      "name": "Bio_Balance_Highlighter_Peptide_Super_Ampoule_10x2ml",
-      "description": "A peptide-infused ampoule that enhances skin elasticity and glow.",
-      "price": 500,
-      "productBrand": 124,
-      "category": 13,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54442-Bio_Balance_Highlighter_Peptide_Super_Ampoule_10x2ml.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54442-Bio_Balance_Highlighter_Peptide_Super_Ampoule_10x2ml-back_side.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54442-Bio_Balance_Highlighter_Peptide_Super_Ampoule_10x2ml.webp"
+        "Name": "Protective Glasses",
+        "Description": "Provides protection from blood splashes or chemical exposure in the operating room.",
+        "Price": 1500.0,
+        "ProductBrandId": 22,
+        "CategoryId": 3,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 125,
-      "name": "BioBalanceDeepPeelingSuperSerum30ml",
-      "description": "An exfoliating serum that gently removes dead skin cells for a smoother texture.",
-      "price": 500,
-      "productBrand": 125,
-      "category": 9,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54448-BioBalanceDeepPeelingSuperSerum30ml-inside.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54448-BioBalanceDeepPeelingSuperSerum30ml-inside2.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/54448-BioBalanceDeepPeelingSuperSerum30ml.webp",
-          "isMain": false
-        },
-        {
-          "id": "4",
-          "url": "../../images/product/54448-BioBalanceDeepPeelingSuperSerum30ml-leftside.webp",
-          "isMain": false
-        },
-        {
-          "id": "5",
-          "url": "../../images/product/54448-BioBalanceDeepPeelingSuperSerum30ml-inside3.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54448-BioBalanceDeepPeelingSuperSerum30ml-inside.webp"
+        "Name": "Mercury Thermometer",
+        "Description": "Contains liquid mercury that expands with heat and rises in the glass tube to show temperature.Commonly marked in Celsius (°C) or Fahrenheit (°F).",
+        "Price": 50.0,
+        "ProductBrandId": 23,
+        "CategoryId": 22,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 126,
-      "name": "One_Days_You_-_Pore_Tightening_Ampoule_Serum_30ml",
-      "description": "A refining serum that minimizes pores and controls excess oil.",
-      "price": 500,
-      "productBrand": 126,
-      "category": 12,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54579-One_Days_You_-_Pore_Tightening_Ampoule_Serum_30ml3.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54579-One_Days_You_-_Pore_Tightening_Ampoule_Serum_30ml.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/54579-One_Days_You_-_Pore_Tightening_Ampoule_Serum_30ml2.webp",
-          "isMain": false
-        },
-        {
-          "id": "4",
-          "url": "../../images/product/54579-One_Days_You_-_Pore_Tightening_Ampoule_Serum_30ml4.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54579-One_Days_You_-_Pore_Tightening_Ampoule_Serum_30ml3.webp"
+        "Name": "Surgical gloves",
+        "Description": "",
+        "Price": 1500.0,
+        "ProductBrandId": 24,
+        "CategoryId": 22,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 127,
-      "name": "One_Days_You_-_Cicaming_Ampoule_Serum_30ml",
-      "description": "A soothing serum that helps repair and calm irritated skin.",
-      "price": 500,
-      "productBrand": 127,
-      "category": 16,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54580-One_Days_You_-_Cicaming_Ampoule_Serum_30ml.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/OneDaysYou-CicamingAmpouleSerum30ml.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54580-One_Days_You_-_Cicaming_Ampoule_Serum_30ml.webp"
+        "Name": "Heart Rate Monitor Watch",
+        "Description": "is a wearable device that tracks your heartbeats in real time. It's commonly used in fitness, health monitoring",
+        "Price": 1500.0,
+        "ProductBrandId": 25,
+        "CategoryId": 22,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 128,
-      "name": "Under_Twenty_-_Exfoliating_Gel_Serum_Aha_Bha_15_30ml",
-      "description": "A gentle exfoliating serum with AHAs and BHAs to brighten and clarify skin.",
-      "price": 500,
-      "productBrand": 128,
-      "category": 22,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54590-Under_Twenty_-_Exfoliating_Gel_Serum_Aha_Bha_15_30ml-inside_3.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54590-Under_Twenty_-_Exfoliating_Gel_Serum_Aha_Bha_15_30ml-back_side.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/54590-Under_Twenty_-_Exfoliating_Gel_Serum_Aha_Bha_15_30ml-inside.webp",
-          "isMain": false
-        },
-        {
-          "id": "4",
-          "url": "../../images/product/54590-Under_Twenty_-_Exfoliating_Gel_Serum_Aha_Bha_15_30ml-inside_2.webp",
-          "isMain": false
-        },
-        {
-          "id": "5",
-          "url": "../../images/product/54590-Under_Twenty_-_Exfoliating_Gel_Serum_Aha_Bha_15_30ml.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54590-Under_Twenty_-_Exfoliating_Gel_Serum_Aha_Bha_15_30ml-inside_3.webp"
+        "Name": "Digital Thermometer",
+        "Description": "Provides quick readings (usually within 10-60 seconds).Easy to read display screen showing temperature in Celsius (°C) or Fahrenheit (°F).",
+        "Price": 1500.0,
+        "ProductBrandId": 26,
+        "CategoryId": 19,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 129,
-      "name": "Avent_Natural_Teats_0m",
-      "description": "Soft and flexible bottle teats designed for newborns.",
-      "price": 500,
-      "productBrand": 129,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54598-Avent_Natural_Teats_0m_2Pcs-Y96202_PA718_-2027.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54598-Avent_Natural_Teats_0m_2Pcs-Y96202_PA718_-2027-back_side.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/54598-Avent_Natural_Teats_0m_2Pcs-Y96202_PA718_-2027-left_side.webp",
-          "isMain": false
-        },
-        {
-          "id": "4",
-          "url": "../../images/product/54598-Avent_Natural_Teats_0m_2Pcs-Y96202_PA718_-2027-right_side.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54598-Avent_Natural_Teats_0m_2Pcs-Y96202_PA718_-2027.webp"
+        "Name": "Automatic Hand Sanitizer Dispenser",
+        "Description": "a hands-free device commonly used in medical environments like hospitals, clinics",
+        "Price": 500.0,
+        "ProductBrandId": 27,
+        "CategoryId": 3,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 130,
-      "name": "Australian_Body_Care_Pre-Aging_Serum_30ml",
-      "description": "A preventative anti-aging serum to maintain youthful skin.",
-      "price": 500,
-      "productBrand": 130,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "/54615-Australian_Body_Care_Pre-Aging_Serum_30ml-inside_3.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54615-Australian_Body_Care_Pre-Aging_Serum_30ml-inside.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/54615-Australian_Body_Care_Pre-Aging_Serum_30ml-inside_2.webp",
-          "isMain": false
-        },
-        {
-          "id": "4",
-          "url": "../../images/product/54615-Australian_Body_Care_Pre-Aging_Serum_30ml.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "/54615-Australian_Body_Care_Pre-Aging_Serum_30ml-inside_3.webp"
+        "Name": "CENTRUMSILVER30TAB",
+        "Description": "",
+        "Price": 100.0,
+        "ProductBrandId": 28,
+        "CategoryId": 16,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 131,
-      "name": "Skala_Expert_Crespinho_Divino_Kids_Hair_Spray_250ml",
-      "description": "A gentle hair spray for kids, providing light hold without stiffness.",
-      "price": 500,
-      "productBrand": 131,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54731-Skala_Expert_Crespinho_Divino_Kids_Hair_Spray_250ml_9cd43068-42be-4040-99f0-d5066180b498.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54731-Skala_Expert_Crespinho_Divino_Kids_Hair_Spray_250ml-back_side_eefc39e0-0073-4c0a-b079-2d7824f5b2bb.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54731-Skala_Expert_Crespinho_Divino_Kids_Hair_Spray_250ml_9cd43068-42be-4040-99f0-d5066180b498.webp"
+        "Name": "HEALTHLIFEVITC1000M",
+        "Description": "A dietary supplement rich in Vitamin C (1000mg) to support immune function and fight oxidative stress.",
+        "Price": 100.0,
+        "ProductBrandId": 29,
+        "CategoryId": 16,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 132,
-      "name": "Skalinha_Bebe_Camomila_Shampoo_200ml",
-      "description": "A mild chamomile shampoo for babies, gently cleansing without irritation.",
-      "price": 500,
-      "productBrand": 132,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54732-Skalinha_Bebe_Camomila_Shampoo_200ml_212f87ab-a578-4f1a-b680-d476438b03f6.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54732-Skalinha_Bebe_Camomila_Shampoo_200ml-back_side_fadf3fac-8416-4308-ad06-3d850660cb4d.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54732-Skalinha_Bebe_Camomila_Shampoo_200ml_212f87ab-a578-4f1a-b680-d476438b03f6.webp"
+        "Name": "FEROGLOBIN",
+        "Description": "An iron-rich supplement with essential vitamins to support blood formation, energy, and overall vitality.",
+        "Price": 500.0,
+        "ProductBrandId": 30,
+        "CategoryId": 16,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 133,
-      "name": "Skala_Expert_Mais_Cachinhos_2_In_1_Hidratante_Cream_1000g",
-      "description": "A hydrating cream for curly hair, providing moisture and definition.",
-      "price": 500,
-      "productBrand": 133,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54736-Skala_Expert_Mais_Cachinhos_2_In_1_Hidratante_Cream_1000g.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54736-Skala_Expert_Mais_Cachinhos_2_In_1_Hidratante_Cream_1000g-BACK_SIDE.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54736-Skala_Expert_Mais_Cachinhos_2_In_1_Hidratante_Cream_1000g.webp"
+        "Name": "XYLOLIN_CHILDREN_SPRAY_10ML",
+        "Description": "Nasal spray for children that helps relieve nasal congestion caused by colds and allergies.",
+        "Price": 500.0,
+        "ProductBrandId": 31,
+        "CategoryId": 20,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 134,
-      "name": "Skala_Expert_Maislisos_2_In_1_Conditioner_Cream_1000g",
-      "description": "A smoothing cream for straight hair, adding shine and manageability.",
-      "price": 500,
-      "productBrand": 134,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54737-Skala_Expert_Maislisos_2_In_1_Conditioner_Cream_1000g_4c740e26-b699-4078-b9e7-895ef67eec16.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54737-Skala_Expert_Maislisos_2_In_1_Conditioner_Cream_1000g_4c740e26-b699-4078-b9e7-895ef67eec16 (1).webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54737-Skala_Expert_Maislisos_2_In_1_Conditioner_Cream_1000g_4c740e26-b699-4078-b9e7-895ef67eec16.webp"
+        "Name": "Nivea SunInt 200ml",
+        "Description": "Intensive sun protection lotion from Nivea, provides effective UV protection while moisturizing the skin.",
+        "Price": 500.0,
+        "ProductBrandId": 32,
+        "CategoryId": 16,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 135,
-      "name": "Skala_Expert_Mais_Crespinhos_2_In_1_Hidratante_Cream_1000g",
-      "description": "A moisturizing cream for tightly curled hair, enhancing softness and bounce.",
-      "price": 500,
-      "productBrand": 135,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54739-Skala_Expert_Mais_Crespinhos_2_In_1_Hidratante_Cream_1000g_cc15359b-7f7a-4993-8a05-a2e2a7e62313.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54739-Skala_Expert_Mais_Crespinhos_2_In_1_Hidratante_Cream_1000g-back_side_93995fbe-6737-4ee6-935a-38f0e102dbff.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54739-Skala_Expert_Mais_Crespinhos_2_In_1_Hidratante_Cream_1000g_cc15359b-7f7a-4993-8a05-a2e2a7e62313.webp"
+        "Name": "VASELINE-ORIGINAL-100ml",
+        "Description": "Pure petroleum jelly that moisturizes dry skin, protects from chapping, and promotes healing.",
+        "Price": 500.0,
+        "ProductBrandId": 33,
+        "CategoryId": 12,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 136,
-      "name": "Septanazal_For_Adults_1mgMl_50mgMl_Nasal_Spray_10ml",
-      "description": "A nasal decongestant spray for temporary relief from nasal congestion.",
-      "price": 500,
-      "productBrand": 136,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54767-Septanazal_For_Adults_1mgMl_50mgMl_Nasal_Spray_10ml-inside_3_78ca0ed8-b6ed-42ed-970e-6b5e1d9833c4.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54767-Septanazal_For_Adults_1mgMl_50mgMl_Nasal_Spray_10ml-inside_f80fbd14-832c-48a7-8418-b2df3d918da2.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/54767-Septanazal_For_Adults_1mgMl_50mgMl_Nasal_Spray_10ml-left_side_07ad1936-912e-4681-babb-43d446c7f178.webp",
-          "isMain": false
-        },
-        {
-          "id": "4",
-          "url": "../../images/product/54767-Septanazal_For_Adults_1mgMl_50mgMl_Nasal_Spray_10ml-right_side_fdc22db1-5e57-471e-bac0-0d60995f4e61.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54767-Septanazal_For_Adults_1mgMl_50mgMl_Nasal_Spray_10ml-inside_3_78ca0ed8-b6ed-42ed-970e-6b5e1d9833c4.webp"
+        "Name": "Sudo-Cream-250gm",
+        "Description": "A versatile skincare cream ideal for treating diaper rash, minor burns, and skin irritation.",
+        "Price": 500.0,
+        "ProductBrandId": 34,
+        "CategoryId": 1,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 137,
-      "name": "Hartmann_Veroval",
-      "description": "",
-      "price": 500,
-      "productBrand": 137,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54939-Hartmann_Veroval_Compact3_3a3a1da9-3f8e-46a2-b93c-913fba9c8a4b.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54939-Hartmann_Veroval_Compact1_5ed2d98e-9d2f-4e36-958d-30d0ee3051ef.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/54939-Hartmann_Veroval_Compact2_b14ac461-cdd8-4d45-8a09-42910fecfd03.webp",
-          "isMain": false
-        },
-        {
-          "id": "4",
-          "url": "../../images/product/54939-Hartmann_Veroval_Compact_Right_Side_dbff3bfd-3218-4498-8d42-5387812c9f7a.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54939-Hartmann_Veroval_Compact3_3a3a1da9-3f8e-46a2-b93c-913fba9c8a4b.webp"
+        "Name": "Infrared Massage Device",
+        "Description": "Provides comfortable and deep muscle massage.Includes infrared function to relieve pain and improve blood circulation.Ergonomic design for ease of use",
+        "Price": 500.0,
+        "ProductBrandId": 35,
+        "CategoryId": 18,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 138,
-      "name": "Tresemme_Keratin_Smooth_Straight_Shampoo_200ml",
-      "description": "A smoothing shampoo infused with keratin for sleek, frizz-free hair.",
-      "price": 500,
-      "productBrand": 138,
-      "category": 20,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/54981-Tresemme_Keratin_Smooth_Straight_Shampoo_200ml_Front_Side_74d410fd-cd91-422e-8dbe-5270340c1811.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/54981-Tresemme_Keratin_Smooth_Straight_Shampoo_200ml_Back_Side_cdccfb57-88ce-47bc-9131-85b4e01c1841.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/54981-Tresemme_Keratin_Smooth_Straight_Shampoo_200ml_Front_Side_74d410fd-cd91-422e-8dbe-5270340c1811.webp"
+        "Name": "BABY-SOFT-LOTION-500ml",
+        "Description": "Gentle baby lotion formulated to moisturize and soften delicate skin all day long.",
+        "Price": 500.0,
+        "ProductBrandId": 36,
+        "CategoryId": 20,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 139,
-      "name": "Panadol_Migraine_24_Caplets",
-      "description": "Pain relief caplets specifically formulated for migraine symptoms.",
-      "price": 500,
-      "productBrand": 139,
-      "category": 16,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/55112-Panadol_Migraine_24_Caplets_front.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/55112-Panadol_Migraine_24_Caplets_left.webp",
-          "isMain": false
-        },
-        {
-          "id": "3",
-          "url": "../../images/product/55112-Panadol_Migraine_24_Caplets_right.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/55112-Panadol_Migraine_24_Caplets_front.webp"
+        "Name": "FESS_LITTLE_SALINE_NASAL_SPRAY_ASPIRATOR_15ml",
+        "Description": "A saline nasal spray with aspirator, specially designed for infants to gently clear nasal congestion.",
+        "Price": 500.0,
+        "ProductBrandId": 37,
+        "CategoryId": 20,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 140,
-      "name": "OMRON COMPRESSOR NEBULIZER C102 TOTAL",
-      "description": "A reliable nebulizer for effective respiratory therapy at home.",
-      "price": 500,
-      "productBrand": 140,
-      "category": 1,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/OMRONCOMPRESSORNEBULIZERC102TOTAL.webp",
-          "isMain": true
-        },
-        {
-          "id": "2",
-          "url": "../../images/product/OMRONCOMPRESSORNEBULIZERC102TOTALthth.webp",
-          "isMain": false
-        }
-      ],
-      "photoUrl": "../../images/product/OMRONCOMPRESSORNEBULIZERC102TOTAL.webp"
+        "Name": "Listerine_Total_Care_Tartar_Protect_Mouthwash_500ml",
+        "Description": "Listerine Total Care Tartar Protect offers complete oral care in one rinse. It helps prevent tartar buildup, strengthens teeth, fights bad breath, and maintains healthy gums. Leaves your mouth feeling fresh and clean all day.",
+        "Price": 500.0,
+        "ProductBrandId": 38,
+        "CategoryId": 19,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     },
     {
-      "id": 141,
-      "name": "PHILIPS AVENT SOOTHIE SILICONE (0-6M)",
-      "description": "A soft silicone pacifier designed to comfort babies aged 0-6 months.",
-      "price": 500,
-      "productBrand": 141,
-      "category": 16,
-      "productPhotos": [
-        {
-          "id": "1",
-          "url": "../../images/product/PHILIPSAVENTSOOTHIESILICONE0-6MSCF099.20.webp",
-          "isMain": true
-        }
-      ],
-      "photoUrl": "../../images/product/PHILIPSAVENTSOOTHIESILICONE0-6MSCF099.20.webp"
+        "Name": "PRIORINN",
+        "Description": "Priorin Capsules support hair growth from within using a unique blend of natural ingredients including millet extract, biotin, and L-cystine. Ideal for those experiencing thinning hair or hair loss. Promotes stronger, healthier hair.",
+        "Price": 500.0,
+        "ProductBrandId": 39,
+        "CategoryId": 14,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "BIODER MASE-BIUM-FOAMING-GEL200ml",
+        "Description": "",
+        "Price": 500.0,
+        "ProductBrandId": 40,
+        "CategoryId": 21,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "Lacalut-Aktiv Tooth-paste-75ml",
+        "Description": "",
+        "Price": 500.0,
+        "ProductBrandId": 41,
+        "CategoryId": 5,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "REVITOL_KERATIN_HAIR_MASK_500m_REKHM",
+        "Description": "",
+        "Price": 500.0,
+        "ProductBrandId": 42,
+        "CategoryId": 1,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "acalut Aktiv-Toothbrush",
+        "Description": "A toothbrush designed for effective cleaning, offering a gentle brushing experience. It helps to maintain oral hygiene while ensuring comfort.",
+        "Price": 500.0,
+        "ProductBrandId": 43,
+        "CategoryId": 21,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "Melatime-SunScreen-Gel-SPF50+-Velvet-Touch-50-GM",
+        "Description": "The formula includes Aquagel, Panthenol, Tocopheryl Acetate, and Niacinamide, ensuring deep hydration and protection against free radicals. Additionally, it contains chemical and physical sunscreen blockers like Titanium Dioxide and Zinc Oxide for ultimate sun defense ",
+        "Price": 500.0,
+        "ProductBrandId": 44,
+        "CategoryId": 12,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "LAROCHE POSAYE-FFACLARFOAMINGGEL-400ml",
+        "Description": "A gentle foaming gel that cleanses the skin effectively. It is suitable for oily and acne-prone skin, helping to remove excess oil without causing dryness.",
+        "Price": 500.0,
+        "ProductBrandId": 45,
+        "CategoryId": 16,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "Lansinoh_Breastmilk_Storage_Bags_25Bags",
+        "Description": " High-quality storage bags for breastmilk, providing a safe and convenient way to store milk for later use. These bags are durable and designed to prevent leaks.",
+        "Price": 500.0,
+        "ProductBrandId": 46,
+        "CategoryId": 20,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "ENERGYALCOHOLSOLUTION95_SPRAY500ml",
+        "Description": "An alcohol solution in spray form, ideal for sanitizing surfaces and hands. It offers 95% alcohol content, ensuring effective disinfection.",
+        "Price": 500.0,
+        "ProductBrandId": 47,
+        "CategoryId": 14,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "FERRONAM",
+        "Description": "A supplement designed to help with iron deficiency. It comes in convenient sachets that are easy to mix and consume, providing essential nutrients.",
+        "Price": 500.0,
+        "ProductBrandId": 48,
+        "CategoryId": 16,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "TynorWristSplintAmbidextrous",
+        "Description": "A versatile wrist splint suitable for both hands, offering support for injured or weak wrists. It is comfortable and provides necessary stabilization.",
+        "Price": 500.0,
+        "ProductBrandId": 49,
+        "CategoryId": 19,
+        "ProductPhotos": [],
+        "PhotoUrl": null
+    },
+    {
+        "Name": "A_NATURES_BOUNTY_VITAMIN_C-1000_mg",
+        "Description": " A vitamin C supplement that helps to support the immune system. It comes in easy-to-swallow tablets, providing the body with an essential vitamin for overall health.",
+        "Price": 500.0,
+        "ProductBrandId": 50,
+        "CategoryId": 16,
+        "ProductPhotos": [],
+        "PhotoUrl": null
     }
-  ]
 ]
