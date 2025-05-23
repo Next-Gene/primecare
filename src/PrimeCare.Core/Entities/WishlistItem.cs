@@ -23,7 +23,7 @@
         /// <summary>
         /// Gets or sets the URL of the product's picture.
         /// </summary>
-        public string PicrureUrl { get; set; } = null!;
+        public string PictureUrl { get; set; } = null!;
 
         /// <summary>
         /// Gets or sets the brand of the product.

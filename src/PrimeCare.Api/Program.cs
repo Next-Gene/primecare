@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PrimeCare.Api.Extensions;
 using PrimeCare.Application;
@@ -15,7 +16,11 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container
-        builder.Services.AddControllers();
+        builder.Services.AddControllers()
+        .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
         builder.Services.AddSwaggerDecumentation();
 
         builder.Services.AddApplicationService(); // for application layer
@@ -61,7 +66,10 @@ public class Program
         try
         {
             var context = services.GetRequiredService<PrimeCareContext>();
+
             await context.Database.MigrateAsync();
+            await PrimeContextSeed.SeedAsync(context, loggerFactory);
+
 
             var identityContext = services.GetRequiredService<AppIdentityDbContext>();
             await identityContext.Database.MigrateAsync();

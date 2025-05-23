@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using PrimeCare.Core.Entities;
-using System.Reflection;
+using PrimeCare.Core.Entities.Order;
+using PrimeCare.Core.Entities.OrderAggregate;
 
 namespace PrimeCare.Infrastructure.Data;
 
@@ -43,6 +45,15 @@ public class PrimeCareContext : DbContext
     /// Gets or sets the category photos in the database.
     /// </summary>
     public DbSet<CategoryPhoto> CategoryPhotos { get; set; }
+
+
+    public DbSet<Order> Orders { get; set; }
+
+    public DbSet<OrderItem> OrderItems { get; set; }
+
+    public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
+
+
 
     /// <summary>
     /// Configures the entity mappings and relationships for the context.

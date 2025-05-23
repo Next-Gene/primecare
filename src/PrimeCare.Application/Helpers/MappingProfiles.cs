@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using PrimeCare.Core.Entities;
+
 using PrimeCare.Core.Entities.Identity;
 using PrimeCare.Shared.Dtos.Cart;
 using PrimeCare.Shared.Dtos.Categories;
@@ -79,13 +80,12 @@ public class MappingProfiles : Profile
         CreateMap<CategoryPhoto, CategoryPhotoDto>();
 
         CreateMap<Address, AddressDto>().ReverseMap();
-
         //CreateMap<CustomerCartDto, CustomerCart>();
         //CreateMap<CartItemDto, CartItem>();
         CreateMap<ProductDto, CartItem>()
         .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
         .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Name))
-        .ForMember(dest => dest.PicrureUrl, opt => opt.MapFrom(src => src.PhotoUrl))
+        .ForMember(dest => dest.PictureUrl, opt => opt.MapFrom(src => src.ProductPhotos.FirstOrDefault(x => x.IsMain)!.Url))
         .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
         .ForMember(dest => dest.Brand, opt => opt.MapFrom(src => src.ProductBrand))
         .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category));
@@ -93,7 +93,7 @@ public class MappingProfiles : Profile
         CreateMap<ProductDto, WishlistItem>()
        .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
        .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Name))
-       .ForMember(dest => dest.PicrureUrl, opt => opt.MapFrom(src => src.PhotoUrl))
+       .ForMember(dest => dest.PictureUrl, opt => opt.MapFrom(src => src.ProductPhotos.FirstOrDefault(x => x.IsMain)!.Url))
        .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
        .ForMember(dest => dest.Brand, opt => opt.MapFrom(src => src.ProductBrand))
        .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category));
@@ -109,6 +109,7 @@ public class MappingProfiles : Profile
         // CartItem ↔ CartItemDto
         CreateMap<CartItem, CartItemDto>();
         CreateMap<CartItemDto, CartItem>();
+        CreateMap<AddressDto, PrimeCare.Core.Entities.Order.Address>();
 
     }
 }
