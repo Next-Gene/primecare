@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using Microsoft.Extensions.Logging;
+using PrimeCare.Core.Entities;
 using PrimeCare.Core.Entities.Order;
 
 namespace PrimeCare.Infrastructure.Data;
@@ -20,6 +21,26 @@ public class PrimeContextSeed
         try
         {
 
+            // Seed product brands if none exist
+            if (!context.ProductBrands.Any())
+            {
+                var brandsData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\productBrands.json");
+                var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
+                foreach (var brand in brands!)
+                    context.ProductBrands.Add(brand);
+                await context.SaveChangesAsync();
+            }
+
+            // Seed categories if none exist
+            if (!context.Categories.Any())
+            {
+                var categoriesData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\categories.json");
+                var categories = JsonSerializer.Deserialize<List<Category>>(categoriesData);
+                foreach (var category in categories!)
+                    context.Categories.Add(category);
+                await context.SaveChangesAsync();
+            }
+
             if (!context.DeliveryMethods.Any())
             {
                 var dmData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\delivery.json");
@@ -38,35 +59,16 @@ public class PrimeContextSeed
                 await context.SaveChangesAsync();
             }
 
-            //// Seed product brands if none exist
-            //if (!context.ProductBrands.Any())
-            //{
-            //    var brandsData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\brands.json");
-            //    var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
-            //    foreach (var brand in brands!)
-            //        context.ProductBrands.Add(brand);
-            //    await context.SaveChangesAsync();
-            //}
 
-            //// Seed categories if none exist
-            //if (!context.Categories.Any())
-            //{
-            //    var categoriesData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\categories.json");
-            //    var categories = JsonSerializer.Deserialize<List<Category>>(categoriesData);
-            //    foreach (var category in categories!)
-            //        context.Categories.Add(category);
-            //    await context.SaveChangesAsync();
-            //}
-
-            //// Seed products if none exist
-            //if (!context.Products.Any())
-            //{
-            //    var productsData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\products.json");
-            //    var products = JsonSerializer.Deserialize<List<Product>>(productsData);
-            //    foreach (var product in products!)
-            //        context.Products.Add(product);
-            //    await context.SaveChangesAsync();
-            //}
+            // Seed products if none exist
+            if (!context.Products.Any())
+            {
+                var productsData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\products.json");
+                var products = JsonSerializer.Deserialize<List<Product>>(productsData);
+                foreach (var product in products!)
+                    context.Products.Add(product);
+                await context.SaveChangesAsync();
+            }
 
 
         }

@@ -1,259 +1,191 @@
 [
-  {
-    "_id": "1",
-    "name": "Medical Equipment",
-    "slug": "Medical Equipment",
-    "image": "/images/category/Medical-Equipment.png",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 3,
-    "description": "Essential devices for patient care."
-  },
-  {
-    "_id": "2",
-    "name": "Diagnostic Equipment",
-    "slug": "Diagnostic Equipment",
-    "image": "/images/category/Diagnostic-Equipment.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 2,
-    "description": "Tools for accurate health diagnostics."
-  },
-  {
-    "_id": "3",
-    "name": "Medical Supplies",
-    "slug": "Medical Supplies",
-    "image": "/images/category/Medical-Supplies.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 3,
-    "description": "Explore essential medical products for quality care and reliability."
-  },
-  {
-    "_id": "4",
-    "name": "Hygiene",
-    "slug": "Hygiene",
-    "image": "/images/category/Hygiene.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 1,
-    "description": "Products for personal cleanliness and safety."
-  },
-  {
-    "_id": "5",
-    "name": "Surgical Instruments",
-    "slug": "Surgical Instruments",
-    "image": "/images/category/Surgical-Instruments.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 1,
-    "description": "Precision instruments for surgical procedures."
-  },
-  {
-    "_id": "6",
-    "name": "Offers",
-    "slug": "Offers",
-    "image": "/images/category/image.png",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Offers updated every day."
-  },
-  {
-    "_id": "7",
-    "name": "Mother Child Care",
-    "slug": "mother-child-care",
-    "image": "/images/category/image 7.png",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Everything about your baby."
-  },
-  {
-    "_id": "8",
-    "name": "Prescription Medications",
-    "slug": "prescription-medications",
-    "image": "/images/category/image 6.png",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "That is permitted to be dispensed only to those with a medical prescription."
-  },
-  {
-    "_id": "9",
-    "name": "Medicines Without a Prescription",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image 5.png",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "The medicines can buy without prescripition."
-  },
-  {
-    "_id": "11",
-    "name": "Blood Sugar Monitoring",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image53.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "A glucose meter for accurate health tracking."
-  },
-  {
-    "_id": "12",
-    "name": "Cosmetic Treatments",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image76.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Advanced medical techniques to enhance and maintain skin beauty."
-  },
-  {
-    "_id": "13",
-    "name": "Medical Ampoules",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image98.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "High-quality pharmaceutical ampoules used for various treatments."
-  },
-  {
-    "_id": "14",
-    "name": "Injections & Medical Care",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image88.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Medical injection tools ensuring precision and safety in treatments."
-  },
-  {
-    "_id": "15",
-    "name": "Doctor’s Essentials",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image22.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "A stethoscope and digital device for efficient medical diagnosis."
-  },
-  {
-    "_id": "16",
-    "name": "Medications & Medical Solutions",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image111.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "A collection of essential medical solutions for various conditions."
-  },
-  {
-    "_id": "17",
-    "name": "Creative Medical Frame",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image222.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "An innovative design combining medical elements in a unique layout."
-  },
-  {
-    "_id": "18",
-    "name": "Telemedicine Services",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image1213.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Modern technology enabling remote medical consultations with ease."
-  },
-  {
-    "_id": "19",
-    "name": "Patient Care",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image13112.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Compassionate and professional medical care."
-  },
-  {
-    "_id": "20",
-    "name": "Family Healthcare",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image112.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Medical tools designed for family health and optimal care."
-  },
-  {
-    "_id": "21",
-    "name": "Medical Consultation",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image15.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Professional doctors providing expert health advice and treatment."
-  },
-  {
-    "_id": "22",
-    "name": "Health Protection Supplies",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image16.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Protective essentials for daily safety."
-  },
-  {
-    "_id": "23",
-    "name": "Online Medical Consultation",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image18.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0
-  },
-  {
-    "_id": "24",
-    "name": "Medical Research & Laboratory",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image937.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0
-  },
-  {
-    "_id": "25",
-    "name": "Time & Health Management",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image38774.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Prioritizing timely medical care to enhance well-being and longevity."
-  },
-  {
-    "_id": "26",
-    "name": "Health Monitoring Devices",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image59.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0,
-    "description": "Essential medical tools for accurate temperature and vital sign tracking."
-  },
-  {
-    "_id": "27",
-    "name": "Medical Work Environment",
-    "slug": "medicines-without-prescription",
-    "image": "/images/category/image2836.jpg",
-    "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-01T12:00:00.000Z",
-    "productsCount": 0
-  }
+    {
+        "Name": "Medical Equipment",
+        "Slug": "Medical Equipment",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Essential devices for patient care."
+    },
+    {
+        "Name": "Diagnostic Equipment",
+        "Slug": "Diagnostic Equipment",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Tools for accurate health diagnostics."
+    },
+    {
+        "Name": "Medical Supplies",
+        "Slug": "Medical Supplies",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Explore essential medical products for quality care and reliability."
+    },
+    {
+        "Name": "Hygiene",
+        "Slug": "Hygiene",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Products for personal cleanliness and safety."
+    },
+    {
+        "Name": "Surgical Instruments",
+        "Slug": "Surgical Instruments",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Precision instruments for surgical procedures."
+    },
+    {
+        "Name": "Offers",
+        "Slug": "Offers",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Offers updated every day."
+    },
+    {
+        "Name": "Mother Child Care",
+        "Slug": "mother-child-care",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Everything about your baby."
+    },
+    {
+        "Name": "Prescription Medications",
+        "Slug": "prescription-medications",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "That is permitted to be dispensed only to those with a medical prescription."
+    },
+    {
+        "Name": "Medicines Without a Prescription",
+        "Slug": "medicines-without-prescription",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "The medicines can buy without prescripition."
+    },
+    {
+        "Name": "Blood Sugar Monitoring",
+        "Slug": "blood-sugar-monitoring",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "A glucose meter for accurate health tracking."
+    },
+    {
+        "Name": "Cosmetic Treatments",
+        "Slug": "cosmetic-treatments",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Advanced medical techniques to enhance and maintain skin beauty."
+    },
+    {
+        "Name": "Medical Ampoules",
+        "Slug": "medical-ampoules",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "High-quality pharmaceutical ampoules used for various treatments."
+    },
+    {
+        "Name": "Injections & Medical Care",
+        "Slug": "injections-medical-care",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Medical injection tools ensuring precision and safety in treatments."
+    },
+    {
+        "Name": "Doctor’s Essentials",
+        "Slug": "doctors-essentials",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "A stethoscope and digital device for efficient medical diagnosis."
+    },
+    {
+        "Name": "Medications & Medical Solutions",
+        "Slug": "medications-medical-solutions",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "A collection of essential medical solutions for various conditions."
+    },
+    {
+        "Name": "Creative Medical Frame",
+        "Slug": "creative-medical-frame",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "An innovative design combining medical elements in a unique layout."
+    },
+    {
+        "Name": "Telemedicine Services",
+        "Slug": "telemedicine-services",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Modern technology enabling remote medical consultations with ease."
+    },
+    {
+        "Name": "Patient Care",
+        "Slug": "patient-care",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Compassionate and professional medical care."
+    },
+    {
+        "Name": "Family Healthcare",
+        "Slug": "family-healthcare",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Medical tools designed for family health and optimal care."
+    },
+    {
+        "Name": "Medical Consultation",
+        "Slug": "medical-consultation",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Professional doctors providing expert health advice and treatment."
+    },
+    {
+        "Name": "Health Protection Supplies",
+        "Slug": "health-protection-supplies",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Protective essentials for daily safety."
+    },
+    {
+        "Name": "Online Medical Consultation",
+        "Slug": "online-medical-consultation",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Remote medical consultations with professional doctors."
+    },
+    {
+        "Name": "Medical Research & Laboratory",
+        "Slug": "medical-research-laboratory",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Advanced research and laboratory services for medical innovation."
+    },
+    {
+        "Name": "Time & Health Management",
+        "Slug": "time-health-management",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Prioritizing timely medical care to enhance well-being and longevity."
+    },
+    {
+        "Name": "Health Monitoring Devices",
+        "Slug": "health-monitoring-devices",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Essential medical tools for accurate temperature and vital sign tracking."
+    },
+    {
+        "Name": "Medical Work Environment",
+        "Slug": "medical-work-environment",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Optimized work environments for medical professionals."
+    },
+    {
+        "Name": "Hair Care & Hair Loss Treatment",
+        "Slug": "hair-care-hair-loss-treatment",
+        "CreatedAt": "2025-05-14T20:32:06.737",
+        "UpdatedAt": "2025-05-14T20:45:04.073",
+        "Description": "Protect your hair with essential care for a healthy, vibrant look."
+    }
 ]
