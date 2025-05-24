@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Services.Interfaces;
+using PrimeCare.Core.Entities;
+using PrimeCare.Core.Interfaces;
 using PrimeCare.Shared.Dtos.Photos;
 using PrimeCare.Shared.Dtos.Products;
 
@@ -13,14 +15,17 @@ namespace PrimeCare.Api.Controllers;
 public class ProductController : BaseApiController
 {
     private readonly IProductService _productService;
+    private readonly IGenericRepository<Product> _productInterface;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ProductController"/> class.
     /// </summary>
     /// <param name="productService">The product service for product operations.</param>
-    public ProductController(IProductService productService)
+    public ProductController(IProductService productService,
+        IGenericRepository<Product> productInterface)
     {
         _productService = productService;
+        _productInterface = productInterface;
     }
 
     /// <summary>
@@ -111,5 +116,23 @@ public class ProductController : BaseApiController
             return BadRequest("Failed to add photo or product not found.");
 
         return CreatedAtAction(nameof(GetProductById), new { id }, photo);
+    }
+
+    [HttpPut("set-main-photo/{}")]
+    public async Task<ActionResult> SetMainPhoto(int productId, int photoId)
+    {
+        var product = await _productInterface.GetByIdAsync(productId);
+        if (product == null)
+            return null!;
+
+        var photo = product.ProductPhotos.FirstOrDefault(x => x.Id == photoId);
+        if (photo!.IsMain) return BadRequest("This is already your main photo");
+
+        var currentMain = product.ProductPhotos.FirstOrDefault(x => x.IsMain);
+        if (currentMain != null) currentMain.IsMain = false;
+
+        if (await _productInterface.SaveAllAsync()) return NoContent();
+
+        return BadRequest("Faild to set main photo");
     }
 }
