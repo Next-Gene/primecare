@@ -34,14 +34,20 @@
         /// <summary>
         /// Gets the total price of all items in the cart.
         /// </summary>
+        /// 
 
+        public int? DeliveryMethodId { get; set; } // Delivery Method
 
-        private const decimal TaxRate = 0.15m; // 15% ضريبة
+        public string ClientSecret { get; set; } = null!; // Client Secret for payment processing
+
+        public string PaymentIntentId { get; set; } = null!; // Payment Intent ID for tracking payment status
+
+        private const decimal TaxRate = 0.15m; // 15% Tx
 
         public decimal TotalPrice => CartItems.Sum(item => item.Price * item.Quantity);
 
-        public decimal TaxAmount => TotalPrice * TaxRate; // قيمة الضريبة
+        public decimal TaxAmount => TotalPrice * TaxRate; // TaxAmount 
 
-        public decimal TotalPriceWithTax => TotalPrice + TaxAmount; // السعر شامل الضري
+        public decimal TotalPriceWithTax => TotalPrice + TaxAmount; //  TotalPriceWithTax
     }
 }

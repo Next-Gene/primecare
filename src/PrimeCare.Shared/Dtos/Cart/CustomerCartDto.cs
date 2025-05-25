@@ -14,11 +14,17 @@ namespace PrimeCare.Shared.Dtos.Cart
 
         public decimal TotalPrice { get; set; }
 
-        public decimal TaxAmount { get; set; } // الضريبة
+        public decimal TaxAmount { get; set; }
 
-        public decimal TotalPriceWithTax { get; set; } // السعر مع الضريبة
+        public decimal TotalPriceWithTax { get; set; }
+
+        public int? DeliveryMethodId { get; set; }
+
+        public string ClientSecret { get; set; } = null!;
+
+        public string PaymentIntentId { get; set; } = null!;
+
+
     }
-
-
 }
 
