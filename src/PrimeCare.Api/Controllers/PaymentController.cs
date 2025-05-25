@@ -17,7 +17,7 @@ namespace PrimeCare.Api.Controllers
 
 
         }
-
+        // CreateOrUpdatePaymentIntent
         [Authorize]
         [HttpPost]
         public async Task<ActionResult<CustomerCart>> CreateOrUpdatePaymentIntent()
