@@ -9,15 +9,16 @@ namespace PrimeCare.Api.Extensions
 {
     public static class IdentityServiceExtensions
     {
-
-
         public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
             var builder = services.AddIdentityCore<ApplicationUser>();
             builder = new IdentityBuilder(builder.UserType, builder.Services);
+            builder.AddRoles<IdentityRole>(); // Add roles support
             builder.AddEntityFrameworkStores<AppIdentityDbContext>();
             builder.AddSignInManager<SignInManager<ApplicationUser>>();
+            builder.AddRoleManager<RoleManager<IdentityRole>>(); // Add role manager
             builder.AddDefaultTokenProviders();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -27,13 +28,17 @@ namespace PrimeCare.Api.Extensions
                     ValidIssuer = configuration["Token:Issuer"],
                     ValidateIssuer = true,
                     ValidateAudience = false,
-
-
                 };
-
             });
-            return services;
 
+            // Add Authorization policies
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("AdminOrSeller", policy => policy.RequireRole("Admin", "Seller"));
+            });
+
+            return services;
         }
     }
 }

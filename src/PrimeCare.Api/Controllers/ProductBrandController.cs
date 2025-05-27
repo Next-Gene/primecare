@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Shared.Dtos.ProductBrand;
 using PrimeCare.Shared.Errors;
@@ -25,6 +26,7 @@ public class ProductBrandController : BaseApiController
 
     /// <summary>
     /// Retrieves all product brands.
+    /// Public access - no authorization required.
     /// </summary>
     /// <returns>A list of product brands or 404 if none found.</returns>
     [HttpGet]
@@ -38,6 +40,7 @@ public class ProductBrandController : BaseApiController
 
     /// <summary>
     /// Retrieves a specific product brand by ID.
+    /// Public access - no authorization required.
     /// </summary>
     /// <param name="id">The ID of the product brand.</param>
     /// <returns>The product brand details or 404 if not found.</returns>
@@ -52,10 +55,12 @@ public class ProductBrandController : BaseApiController
 
     /// <summary>
     /// Creates a new product brand.
+    /// Requires Admin or Seller role.
     /// </summary>
     /// <param name="productBrand">The product brand data.</param>
     /// <returns>Result of the creation operation.</returns>
     [HttpPost]
+    [Authorize(Policy = "AdminOrSeller")]
     public async Task<IActionResult> CreateProductBrand([FromBody] CreateProductBrandDto productBrand)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -66,11 +71,13 @@ public class ProductBrandController : BaseApiController
 
     /// <summary>
     /// Updates an existing product brand.
+    /// Requires Admin or Seller role.
     /// </summary>
     /// <param name="id">The ID of the product brand to update.</param>
     /// <param name="productBrand">The updated product brand data.</param>
     /// <returns>Result of the update operation.</returns>
     [HttpPut("{id}")]
+    [Authorize(Policy = "AdminOrSeller")]
     public async Task<IActionResult> UpdateProductBrand(int id, [FromBody] ProductBrandDto productBrand)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -82,10 +89,12 @@ public class ProductBrandController : BaseApiController
 
     /// <summary>
     /// Deletes a product brand by ID.
+    /// Requires Admin role only.
     /// </summary>
     /// <param name="id">The ID of the product brand to delete.</param>
     /// <returns>Result of the delete operation.</returns>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> DeleteProductBrand(int id)
     {
         var result = await _productBrandService.DeleteAsync(id);
