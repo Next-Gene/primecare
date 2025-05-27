@@ -138,6 +138,7 @@ public class ProductController : BaseApiController
     /// <returns>A result indicating success or failure.</returns>
     [HttpPut("set-main-photo/{productId}/{photoId}")]
     [Authorize(Policy = "AdminOrSeller")]
+
     public async Task<ActionResult> SetMainPhoto(int productId, int photoId)
     {
         var product = await _productInterface.GetByIdAsync(productId);
