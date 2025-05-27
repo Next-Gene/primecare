@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
 using PrimeCare.Core.Interfaces;
@@ -30,6 +31,7 @@ public class ProductController : BaseApiController
 
     /// <summary>
     /// Retrieves all products with optional filters and sorting.
+    /// Public access - no authorization required.
     /// </summary>
     /// <param name="sort">The sorting criteria (optional).</param>
     /// <param name="brandId">The brand ID to filter by (optional).</param>
@@ -48,6 +50,7 @@ public class ProductController : BaseApiController
 
     /// <summary>
     /// Retrieves a product by its unique identifier.
+    /// Public access - no authorization required.
     /// </summary>
     /// <param name="id">The unique identifier of the product.</param>
     /// <returns>The product if found; otherwise, a not found response.</returns>
@@ -60,10 +63,12 @@ public class ProductController : BaseApiController
 
     /// <summary>
     /// Creates a new product.
+    /// Requires Admin or Seller role.
     /// </summary>
     /// <param name="product">The product data to create.</param>
     /// <returns>A result indicating success or failure.</returns>
     [HttpPost]
+    [Authorize(Policy = "AdminOrSeller")]
     public async Task<IActionResult> CreateProduct([FromBody] CreateProductDto product)
     {
         if (!ModelState.IsValid)
@@ -75,11 +80,13 @@ public class ProductController : BaseApiController
 
     /// <summary>
     /// Updates an existing product.
+    /// Requires Admin or Seller role.
     /// </summary>
     /// <param name="id">The unique identifier of the product to update.</param>
     /// <param name="product">The updated product data.</param>
     /// <returns>A result indicating success or failure.</returns>
     [HttpPut("{id}")]
+    [Authorize(Policy = "AdminOrSeller")]
     public async Task<IActionResult> UpdateProduct(int id, [FromBody] UpdateProductDto product)
     {
         if (!ModelState.IsValid)
@@ -92,10 +99,12 @@ public class ProductController : BaseApiController
 
     /// <summary>
     /// Deletes a product by its unique identifier.
+    /// Requires Admin role only.
     /// </summary>
     /// <param name="id">The unique identifier of the product to delete.</param>
     /// <returns>A result indicating success or failure.</returns>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> DeleteProduct(int id)
     {
         var result = await _productService.DeleteAsync(id);
@@ -104,11 +113,13 @@ public class ProductController : BaseApiController
 
     /// <summary>
     /// Adds a photo to a product.
+    /// Requires Admin or Seller role.
     /// </summary>
     /// <param name="id">The unique identifier of the product.</param>
     /// <param name="file">The photo file to add.</param>
     /// <returns>The added photo or a bad request if the operation fails.</returns>
     [HttpPost("{id}/photo")]
+    [Authorize(Policy = "AdminOrSeller")]
     public async Task<ActionResult<ProductPhotoDto>> AddProductPhoto(int id, IFormFile file)
     {
         var photo = await _productService.AddPhotoAsync(id, file);
@@ -118,21 +129,37 @@ public class ProductController : BaseApiController
         return CreatedAtAction(nameof(GetProductById), new { id }, photo);
     }
 
-    [HttpPut("set-main-photo/{}")]
+    /// <summary>
+    /// Sets a photo as the main photo for a product.
+    /// Requires Admin or Seller role.
+    /// </summary>
+    /// <param name="productId">The unique identifier of the product.</param>
+    /// <param name="photoId">The unique identifier of the photo to set as main.</param>
+    /// <returns>A result indicating success or failure.</returns>
+    [HttpPut("set-main-photo/{productId}/{photoId}")]
+    [Authorize(Policy = "AdminOrSeller")]
     public async Task<ActionResult> SetMainPhoto(int productId, int photoId)
     {
         var product = await _productInterface.GetByIdAsync(productId);
         if (product == null)
-            return null!;
+            return NotFound($"Product with ID {productId} not found.");
 
         var photo = product.ProductPhotos.FirstOrDefault(x => x.Id == photoId);
-        if (photo!.IsMain) return BadRequest("This is already your main photo");
+        if (photo == null)
+            return NotFound($"Photo with ID {photoId} not found for this product.");
+
+        if (photo.IsMain)
+            return BadRequest("This is already your main photo");
 
         var currentMain = product.ProductPhotos.FirstOrDefault(x => x.IsMain);
-        if (currentMain != null) currentMain.IsMain = false;
+        if (currentMain != null)
+            currentMain.IsMain = false;
 
-        if (await _productInterface.SaveAllAsync()) return NoContent();
+        photo.IsMain = true;
 
-        return BadRequest("Faild to set main photo");
+        if (await _productInterface.SaveAllAsync())
+            return NoContent();
+
+        return BadRequest("Failed to set main photo");
     }
 }

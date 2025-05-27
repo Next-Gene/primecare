@@ -73,9 +73,9 @@ public class Program
 
             var identityContext = services.GetRequiredService<AppIdentityDbContext>();
             await identityContext.Database.MigrateAsync();
-
             var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-            await AppIdentityDbContextSeed.SeedUserAsync(userManager); // Uncomment for seeding
+            var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            await AppIdentityDbContextSeed.SeedUsersAsync(userManager, roleManager);
         }
         catch (Exception ex)
         {
