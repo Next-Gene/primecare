@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace PrimeCare.Infrastructure.Migrations
+namespace PrimeCare.Infrastructure.Migrations.PrimeCare
 {
     /// <inheritdoc />
-    public partial class Intial : Migration
+    public partial class Intail : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

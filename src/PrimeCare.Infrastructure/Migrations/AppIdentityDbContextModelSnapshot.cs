@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PrimeCare.Infrastructure.Identity;
 
 #nullable disable
 
-namespace PrimeCare.Infrastructure.Migrations.AppIdentityDb
+namespace PrimeCare.Infrastructure.Migrations
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20250527202351_Identity")]
-    partial class Identity
+    partial class AppIdentityDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

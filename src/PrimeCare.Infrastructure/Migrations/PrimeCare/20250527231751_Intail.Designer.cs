@@ -9,11 +9,11 @@ using PrimeCare.Infrastructure.Data;
 
 #nullable disable
 
-namespace PrimeCare.Infrastructure.Migrations
+namespace PrimeCare.Infrastructure.Migrations.PrimeCare
 {
     [DbContext(typeof(PrimeCareContext))]
-    [Migration("20250527201350_Intial")]
-    partial class Intial
+    [Migration("20250527231751_Intail")]
+    partial class Intail
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
