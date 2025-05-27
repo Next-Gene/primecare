@@ -6,6 +6,6 @@ namespace PrimeCare.Application.Services.Interfaces
     {
 
         string CreateToken(ApplicationUser applicationUser);
-
+        Task<string> CreateTokenAsync(ApplicationUser applicationUser);
     }
 }

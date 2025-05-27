@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Shared.Dtos.Categories;
 using PrimeCare.Shared.Dtos.Photos;
@@ -26,6 +27,7 @@ public class CategoryController : BaseApiController
 
     /// <summary>
     /// Retrieves all categories with optional sorting.
+    /// Public access - no authorization required.
     /// </summary>
     /// <param name="sort">The sorting criteria (optional).</param>
     /// <returns>A list of categories or a not found response if none exist.</returns>
@@ -42,6 +44,7 @@ public class CategoryController : BaseApiController
 
     /// <summary>
     /// Retrieves a category by its unique identifier.
+    /// Public access - no authorization required.
     /// </summary>
     /// <param name="id">The unique identifier of the category.</param>
     /// <returns>The category if found; otherwise, a not found response.</returns>
@@ -58,10 +61,12 @@ public class CategoryController : BaseApiController
 
     /// <summary>
     /// Creates a new category.
+    /// Requires Admin or Seller role.
     /// </summary>
     /// <param name="category">The category data to create.</param>
     /// <returns>A result indicating success or failure.</returns>
     [HttpPost]
+    [Authorize(Policy = "AdminOrSeller")]
     public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryDto category)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -75,11 +80,13 @@ public class CategoryController : BaseApiController
 
     /// <summary>
     /// Updates an existing category.
+    /// Requires Admin or Seller role.
     /// </summary>
     /// <param name="id">The unique identifier of the category to update.</param>
     /// <param name="category">The updated category data.</param>
     /// <returns>A result indicating success or failure.</returns>
     [HttpPut("{id}")]
+    [Authorize(Policy = "AdminOrSeller")]
     public async Task<IActionResult> UpdateCategory(int id, [FromBody] UpdateCategoryDto category)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -94,10 +101,12 @@ public class CategoryController : BaseApiController
 
     /// <summary>
     /// Deletes a category by its unique identifier.
+    /// Requires Admin role only.
     /// </summary>
     /// <param name="id">The unique identifier of the category to delete.</param>
     /// <returns>A result indicating success or failure.</returns>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> DeleteCategory(int id)
     {
         var result = await _categoryService.DeleteAsync(id);
@@ -109,11 +118,13 @@ public class CategoryController : BaseApiController
 
     /// <summary>
     /// Adds a photo to a category.
+    /// Requires Admin or Seller role.
     /// </summary>
     /// <param name="id">The unique identifier of the category.</param>
     /// <param name="file">The photo file to add.</param>
     /// <returns>The added photo or a bad request if the operation fails.</returns>
     [HttpPost("{id}/photo")]
+    [Authorize(Policy = "AdminOrSeller")]
     public async Task<ActionResult<CategoryPhotoDto>> AddPhotoToCategory(int id, IFormFile file)
     {
         var photo = await _categoryService.AddPhotoAsync(id, file);
