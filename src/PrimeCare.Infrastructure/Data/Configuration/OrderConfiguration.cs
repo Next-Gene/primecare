@@ -18,6 +18,8 @@ namespace PrimeCare.Infrastructure.Data.Configuration
                     o => o.ToString(),
                     o => (OrderStatus)Enum.Parse(typeof(OrderStatus), o));
             builder.HasMany(o => o.OrderItems).WithOne().OnDelete(DeleteBehavior.Cascade);
+            builder.Property(o => o.Subtotal).HasColumnType("decimal(18,2)");
+
         }
     }
 

@@ -118,7 +118,7 @@ public class ProductController : BaseApiController
         return CreatedAtAction(nameof(GetProductById), new { id }, photo);
     }
 
-    [HttpPut("set-main-photo/{photoId}/{productId}")]
+    [HttpPut("set-main-photo/{}")]
     public async Task<ActionResult> SetMainPhoto(int productId, int photoId)
     {
         var product = await _productInterface.GetByIdAsync(productId);
