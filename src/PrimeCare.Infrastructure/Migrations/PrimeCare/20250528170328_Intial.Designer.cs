@@ -12,8 +12,8 @@ using PrimeCare.Infrastructure.Data;
 namespace PrimeCare.Infrastructure.Migrations.PrimeCare
 {
     [DbContext(typeof(PrimeCareContext))]
-    [Migration("20250527231751_Intail")]
-    partial class Intail
+    [Migration("20250528170328_Intial")]
+    partial class Intial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

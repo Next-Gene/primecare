@@ -16,7 +16,8 @@ namespace PrimeCare.Infrastructure.Identity
 
         private static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
         {
-            var roles = new[] { "Admin", "Seller" };
+            // Updated to include "User" as the default role
+            var roles = new[] { "Admin", "Seller", "User" };
 
             foreach (var role in roles)
             {
@@ -30,13 +31,13 @@ namespace PrimeCare.Infrastructure.Identity
         private static async Task SeedUserAsync(UserManager<ApplicationUser> userManager)
         {
             // Create Admin user
-            if (await userManager.FindByEmailAsync("seifmoatz27249@gmail.com") == null)
+            if (await userManager.FindByEmailAsync("seifmoataz27249@gmail.com") == null)
             {
                 var adminUser = new ApplicationUser
                 {
                     FullName = "Admin User",
                     UserName = "admin",
-                    Email = "seifmoatz27249@gmail.com",
+                    Email = "seifmoataz27249@gmail.com",
                     PhoneNumber = "01022832634",
                     Address = new Address
                     {
@@ -80,6 +81,33 @@ namespace PrimeCare.Infrastructure.Identity
                 if (result.Succeeded)
                 {
                     await userManager.AddToRoleAsync(sellerUser, "Seller");
+                }
+            }
+
+            // Create a regular User for testing
+            if (await userManager.FindByEmailAsync("user@example.com") == null)
+            {
+                var regularUser = new ApplicationUser
+                {
+                    FullName = "Regular User",
+                    UserName = "user",
+                    Email = "user@example.com",
+                    PhoneNumber = "01000000000",
+                    Address = new Address
+                    {
+                        FirstName = "Regular",
+                        LastName = "User",
+                        Street = "User Street",
+                        City = "Cairo",
+                        State = "Cairo",
+                        ZipCode = "11111"
+                    }
+                };
+
+                var result = await userManager.CreateAsync(regularUser, "Pa$$w0rd");
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(regularUser, "User");
                 }
             }
 
