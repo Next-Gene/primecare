@@ -20,6 +20,7 @@ namespace PrimeCare.Api.Controllers
         private readonly IEmailService _emailService;
         private readonly IConfiguration _configuration;
         private readonly IDatabase _database;
+        private readonly IRoleManagementService _roleManagementService;
 
         public AuthController(
             UserManager<ApplicationUser> userManager,
@@ -28,7 +29,8 @@ namespace PrimeCare.Api.Controllers
             IMapper mapper,
             IEmailService emailService,
             IConfiguration configuration,
-            IConnectionMultiplexer redis)
+            IConnectionMultiplexer redis,
+            IRoleManagementService roleManagementService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -37,6 +39,7 @@ namespace PrimeCare.Api.Controllers
             _emailService = emailService;
             _configuration = configuration;
             _database = redis.GetDatabase();
+            _roleManagementService = roleManagementService;
         }
 
         [Authorize]
@@ -142,6 +145,18 @@ namespace PrimeCare.Api.Controllers
                 return BadRequest(new ApiResponse(400, $"Registration failed: {errors}"));
             }
 
+            // Automatically assign the "User" role to newly registered users
+            try
+            {
+                await _roleManagementService.AssignDefaultRoleToUserAsync(user.Email);
+            }
+            catch (Exception ex)
+            {
+                // Log the error but don't fail the registration
+                // You might want to use a logger here
+                Console.WriteLine($"Warning: Failed to assign default role to user {user.Email}: {ex.Message}");
+            }
+
             return Ok(new UserDto
             {
                 UserName = user.UserName,
@@ -221,6 +236,65 @@ namespace PrimeCare.Api.Controllers
             await _database.KeyDeleteAsync($"verified-reset-{resetPasswordDto.Email}");
 
             return Ok(new { Message = "Password reset successful" });
+        }
+
+        // Role management endpoints
+
+        [Authorize(Policy = "AdminOnly")]
+        [HttpPost("change-user-role")]
+        public async Task<IActionResult> ChangeUserRole([FromBody] ChangeUserRoleDto changeRoleDto)
+        {
+            try
+            {
+                await _roleManagementService.ChangeUserRoleAsync(changeRoleDto.Email, changeRoleDto.NewRole);
+                return Ok(new { Message = $"User role changed to {changeRoleDto.NewRole} successfully" });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new ApiResponse(400, ex.Message));
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new ApiResponse(400, ex.Message));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse(500, $"Internal server error: {ex.Message}"));
+            }
+        }
+
+        [Authorize(Policy = "AdminOnly")]
+        [HttpGet("user-roles/{email}")]
+        public async Task<ActionResult<UserRoleDto>> GetUserRoles(string email)
+        {
+            try
+            {
+                var userRoles = await _roleManagementService.GetUserRolesAsync(email);
+                return Ok(userRoles);
+            }
+            catch (ArgumentException ex)
+            {
+                return NotFound(new ApiResponse(404, ex.Message));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse(500, $"Internal server error: {ex.Message}"));
+            }
+        }
+
+        [Authorize(Policy = "AdminOnly")]
+        [HttpGet("available-roles")]
+        public async Task<ActionResult<IEnumerable<string>>> GetAvailableRoles()
+        {
+            try
+            {
+                var roles = await _roleManagementService.GetAllRolesAsync();
+                return Ok(roles);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse(500, $"Internal server error: {ex.Message}"));
+            }
         }
     }
 }

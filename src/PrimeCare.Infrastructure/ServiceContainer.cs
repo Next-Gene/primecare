@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PrimeCare.Application.Services;
 using PrimeCare.Application.Services.Implementations;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
@@ -42,6 +43,7 @@ public static class ServiceContainer
         services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<IRoleManagementService, RoleManagementService>();
 
         return services;
     }
