@@ -12,7 +12,7 @@ using PrimeCare.Infrastructure.Data;
 namespace PrimeCare.Infrastructure.Migrations
 {
     [DbContext(typeof(PrimeCareContext))]
-    [Migration("20250529002523_Intial")]
+    [Migration("20250529025215_Intial")]
     partial class Intial
     {
         /// <inheritdoc />
@@ -190,6 +190,10 @@ namespace PrimeCare.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedByName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -136,10 +136,9 @@ namespace PrimeCare.Infrastructure.Identity
                 foreach (var product in products!)
                 {
                     product.CreatedBy = sellerUser.Id;
-                    product.CreatedBy = sellerUser.FullName;
-                    //product.CreatedByName = sellerUser.FullName;
+                    product.CreatedByName = sellerUser.FullName;
                 }
-
+                context.Products.AddRange(products);
                 await context.SaveChangesAsync();
             }
         }
