@@ -44,6 +44,7 @@ public static class ServiceContainer
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IRoleManagementService, RoleManagementService>();
+        services.AddScoped<IReportsService, ReportsService>();
 
         return services;
     }

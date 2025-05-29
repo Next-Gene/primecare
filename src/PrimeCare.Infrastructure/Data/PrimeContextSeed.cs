@@ -58,20 +58,21 @@ public class PrimeContextSeed
                 }
                 await context.SaveChangesAsync();
             }
-
-
-            // Seed products if none exist
-            if (!context.Products.Any())
-            {
-                var productsData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\products.json");
-                var products = JsonSerializer.Deserialize<List<Product>>(productsData);
-                foreach (var product in products!)
-                    context.Products.Add(product);
-                await context.SaveChangesAsync();
-            }
-
-
         }
+
+
+        //    // Seed products if none exist
+        //    if (!context.Products.Any())
+        //    {
+        //        var productsData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\products.json");
+        //        var products = JsonSerializer.Deserialize<List<Product>>(productsData);
+        //        foreach (var product in products!)
+        //            context.Products.Add(product);
+        //        await context.SaveChangesAsync();
+        //    }
+
+
+        //}
         catch (Exception ex)
         {
             var logger = loggerFactory.CreateLogger<PrimeContextSeed>();

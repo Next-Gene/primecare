@@ -5,6 +5,8 @@
 /// </summary>
 public class Product : BaseEntity
 {
+    //public string CreatedByName { get; set; }
+
     /// <summary>
     /// Gets or sets the name of the product.
     /// </summary>
@@ -45,4 +47,6 @@ public class Product : BaseEntity
     /// Gets or sets the identifier of the product brand.
     /// </summary>
     public int ProductBrandId { get; set; }
+
+    public string CreatedBy { get; set; }
 }
