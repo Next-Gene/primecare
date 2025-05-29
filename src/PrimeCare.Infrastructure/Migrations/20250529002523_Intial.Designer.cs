@@ -9,10 +9,10 @@ using PrimeCare.Infrastructure.Data;
 
 #nullable disable
 
-namespace PrimeCare.Infrastructure.Migrations.PrimeCare
+namespace PrimeCare.Infrastructure.Migrations
 {
     [DbContext(typeof(PrimeCareContext))]
-    [Migration("20250528170328_Intial")]
+    [Migration("20250529002523_Intial")]
     partial class Intial
     {
         /// <inheritdoc />
@@ -188,6 +188,10 @@ namespace PrimeCare.Infrastructure.Migrations.PrimeCare
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()

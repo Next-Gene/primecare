@@ -8,7 +8,7 @@ using PrimeCare.Infrastructure.Data;
 
 #nullable disable
 
-namespace PrimeCare.Infrastructure.Migrations.PrimeCare
+namespace PrimeCare.Infrastructure.Migrations
 {
     [DbContext(typeof(PrimeCareContext))]
     partial class PrimeCareContextModelSnapshot : ModelSnapshot
@@ -185,6 +185,10 @@ namespace PrimeCare.Infrastructure.Migrations.PrimeCare
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()

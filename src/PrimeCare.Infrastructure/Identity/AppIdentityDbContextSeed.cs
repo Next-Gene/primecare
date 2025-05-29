@@ -1,22 +1,30 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.Text.Json;
+using Microsoft.AspNetCore.Identity;
+using PrimeCare.Core.Entities;
 using PrimeCare.Core.Entities.Identity;
+using PrimeCare.Infrastructure.Data; // تأكد من مسار الـ DbContext
 
 namespace PrimeCare.Infrastructure.Identity
 {
     public class AppIdentityDbContextSeed
     {
-        public static async Task SeedUsersAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public static async Task SeedUsersAsync(
+            UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager,
+            PrimeCareContext context)
         {
-            // Seed roles first
+            // 1. Seed roles
             await SeedRolesAsync(roleManager);
 
-            // Seed users with roles
-            await SeedUserAsync(userManager);
+            // 2. Seed users (Admin, Seller, User)
+            await SeedUsersAsync(userManager);
+
+            // 3. Seed products linked to seller
+            await SeedProductsAsync(userManager, context);
         }
 
         private static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
         {
-            // Updated to include "User" as the default role
             var roles = new[] { "Admin", "Seller", "User" };
 
             foreach (var role in roles)
@@ -28,9 +36,9 @@ namespace PrimeCare.Infrastructure.Identity
             }
         }
 
-        private static async Task SeedUserAsync(UserManager<ApplicationUser> userManager)
+        private static async Task SeedUsersAsync(UserManager<ApplicationUser> userManager)
         {
-            // Create Admin user
+            // Admin user
             if (await userManager.FindByEmailAsync("seifmoataz27249@gmail.com") == null)
             {
                 var adminUser = new ApplicationUser
@@ -57,7 +65,7 @@ namespace PrimeCare.Infrastructure.Identity
                 }
             }
 
-            // Create Seller user
+            // Seller user
             if (await userManager.FindByEmailAsync("seifeng2912@gmail.com") == null)
             {
                 var sellerUser = new ApplicationUser
@@ -84,23 +92,23 @@ namespace PrimeCare.Infrastructure.Identity
                 }
             }
 
-            // Create a regular User for testing
-            if (await userManager.FindByEmailAsync("user@example.com") == null)
+            // Regular user
+            if (await userManager.FindByEmailAsync("regularuser@example.com") == null)
             {
                 var regularUser = new ApplicationUser
                 {
                     FullName = "Regular User",
-                    UserName = "user",
-                    Email = "user@example.com",
-                    PhoneNumber = "01000000000",
+                    UserName = "regularuser",
+                    Email = "regularuser@example.com",
+                    PhoneNumber = "01234567890",
                     Address = new Address
                     {
                         FirstName = "Regular",
                         LastName = "User",
                         Street = "User Street",
-                        City = "Cairo",
-                        State = "Cairo",
-                        ZipCode = "11111"
+                        City = "Alexandria",
+                        State = "Alexandria",
+                        ZipCode = "67890"
                     }
                 };
 
@@ -110,16 +118,29 @@ namespace PrimeCare.Infrastructure.Identity
                     await userManager.AddToRoleAsync(regularUser, "User");
                 }
             }
+        }
 
-            // Update existing user to have a role if needed
-            var existingUser = await userManager.FindByEmailAsync("seifemam");
-            if (existingUser != null)
+        private static async Task SeedProductsAsync(UserManager<ApplicationUser> userManager, PrimeCareContext context)
+        {
+            if (!context.Products.Any())
             {
-                var userRoles = await userManager.GetRolesAsync(existingUser);
-                if (!userRoles.Any())
+                var productsData = File.ReadAllText(@"..\PrimeCare.Infrastructure\Data\SeedData\products.json");
+                var products = JsonSerializer.Deserialize<List<Product>>(productsData);
+
+                var sellerUser = await userManager.FindByEmailAsync("seifeng2912@gmail.com");
+                if (sellerUser == null)
                 {
-                    await userManager.AddToRoleAsync(existingUser, "Admin");
+                    throw new Exception("Seller user not found!");
                 }
+
+                foreach (var product in products!)
+                {
+                    product.CreatedBy = sellerUser.Id;
+                    product.CreatedBy = sellerUser.FullName;
+                    //product.CreatedByName = sellerUser.FullName;
+                }
+
+                await context.SaveChangesAsync();
             }
         }
     }

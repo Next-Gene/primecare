@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace PrimeCare.Infrastructure.Migrations
+namespace PrimeCare.Infrastructure.Migrations.AppIdentityDb
 {
     /// <inheritdoc />
     public partial class Identity : Migration
