@@ -45,6 +45,8 @@ public static class ServiceContainer
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IRoleManagementService, RoleManagementService>();
         services.AddScoped<IReportsService, ReportsService>();
+        services.AddScoped<IAuditService, AuditService>();
+        services.AddScoped<IAIUsageService, AIUsageService>();
 
         return services;
     }
