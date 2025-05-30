@@ -30,6 +30,8 @@ public static class ServiceContainer
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<IOrderService, OrderService>();
         services.AddScoped<IPaymentService, PaymentService>();
+        services.AddHttpClient<IMedicalAIService, MedicalAIService>();
+        services.AddScoped<IMedicalAIService, MedicalAIService>();
         return services;
     }
 }

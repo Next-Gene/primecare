@@ -1,8 +1,9 @@
-﻿using System.Reflection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PrimeCare.Core.Entities;
+using PrimeCare.Core.Entities.AiEntites;
 using PrimeCare.Core.Entities.Order;
 using PrimeCare.Core.Entities.OrderAggregate;
+using System.Reflection;
 
 namespace PrimeCare.Infrastructure.Data;
 
@@ -53,7 +54,10 @@ public class PrimeCareContext : DbContext
 
     public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
 
-
+    // AI-related navigation properties
+    public DbSet<AIInteractionAudit> AIInteractionAudits { get; set; }
+    public DbSet<AIResponseAudit> AIResponseAudits { get; set; }
+    public DbSet<AIUsageTracking> AIUsageTrackings { get; set; }
 
     /// <summary>
     /// Configures the entity mappings and relationships for the context.
@@ -64,5 +68,39 @@ public class PrimeCareContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+
+        // Configure AI-related entities
+        {
+            modelBuilder.Entity<AIInteractionAudit>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.UserId).IsRequired();
+                entity.Property(e => e.Query).IsRequired();
+                entity.Property(e => e.AssistantType).HasMaxLength(100);
+
+            });
+
+            modelBuilder.Entity<AIResponseAudit>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.UserId).IsRequired();
+                entity.Property(e => e.Query).IsRequired();
+                entity.Property(e => e.Response).IsRequired();
+
+            });
+
+            modelBuilder.Entity<AIUsageTracking>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.UserId).IsRequired();
+                entity.Property(e => e.Date).IsRequired();
+                entity.HasIndex(e => new { e.UserId, e.Date }).IsUnique();
+
+            });
+
+        }
     }
+
+
 }

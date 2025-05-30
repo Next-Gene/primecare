@@ -24,4 +24,8 @@
     <ProjectReference Include="..\PrimeCare.Infrastructure\PrimeCare.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>

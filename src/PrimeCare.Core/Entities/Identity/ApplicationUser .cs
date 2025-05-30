@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using PrimeCare.Core.Entities.AiEntites;
 
 namespace PrimeCare.Core.Entities.Identity
 {
@@ -6,6 +7,7 @@ namespace PrimeCare.Core.Entities.Identity
     {
         public string FullName { get; set; } = null!;
         public Address? Address { get; set; }
+
 
     }
 }

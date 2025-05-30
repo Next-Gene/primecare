@@ -12,6 +12,55 @@ namespace PrimeCare.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "AIInteractionAudits",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Query = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AssistantType = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IPAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AIInteractionAudits", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AIResponseAudits",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Query = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Response = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AIResponseAudits", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AIUsageTrackings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    RequestCount = table.Column<int>(type: "int", nullable: false),
+                    LastRequestTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AIUsageTrackings", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Categories",
                 columns: table => new
                 {
@@ -188,6 +237,12 @@ namespace PrimeCare.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_AIUsageTrackings_UserId_Date",
+                table: "AIUsageTrackings",
+                columns: new[] { "UserId", "Date" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CategoryPhotos_CategoryId",
                 table: "CategoryPhotos",
                 column: "CategoryId");
@@ -221,6 +276,15 @@ namespace PrimeCare.Infrastructure.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AIInteractionAudits");
+
+            migrationBuilder.DropTable(
+                name: "AIResponseAudits");
+
+            migrationBuilder.DropTable(
+                name: "AIUsageTrackings");
+
             migrationBuilder.DropTable(
                 name: "CategoryPhotos");
 

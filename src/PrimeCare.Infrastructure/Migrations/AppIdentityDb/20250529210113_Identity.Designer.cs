@@ -12,7 +12,7 @@ using PrimeCare.Infrastructure.Identity;
 namespace PrimeCare.Infrastructure.Migrations.AppIdentityDb
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20250529025223_Identity")]
+    [Migration("20250529210113_Identity")]
     partial class Identity
     {
         /// <inheritdoc />
