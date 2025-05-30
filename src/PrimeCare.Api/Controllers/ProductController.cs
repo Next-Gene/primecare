@@ -17,15 +17,18 @@ public class ProductController : BaseApiController
 {
     private readonly IProductService _productService;
     private readonly IGenericRepository<Product> _productInterface;
+    private readonly IPhotoService _photoService;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ProductController"/> class.
     /// </summary>
     /// <param name="productService">The product service for product operations.</param>
     public ProductController(IProductService productService,
+        IPhotoService photoService,
         IGenericRepository<Product> productInterface)
     {
         _productService = productService;
+        _photoService = photoService;
         _productInterface = productInterface;
     }
 
@@ -161,5 +164,35 @@ public class ProductController : BaseApiController
             return NoContent();
 
         return BadRequest("Failed to set main photo");
+    }
+
+    [HttpDelete("delete-photo/{photoId}/{productId}")]
+    [Authorize(Policy = "AdminOrSeller")]
+    public async Task<ActionResult> DeletePhoto(int photoId, int productId)
+    {
+        var product = await _productInterface.GetByIdAsync(productId);
+        if (product == null)
+            return NotFound($"Product with ID {productId} not found.");
+
+        var photo = product.ProductPhotos.FirstOrDefault(x => x.Id == photoId);
+        if (photo == null)
+            return NotFound($"Photo with ID {photoId} not found for this product.");
+
+        if (photo.IsMain)
+            return BadRequest("You cannot delete the main photo of a product.");
+
+        if (photo.PublicId != null)
+        {
+            var result = await _photoService.DeletePhotoAsync(photo.PublicId);
+            if (result.Error != null)
+                return BadRequest("Failed to delete photo from cloud storage.");
+        }
+
+        product.ProductPhotos.Remove(photo);
+
+        if (await _productInterface.SaveAllAsync())
+            return Ok();
+
+        return BadRequest("Failed to delete photo from product.");
     }
 }
