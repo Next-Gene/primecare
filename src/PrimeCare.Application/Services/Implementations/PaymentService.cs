@@ -109,6 +109,7 @@ namespace PrimeCare.Application.Services.Implementations
 
             var service = new SessionService();
             Session session = await service.CreateAsync(options);
+            await _cartService.UpdateCartAsync(cart);
 
             return session.Url; /// Redirect URL for the checkout session
         }

@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Core.Entities;
+using PrimeCare.Core.Entities.Identity;
 using PrimeCare.Core.Interfaces;
 using PrimeCare.Core.Specifications;
 using PrimeCare.Shared;
@@ -18,6 +20,9 @@ public class ProductService : IProductService
     private readonly IGenericRepository<Product> _productInterface;
     private readonly IPhotoService _photoService;
     private readonly IMapper _mapper;
+    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly IHttpContextAccessor _httpContextAccessor;
+
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ProductService"/> class.
@@ -26,11 +31,14 @@ public class ProductService : IProductService
     /// <param name="mapper">The AutoMapper instance for mapping entities and DTOs.</param>
     /// <param name="photoService">The photo service for managing product photos.</param>
     public ProductService(IGenericRepository<Product> productInterface,
-        IMapper mapper, IPhotoService photoService)
+        IMapper mapper, IPhotoService photoService , UserManager<ApplicationUser> userManager , IHttpContextAccessor httpContextAccessor )
     {
         _productInterface = productInterface;
         _photoService = photoService;
         _mapper = mapper;
+        _userManager = userManager;
+        _httpContextAccessor = httpContextAccessor;
+
     }
 
     #region Methods
@@ -78,7 +86,14 @@ public class ProductService : IProductService
     /// </returns>
     public async Task<ServiceResponse> AddAsync(CreateProductDto entity)
     {
+        var user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext?.User); // Retrieve the current user from the HttpContext
+        if (user == null)
+            return new ServiceResponse(false, "User not found.");
+
         var mappedData = _mapper.Map<Product>(entity);
+        mappedData.CreatedBy = user.Id; // Assign CreatedBy from the current user's ID
+        mappedData.CreatedByName = user.FullName; // Assign the user object for reference
+
         int result = await _productInterface.AddAsync(mappedData);
 
         return result > 0
@@ -101,6 +116,7 @@ public class ProductService : IProductService
             return new ServiceResponse(false, "Product not found.");
 
         var mappedData = _mapper.Map(entity, product);
+
         int result = await _productInterface.UpdateAsync(mappedData);
 
         return result > 0

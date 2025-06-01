@@ -9,6 +9,7 @@ using PrimeCare.Shared.Dtos.Photos;
 using PrimeCare.Shared.Dtos.ProductBrand;
 using PrimeCare.Shared.Dtos.Products;
 using PrimeCare.Shared.Dtos.User;
+using PrimeCare.Shared.Dtos.WishList;
 
 namespace PrimeCare.Api.Helpers;
 
@@ -106,6 +107,12 @@ public class MappingProfiles : Profile
        .ForMember(dest => dest.TotalPriceWithTax, opt => opt.MapFrom(src => src.TotalPriceWithTax));
 
         CreateMap<CustomerCartDto, CustomerCart>();
+        CreateMap<CustomerWishlist, CustomerWihListDto>()
+            .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items));
+        // WishlistItem ↔ WishlistItemDto
+        CreateMap<WishlistItem, WishListItemDto>();
+        CreateMap<WishListItemDto, WishlistItem>();
+
 
         // CartItem ↔ CartItemDto
         CreateMap<CartItem, CartItemDto>();
