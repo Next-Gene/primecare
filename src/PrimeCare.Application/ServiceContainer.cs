@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CloudinaryDotNet;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using PrimeCare.Api.Helpers;
 using PrimeCare.Application.Services.Implementations;
 using PrimeCare.Application.Services.Interfaces;
@@ -33,6 +35,8 @@ public static class ServiceContainer
         services.AddScoped<IPaymentService, PaymentService>();
         services.AddHttpClient<IMedicalAIService, MedicalAIService>();
         services.AddScoped<IMedicalAIService, MedicalAIService>();
+
+     
         return services;
     }
 }

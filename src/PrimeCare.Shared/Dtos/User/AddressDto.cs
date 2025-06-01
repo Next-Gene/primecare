@@ -11,5 +11,7 @@
 
         public string phoneNumber { get; set; }
 
+        public string email { get; set; } // Added email property
+
     }
 }
