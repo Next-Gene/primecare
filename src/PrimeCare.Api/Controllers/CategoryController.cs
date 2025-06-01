@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PrimeCare.Application.Helpers;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Shared.Dtos.Categories;
 using PrimeCare.Shared.Dtos.Photos;
@@ -31,6 +32,7 @@ public class CategoryController : BaseApiController
     /// </summary>
     /// <param name="sort">The sorting criteria (optional).</param>
     /// <returns>A list of categories or a not found response if none exist.</returns>
+    [Cashed(600)]
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -48,6 +50,7 @@ public class CategoryController : BaseApiController
     /// </summary>
     /// <param name="id">The unique identifier of the category.</param>
     /// <returns>The category if found; otherwise, a not found response.</returns>
+    [Cashed(600)]
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]

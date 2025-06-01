@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PrimeCare.Application.Helpers;
 using PrimeCare.Application.Services.Interfaces;
 using PrimeCare.Shared.Dtos.ProductBrand;
 using PrimeCare.Shared.Errors;
@@ -29,6 +30,7 @@ public class ProductBrandController : BaseApiController
     /// Public access - no authorization required.
     /// </summary>
     /// <returns>A list of product brands or 404 if none found.</returns>
+    [Cashed(600)]
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -44,6 +46,7 @@ public class ProductBrandController : BaseApiController
     /// </summary>
     /// <param name="id">The ID of the product brand.</param>
     /// <returns>The product brand details or 404 if not found.</returns>
+    [Cashed(600)]
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
